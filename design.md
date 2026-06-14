@@ -107,9 +107,8 @@ purpose: Alternate Hermes Dash visual mode named v2-dash, translated from Modal.
 
 ## Implementation Notes for Hermes
 
-- v2 theme name in the app: `modal-v2` / label `v2-dash / Modal taste`.
-- Add a theme selector in the header so the existing Dell 1996 styling remains available.
-- Scope the alternate style under `.modal-taste` so the original dashboard can still render unchanged.
+- Modal-inspired styling is now the default and only dashboard visual direction.
+- Keep the `.modal-taste` class as the app-level styling hook for the dashboard shell.
 - Apply the Opus observations in UI structure, not just colors: centered hero, italic wordmark accent on `Dash`, runtime-panel metric cards, pill project tabs, and dark code/log-style report surfaces.
 - Use CSS custom properties for Modal-derived colors:
   - `--modal-black: #000000`

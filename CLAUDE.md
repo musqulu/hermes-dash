@@ -11,23 +11,20 @@ This repository is the public Hermes report dashboard.
 
 ## Design system
 
-Use `DESIGN-dell-1996.md` as the primary visual source of truth for this repo.
+Use `design.md` as the primary visual source of truth for this repo.
 
-Follow its Dell 1996-inspired vocabulary:
+Follow its Modal-inspired vocabulary:
 
-- black page frame
-- white canvas
-- square 1px black borders
-- catalog tint blocks: sage, salmon, peach, lime, sky, steel, periwinkle
-- Dell red only for high-emphasis callouts
-- yellow sticker-style labels/buttons
-- Arial Black display headings
-- Helvetica UI labels/buttons
-- Times New Roman body copy
-- classic blue underlined links
-- hard-edged bevels/stickers, not soft modern shadows
+- black / near-black runtime surfaces
+- pale green foreground text
+- neon green action and selected states
+- muted green secondary copy
+- pill buttons, tabs, and controls
+- translucent green borders
+- flat dark panels with minimal elevation
+- Inter/system sans typography
 
-Avoid modern generic dashboard styling: rounded cards, glassmorphism, soft shadows, gradients, SaaS-neutral gray-on-gray UI, and vague “clean modern” redesigns unless explicitly asked.
+Avoid retro catalog styling: bevel stickers, square black page frames, Times New Roman body copy, multi-color tint systems, and heavy nostalgic browser chrome unless explicitly asked.
 
 ## Taste skill
 
@@ -48,7 +45,7 @@ The skill requires the user-level Playwright MCP server named `playwright`, inst
 
 `claude mcp add playwright -s user -- npx -y @playwright/mcp@latest --isolated`
 
-When using taste output for this repo, adapt the result to the existing Dell 1996 dashboard direction instead of blindly replacing it. Preserve the dashboard's report-browsing clarity and the public/management split.
+When using taste output for this repo, adapt the result to the Modal-inspired dashboard direction. Preserve the dashboard's report-browsing clarity and the public/management split.
 
 ## Development commands
 

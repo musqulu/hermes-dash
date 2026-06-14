@@ -13,14 +13,14 @@ Reports are stored in `content/reports/*` for now. Later this can move to a data
 
 ## Design system
 
-The repository uses the uploaded Dell 1996-inspired design spec in `DESIGN-dell-1996.md`.
+The dashboard uses the Modal-inspired design direction documented in `design.md`.
 
 Implementation notes:
 
 - Global design tokens live in `src/app/globals.css` as CSS variables.
 - Tailwind scans both `pages/**/*` and `src/**/*` so page-level classes are included in builds.
-- UI should keep the DESIGN.md vocabulary: black page frame, square borders, catalog tint blocks, Arial Black display headings, Helvetica UI labels, Times New Roman body copy, classic blue links, and hard-edged sticker/bevel treatments.
-- Avoid modern soft cards, rounded corners, gradients, glass effects, and soft shadows unless the design spec changes.
+- UI should keep the Modal-inspired vocabulary: dark runtime surfaces, pale green text, neon green action states, pill controls, translucent green borders, and flat panels.
+- Avoid retro catalog styling, bevel stickers, square black page frames, Times New Roman body copy, and multi-color tint systems unless the design direction changes.
 
 ## Local setup
 

@@ -107,7 +107,6 @@ function renderMarkdownLine(rawLine: string, index: number) {
 
 export function ReportDashboard({ index, managementMode = false }: Props) {
   const [query, setQuery] = useState("");
-  const [styleMode, setStyleMode] = useState<"dell" | "modal">("dell");
   const [activeProjectId, setActiveProjectId] = useState(index.projects[0]?.id ?? "");
   const activeProject = index.projects.find((project) => project.id === activeProjectId) ?? index.projects[0];
   const [activeIdByProject, setActiveIdByProject] = useState<Record<string, string>>(() =>
@@ -137,15 +136,10 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
     .sort((a, b) => new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime())[0];
 
   return (
-    <main
-      className={cn(
-        "page-frame mx-auto flex min-h-screen w-full max-w-[760px] flex-col gap-6 px-3 py-3 md:px-4 md:py-4",
-        styleMode === "modal" && "modal-taste",
-      )}
-    >
+    <main className="modal-taste page-frame mx-auto flex min-h-screen w-full max-w-[760px] flex-col gap-6 px-3 py-3 md:px-4 md:py-4">
       <header className="dashboard-hero border border-black bg-black text-white md:grid md:grid-cols-[1fr_auto]">
         <div className="dashboard-hero-copy space-y-3 p-4">
-          <Badge variant="default" className="bevel-sticker hero-badge w-fit bg-[var(--dell-yellow)] text-black">
+          <Badge variant="default" className="bevel-sticker hero-badge w-fit bg-[var(--modal-accent)] text-black">
             Local Markdown report log
           </Badge>
           <div className="space-y-2">
@@ -157,21 +151,9 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
             </p>
           </div>
         </div>
-        <div className="dashboard-actions space-y-3 border-l border-black bg-[var(--dell-red)] px-3 py-3 text-xs text-white md:max-w-sm">
-          <label className="block font-ui text-[10px] font-bold uppercase tracking-[0.08em] text-white/80" htmlFor="style-mode">
-            Dashboard style
-          </label>
-          <select
-            className="style-select w-full border border-black bg-white px-2 py-1 font-ui text-xs font-bold uppercase text-black outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            id="style-mode"
-            value={styleMode}
-            onChange={(event) => setStyleMode(event.target.value as "dell" | "modal")}
-          >
-            <option value="dell">Current / Dell 1996</option>
-            <option value="modal">v2-dash / Modal taste</option>
-          </select>
+        <div className="dashboard-actions space-y-3 border-l border-black bg-[var(--modal-nav)] px-3 py-3 text-xs text-white md:max-w-sm">
           <a
-            className="bevel-sticker inline-flex bg-[var(--dell-yellow)] px-2 py-1 font-ui text-xs font-bold uppercase text-black transition hover:bg-[var(--dell-yellow)]"
+            className="bevel-sticker inline-flex bg-[var(--modal-accent)] px-2 py-1 font-ui text-xs font-bold uppercase text-black transition hover:bg-[var(--modal-accent)]"
             href={managementMode ? "/" : "/manage"}
           >
             {managementMode ? "View public read-only dashboard" : "Login to management dashboard"}
