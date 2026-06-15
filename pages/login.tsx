@@ -30,37 +30,43 @@ export default function Login() {
   }
 
   return (
-    <main className="page-frame mx-auto flex min-h-screen w-full max-w-[480px] flex-col justify-center gap-6 px-5 py-12">
-      <div className="space-y-2">
-        <a className="classic-link font-serif text-sm" href="/">
+    <main className="flex min-h-screen w-full flex-col justify-center px-5 py-12">
+      <div className="auth-card animate-in">
+        <a
+          href="/"
+          style={{ color: "var(--modal-muted)", fontSize: "0.82rem", textDecoration: "none" }}
+        >
           ← Public dashboard
         </a>
-        <h1 className="font-display text-4xl uppercase leading-none">Management login</h1>
-        <p className="font-serif text-sm text-black">
+
+        <h1 className="detail-title" style={{ marginTop: "1rem", fontSize: "1.9rem" }}>
+          Management login
+        </h1>
+        <p className="detail-summary" style={{ marginTop: "0.5rem", fontSize: "0.9rem" }}>
           Enter the dashboard password to review reports and save feedback for future agent runs.
         </p>
-      </div>
 
-      <form className="space-y-4 border border-black bg-[var(--tint-sage)] p-5" onSubmit={submit}>
-        <label className="space-y-2 font-ui text-sm font-bold uppercase">
-          <span>Password</span>
-          <input
-            autoFocus
-            className="w-full border border-black bg-white px-3 py-2 font-serif text-sm normal-case outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            onChange={(event) => setPassword(event.target.value)}
-            type="password"
-            value={password}
-          />
-        </label>
-        <button
-          className="bevel-sticker w-full bg-black px-3 py-2 font-ui text-sm font-bold uppercase text-white disabled:opacity-50"
-          disabled={status === "saving" || !password}
-          type="submit"
-        >
-          {status === "saving" ? "Logging in…" : "Log in"}
-        </button>
-        {status === "error" ? <p className="text-sm text-red-600">{error}</p> : null}
-      </form>
+        <form className="flex flex-col gap-4" style={{ marginTop: "1.5rem" }} onSubmit={submit}>
+          <label className="flex flex-col gap-2">
+            <span className="section-label" style={{ marginBottom: 0 }}>
+              Password
+            </span>
+            <input
+              autoFocus
+              className="field"
+              onChange={(event) => setPassword(event.target.value)}
+              type="password"
+              value={password}
+            />
+          </label>
+          <button className="btn-accent btn w-full" disabled={status === "saving" || !password} type="submit">
+            {status === "saving" ? "Logging in…" : "Log in"}
+          </button>
+          {status === "error" ? (
+            <p style={{ color: "hsl(var(--destructive))", fontSize: "0.85rem" }}>{error}</p>
+          ) : null}
+        </form>
+      </div>
     </main>
   );
 }

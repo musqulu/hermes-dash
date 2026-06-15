@@ -1,13 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
-import { CalendarDays, FileText, MessageSquare, Search } from "lucide-react";
+import { FileText, MessageSquare, Search } from "lucide-react";
 import type { Report, ReportComment, ReportIndex } from "@/lib/reports";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
 
 type Props = {
   index: ReportIndex;
@@ -29,81 +24,149 @@ function metricLabel(value: number, singular: string, plural = `${singular}s`) {
   return `${value.toLocaleString("en-GB")} ${value === 1 ? singular : plural}`;
 }
 
-function cleanInlineMarkdown(value: string) {
-  return value
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
-    .trim();
-}
+/* ---- Inline markdown (bold, code, links) ----------------------------- */
 
-function renderInlineMarkdown(value: string): ReactNode[] {
+const inlinePattern = /(\[[^\]]+\]\((?:https?:\/\/|\/)[^)]+\))|(\*\*[^*]+\*\*)|(`[^`]+`)/g;
+
+function renderInlineMarkdown(value: string, keyPrefix: string): ReactNode[] {
   const nodes: ReactNode[] = [];
-  const linkPattern = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
   let lastIndex = 0;
+  let i = 0;
 
-  for (const match of value.matchAll(linkPattern)) {
-    if (match.index > lastIndex) {
-      nodes.push(cleanInlineMarkdown(value.slice(lastIndex, match.index)));
+  for (const match of value.matchAll(inlinePattern)) {
+    const start = match.index ?? 0;
+    if (start > lastIndex) {
+      nodes.push(value.slice(lastIndex, start));
     }
 
-    nodes.push(
-      <a
-        className="classic-link"
-        href={match[2]}
-        key={`${match[2]}-${match.index}`}
-        rel="noreferrer"
-        target="_blank"
-      >
-        {cleanInlineMarkdown(match[1])}
-      </a>,
-    );
-    lastIndex = match.index + match[0].length;
+    const token = match[0];
+    const key = `${keyPrefix}-${i++}`;
+
+    if (match[1]) {
+      const link = token.match(/\[([^\]]+)\]\(([^)]+)\)/);
+      if (link) {
+        const external = link[2].startsWith("http");
+        nodes.push(
+          <a
+            key={key}
+            href={link[2]}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noreferrer" : undefined}
+          >
+            {link[1]}
+          </a>,
+        );
+      }
+    } else if (match[2]) {
+      nodes.push(<strong key={key}>{token.slice(2, -2)}</strong>);
+    } else if (match[3]) {
+      nodes.push(<code key={key}>{token.slice(1, -1)}</code>);
+    }
+
+    lastIndex = start + token.length;
   }
 
   if (lastIndex < value.length) {
-    nodes.push(cleanInlineMarkdown(value.slice(lastIndex)));
+    nodes.push(value.slice(lastIndex));
   }
 
-  return nodes.filter((node) => node !== "");
+  return nodes;
 }
 
-function renderMarkdownLine(rawLine: string, index: number) {
-  const line = rawLine.trim();
-  if (!line || line.startsWith("```")) return null;
+/* ---- Block-aware markdown renderer ----------------------------------- */
 
-  const heading = line.match(/^(#{1,6})\s+(.+)$/);
-  if (heading) {
-    const level = heading[1].length;
-    const text = renderInlineMarkdown(heading[2]);
+function renderMarkdown(content: string): ReactNode[] {
+  const lines = content.split("\n");
+  const blocks: ReactNode[] = [];
+  let key = 0;
 
-    if (level === 1) {
-      return <h2 key={index} className="pt-4 font-ui text-xl font-bold uppercase text-black">{text}</h2>;
+  // Buffers for grouping list items
+  let listType: "ul" | "ol" | null = null;
+  let listItems: ReactNode[] = [];
+
+  const flushList = () => {
+    if (!listType || listItems.length === 0) return;
+    const items = listItems;
+    if (listType === "ul") {
+      blocks.push(<ul key={`b-${key++}`}>{items}</ul>);
+    } else {
+      blocks.push(<ol key={`b-${key++}`}>{items}</ol>);
+    }
+    listType = null;
+    listItems = [];
+  };
+
+  for (let idx = 0; idx < lines.length; idx++) {
+    const raw = lines[idx];
+    const line = raw.trim();
+
+    // Fenced code block
+    if (line.startsWith("```")) {
+      flushList();
+      const codeLines: string[] = [];
+      idx++;
+      while (idx < lines.length && !lines[idx].trim().startsWith("```")) {
+        codeLines.push(lines[idx]);
+        idx++;
+      }
+      blocks.push(
+        <pre key={`b-${key++}`}>
+          <code>{codeLines.join("\n")}</code>
+        </pre>,
+      );
+      continue;
     }
 
-    if (level === 2) {
-      return <h3 key={index} className="pt-5 font-ui text-base font-bold uppercase text-black">{text}</h3>;
+    if (!line) {
+      flushList();
+      continue;
     }
 
-    return <h4 key={index} className="pt-4 font-ui text-sm font-bold uppercase text-black">{text}</h4>;
+    // Headings
+    const heading = line.match(/^(#{1,6})\s+(.+)$/);
+    if (heading) {
+      flushList();
+      const level = heading[1].length;
+      const text = renderInlineMarkdown(heading[2], `h-${idx}`);
+      if (level <= 1) blocks.push(<h2 key={`b-${key++}`}>{text}</h2>);
+      else if (level === 2) blocks.push(<h3 key={`b-${key++}`}>{text}</h3>);
+      else blocks.push(<h4 key={`b-${key++}`}>{text}</h4>);
+      continue;
+    }
+
+    // Ordered list item
+    const ordered = line.match(/^\d+\.\s+(.+)$/);
+    if (ordered) {
+      if (listType !== "ol") flushList();
+      listType = "ol";
+      listItems.push(<li key={`li-${idx}`}>{renderInlineMarkdown(ordered[1], `ol-${idx}`)}</li>);
+      continue;
+    }
+
+    // Unordered list item (supports nested indentation visually)
+    const unordered = raw.match(/^(\s*)[-*]\s+(.+)$/);
+    if (unordered) {
+      if (listType !== "ul") flushList();
+      listType = "ul";
+      const indented = unordered[1].length >= 2;
+      listItems.push(
+        <li key={`li-${idx}`} style={indented ? { marginLeft: "1.1rem", opacity: 0.92 } : undefined}>
+          {renderInlineMarkdown(unordered[2], `ul-${idx}`)}
+        </li>,
+      );
+      continue;
+    }
+
+    // Paragraph
+    flushList();
+    blocks.push(<p key={`b-${key++}`}>{renderInlineMarkdown(line, `p-${idx}`)}</p>);
   }
 
-  const ordered = line.match(/^(\d+)\.\s+(.+)$/);
-  if (ordered) {
-    return (
-      <p key={index} className="pt-3 font-serif text-sm font-bold text-black">
-        <span className="mr-2 font-ui text-black">{ordered[1]}.</span> {renderInlineMarkdown(ordered[2])}
-      </p>
-    );
-  }
-
-  const unordered = line.match(/^[-*]\s+(.+)$/);
-  if (unordered) {
-    return <p key={index} className="pl-4 font-serif text-sm leading-6 text-black">• {renderInlineMarkdown(unordered[1])}</p>;
-  }
-
-  return <p key={index} className="font-serif text-sm leading-6 text-black">{renderInlineMarkdown(line)}</p>;
+  flushList();
+  return blocks;
 }
+
+/* ---- Dashboard ------------------------------------------------------- */
 
 export function ReportDashboard({ index, managementMode = false }: Props) {
   const [query, setQuery] = useState("");
@@ -126,165 +189,118 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
 
   const activeId = activeProject ? activeIdByProject[activeProject.id] : "";
   const active = reports.find((report) => report.id === activeId) ?? reports[0];
+
   const totalReports = index.projects.reduce((sum, project) => sum + project.reports.length, 0);
-  const totalWords = index.projects.reduce(
-    (sum, project) => sum + project.reports.reduce((inner, report) => inner + report.wordCount, 0),
-    0,
-  );
   const latest = index.projects
     .flatMap((project) => project.reports)
     .sort((a, b) => new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime())[0];
 
   return (
-    <main className="modal-taste page-frame mx-auto flex min-h-screen w-full max-w-[760px] flex-col gap-6 px-3 py-3 md:px-4 md:py-4">
-      <header className="dashboard-hero border border-black bg-black text-white md:grid md:grid-cols-[1fr_auto]">
-        <div className="dashboard-hero-copy space-y-3 p-4">
-          <Badge variant="default" className="bevel-sticker hero-badge w-fit bg-[var(--modal-accent)] text-black">
-            Local Markdown report log
-          </Badge>
-          <div className="space-y-2">
-            <h1 className="font-display text-4xl uppercase leading-none md:text-5xl">Hermes <span className="modal-word">Dash</span></h1>
-            <p className="hero-subcopy max-w-xl font-serif text-sm text-white">
-              {managementMode
-                ? "Management view for reviewing reports and saving feedback for future agent improvements."
-                : "Open read-only report log for Hermes agent outputs, research briefs, and project ideas."}
-            </p>
-          </div>
-        </div>
-        <div className="dashboard-actions space-y-3 border-l border-black bg-[var(--modal-nav)] px-3 py-3 text-xs text-white md:max-w-sm">
-          <a
-            className="bevel-sticker inline-flex bg-[var(--modal-accent)] px-2 py-1 font-ui text-xs font-bold uppercase text-black transition hover:bg-[var(--modal-accent)]"
-            href={managementMode ? "/" : "/manage"}
-          >
-            {managementMode ? "View public read-only dashboard" : "Login to management dashboard"}
+    <main className="app-shell">
+      <header className="app-header">
+        <span className="wordmark">
+          Hermes <span className="accent">Dash</span>
+        </span>
+        <div className="header-meta">
+          <span className="stat-chip">
+            <b>{totalReports}</b> reports
+          </span>
+          <span className="stat-chip">
+            latest <b>{latest ? formatDate(latest.reportDate) : "—"}</b>
+          </span>
+          <a className="btn" href={managementMode ? "/" : "/manage"}>
+            {managementMode ? "Public view" : "Manage"}
           </a>
         </div>
       </header>
 
-      <section className="project-tabs grid gap-2 md:grid-cols-3">
-        {index.projects.map((project) => (
-          <button
-            key={project.id}
-            className={cn(
-              "bevel-sticker border border-black px-3 py-2 text-left font-ui text-xs font-bold uppercase transition hover:bg-[var(--tint-lime)]",
-              activeProject?.id === project.id && "bg-[var(--tint-periwinkle)] text-black",
+      <div className="app-body">
+        <aside className="app-sidebar scroll-area">
+          <div className="search-field">
+            <Search className="h-4 w-4" aria-hidden />
+            <input
+              type="search"
+              placeholder="Search reports…"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              aria-label="Search reports"
+            />
+          </div>
+
+          {/*
+            Project navigation. Interim solution: a flat vertical list scales
+            for a handful of projects. As projects multiply this is the seam to
+            evolve — group by status/owner or make it search-driven.
+          */}
+          <nav className="nav-section" aria-label="Projects">
+            <div className="nav-label">Projects</div>
+            {index.projects.map((project) => (
+              <button
+                key={project.id}
+                type="button"
+                className="nav-item"
+                data-active={activeProject?.id === project.id}
+                onClick={() => {
+                  setActiveProjectId(project.id);
+                  setQuery("");
+                }}
+              >
+                <span>{project.name}</span>
+                <span className="nav-count">{project.reports.length}</span>
+              </button>
+            ))}
+          </nav>
+
+          <div className="nav-section">
+            <div className="nav-label">
+              <span>Entries</span>
+              <span>{reports.length}</span>
+            </div>
+            {reports.length ? (
+              <div className="entry-list stagger" key={activeProject?.id}>
+                {reports.map((report) => (
+                  <button
+                    key={`${report.projectId}-${report.id}`}
+                    type="button"
+                    className="entry-row"
+                    data-active={active?.id === report.id}
+                    onClick={() =>
+                      setActiveIdByProject((current) => ({ ...current, [report.projectId]: report.id }))
+                    }
+                  >
+                    <span className="entry-date">{formatDate(report.reportDate)}</span>
+                    <span className="entry-title">{report.title}</span>
+                    <span className="entry-summary">{report.summary}</span>
+                    <span className="entry-meta">
+                      <span>{metricLabel(report.wordCount, "word")}</span>
+                      {report.comments.length ? <span>· {metricLabel(report.comments.length, "note")}</span> : null}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="entry-summary" style={{ padding: "0.5rem 0.8rem", whiteSpace: "normal" }}>
+                No reports match your search.
+              </p>
             )}
-            data-active={activeProject?.id === project.id}
-            onClick={() => {
-              setActiveProjectId(project.id);
-              setQuery("");
-            }}
-            type="button"
-          >
-            {project.name} <span className="opacity-70">({project.reports.length})</span>
-          </button>
-        ))}
-      </section>
+          </div>
+        </aside>
 
-      <section className="metric-grid grid gap-2 md:grid-cols-4">
-        <Metric label="Reports" value={totalReports.toString()} />
-        <Metric label="Words indexed" value={totalWords.toLocaleString("en-GB")} />
-        <Metric label="Latest" value={latest ? formatDate(latest.reportDate) : "—"} />
-        <Metric label="Matching now" value={reports.length.toString()} />
-      </section>
-
-      {activeProject ? (
-        <Card className="project-intro bg-[var(--tint-sage)]">
-          <CardHeader className="p-3">
-            <CardTitle className="font-ui text-sm uppercase">{activeProject.name}</CardTitle>
-            <CardDescription>{activeProject.description}</CardDescription>
-          </CardHeader>
-        </Card>
-      ) : null}
-
-      <section className="search-shell relative">
-        <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-        <Input
-          className="pl-9"
-          placeholder="Search reports, outcomes, projects, sources…"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
-      </section>
-
-      {!activeProject || activeProject.reports.length === 0 ? (
-        <Card>
-          <CardHeader>
-            <CardTitle>No Markdown reports found</CardTitle>
-            <CardDescription>
-              Save .md cron outputs into the active source folder above, or set the project-specific report directory env var before starting Next.js.
-            </CardDescription>
-          </CardHeader>
-        </Card>
-      ) : (
-        <section className="grid gap-5">
-          <Card className="report-list-card overflow-hidden">
-            <CardHeader className="ribbon-title p-3">
-              <CardTitle className="font-ui text-sm uppercase">Log entries</CardTitle>
-              <CardDescription>Select a report to read it below.</CardDescription>
-            </CardHeader>
-            <CardContent className="divide-y p-0">
-              {reports.map((report) => (
-                <ReportRow
-                  key={`${report.projectId}-${report.id}`}
-                  report={report}
-                  active={active?.id === report.id}
-                  onClick={() => setActiveIdByProject((current) => ({ ...current, [report.projectId]: report.id }))}
-                />
-              ))}
-              {!reports.length ? <p className="px-6 pb-6 text-sm text-muted-foreground">No reports match your search.</p> : null}
-            </CardContent>
-          </Card>
-
-          <ReportDetail report={active} managementMode={managementMode} />
-        </section>
-      )}
+        <ReportDetail report={active} managementMode={managementMode} hasProjects={!!activeProject} />
+      </div>
     </main>
   );
 }
 
-function Metric({ label, value }: { label: string; value: string }) {
-  return (
-    <Card className="metric-card">
-      <CardHeader className="bg-[var(--tint-peach)] p-3">
-        <CardDescription className="font-ui text-xs font-bold uppercase text-black">{label}</CardDescription>
-        <CardTitle className="font-display text-2xl leading-none">{value}</CardTitle>
-      </CardHeader>
-    </Card>
-  );
-}
-
-function ReportRow({ report, active, onClick }: { report: Report; active: boolean; onClick: () => void }) {
-  return (
-    <button
-      className={cn(
-        "report-row grid w-full gap-3 border-b border-black px-4 py-3 text-left transition hover:bg-[var(--tint-lime)] md:grid-cols-[7rem_1fr_auto] md:items-center",
-        active && "bg-[var(--tint-sky)]",
-      )}
-      data-active={active}
-      onClick={onClick}
-      type="button"
-    >
-      <div className="flex items-center gap-1.5 font-ui text-xs font-bold uppercase text-black md:block">
-        <CalendarDays className="h-3.5 w-3.5 md:mb-1" />
-        <span>{formatDate(report.reportDate)}</span>
-      </div>
-
-      <div className="min-w-0 space-y-1">
-        <div className="truncate font-ui font-bold uppercase leading-snug">{report.title}</div>
-        <p className="line-clamp-1 font-serif text-sm text-black">{report.summary}</p>
-      </div>
-
-      <div className="font-ui text-xs font-bold uppercase text-black md:text-right">
-        <div>{metricLabel(report.wordCount, "word")}</div>
-        <div>{metricLabel(report.sections.length, "section")}</div>
-        {report.comments.length ? <div>{metricLabel(report.comments.length, "comment")}</div> : null}
-      </div>
-    </button>
-  );
-}
-
-function ReportDetail({ report, managementMode }: { report?: Report; managementMode: boolean }) {
+function ReportDetail({
+  report,
+  managementMode,
+  hasProjects,
+}: {
+  report?: Report;
+  managementMode: boolean;
+  hasProjects: boolean;
+}) {
   const [comments, setComments] = useState<ReportComment[]>(report?.comments ?? []);
   const [comment, setComment] = useState("");
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
@@ -299,11 +315,17 @@ function ReportDetail({ report, managementMode }: { report?: Report; managementM
 
   if (!report) {
     return (
-      <Card>
-        <CardHeader>
-          <CardTitle>No report selected</CardTitle>
-        </CardHeader>
-      </Card>
+      <section className="detail-pane">
+        <div className="empty-state animate-fade">
+          <FileText className="h-6 w-6" aria-hidden />
+          <h3>{hasProjects ? "No report selected" : "No reports yet"}</h3>
+          <p>
+            {hasProjects
+              ? "Pick an entry from the sidebar to read it here."
+              : "Drop Markdown reports into a project folder, then refresh."}
+          </p>
+        </div>
+      </section>
     );
   }
 
@@ -322,7 +344,7 @@ function ReportDetail({ report, managementMode }: { report?: Report; managementM
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ projectId: report.projectId, reportId: report.id, comment: trimmed }),
     });
-    const payload = await response.json() as { comment?: ReportComment; error?: string };
+    const payload = (await response.json()) as { comment?: ReportComment; error?: string };
 
     if (!response.ok || !payload.comment) {
       setStatus("error");
@@ -336,98 +358,103 @@ function ReportDetail({ report, managementMode }: { report?: Report; managementM
   }
 
   return (
-    <Card className="detail-card">
-      <CardHeader className="detail-header space-y-4 bg-[var(--tint-periwinkle)]">
-        <div className="flex items-center justify-between gap-3">
-          <Badge variant="outline"><FileText className="mr-1 h-3.5 w-3.5" />{report.fileName}</Badge>
-          <span className="font-ui text-xs font-bold uppercase text-black">{formatDate(report.reportDate)}</span>
+    <section className="detail-pane animate-in" key={`${report.projectId}-${report.id}`}>
+      <div className="detail-head">
+        <div className="meta-line" style={{ marginTop: 0, marginBottom: "1rem", justifyContent: "space-between" }}>
+          <span className="file-badge">
+            <FileText className="h-3.5 w-3.5" aria-hidden />
+            {report.fileName}
+          </span>
+          <span>{formatDate(report.reportDate)}</span>
         </div>
-        <div className="space-y-2">
-          <CardTitle className="font-display text-2xl uppercase leading-tight">{report.title}</CardTitle>
-          <CardDescription>{report.summary}</CardDescription>
-        </div>
-        <div className="flex flex-wrap gap-2 font-ui text-xs font-bold uppercase text-black">
+        <h1 className="detail-title">{report.title}</h1>
+        <p className="detail-summary">{report.summary}</p>
+        <div className="meta-line">
           <span>{metricLabel(report.wordCount, "word")}</span>
-          <span>·</span>
+          <span className="dot">·</span>
           <span>{metricLabel(report.sections.length, "section")}</span>
-          <span>·</span>
-          <span className="truncate" title={report.sourcePath}>{report.sourcePath}</span>
+          <span className="dot">·</span>
+          <span style={{ maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis" }} title={report.sourcePath}>
+            {report.sourcePath}
+          </span>
         </div>
-      </CardHeader>
-      <CardContent className="space-y-6">
+      </div>
+
+      <div className="detail-body">
         {report.highlights.length ? (
-          <section className="space-y-2">
-            <div className="text-sm font-medium">Outcomes</div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {report.highlights.map((highlight) => <li key={highlight}>• {highlight}</li>)}
+          <section>
+            <div className="section-label">Outcomes</div>
+            <ul className="outcome-list">
+              {report.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
             </ul>
           </section>
         ) : null}
 
         {report.sections.length ? (
-          <section className="space-y-2">
-            <div className="text-sm font-medium">Sections</div>
-            <div className="flex flex-wrap gap-1.5">
-              {report.sections.map((section) => <Badge key={section} variant="secondary">{section}</Badge>)}
+          <section>
+            <div className="section-label">Sections</div>
+            <div className="flex flex-wrap gap-2">
+              {report.sections.map((section) => (
+                <span key={section} className="chip">
+                  {section}
+                </span>
+              ))}
             </div>
           </section>
         ) : null}
 
         {managementMode ? (
-          <>
-            <Separator />
-
-            <section className="space-y-3 border border-black bg-[var(--tint-lime)] p-4">
-          <div className="flex items-center gap-2 text-sm font-medium">
-            <MessageSquare className="h-4 w-4" /> Feedback → agent improvement draft
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Add feedback after this report. The app saves your comment and creates a draft improvement note for future agent runs.
-          </p>
-          <form className="space-y-3" onSubmit={submitComment}>
-            <textarea
-              className="min-h-24 w-full border border-black bg-white px-3 py-2 font-serif text-sm outline-none ring-offset-background placeholder:text-black/60 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              placeholder="What should future agent reports do better?"
-              value={comment}
-              onChange={(event) => setComment(event.target.value)}
-            />
-            <div className="flex items-center gap-3">
-              <button
-                className="bevel-sticker bg-black px-3 py-2 font-ui text-sm font-bold uppercase text-white disabled:opacity-50"
-                disabled={status === "saving" || !comment.trim()}
-                type="submit"
-              >
-                {status === "saving" ? "Saving…" : "Save feedback"}
-              </button>
-              {status === "saved" ? <span className="text-xs text-muted-foreground">Saved as a draft improvement note.</span> : null}
-              {status === "error" ? <span className="text-xs text-red-600">{error}</span> : null}
+          <section className="feedback-block">
+            <div className="flex items-center gap-2" style={{ color: "var(--modal-cream)", fontWeight: 500 }}>
+              <MessageSquare className="h-4 w-4" aria-hidden /> Feedback → agent improvement draft
             </div>
-          </form>
+            <p className="entry-summary" style={{ whiteSpace: "normal" }}>
+              Add feedback after this report. The app saves your comment and creates a draft improvement note for
+              future agent runs.
+            </p>
+            <form className="flex flex-col gap-3" onSubmit={submitComment}>
+              <textarea
+                className="field"
+                placeholder="What should future agent reports do better?"
+                value={comment}
+                onChange={(event) => setComment(event.target.value)}
+              />
+              <div className="flex items-center gap-3">
+                <button className="btn-accent btn" disabled={status === "saving" || !comment.trim()} type="submit">
+                  {status === "saving" ? "Saving…" : "Save feedback"}
+                </button>
+                {status === "saved" ? (
+                  <span className="entry-summary">Saved as a draft improvement note.</span>
+                ) : null}
+                {status === "error" ? (
+                  <span style={{ color: "hsl(var(--destructive))", fontSize: "0.8rem" }}>{error}</span>
+                ) : null}
+              </div>
+            </form>
 
-          {comments.length ? (
-            <div className="space-y-3 border-t pt-4">
-              {comments.map((item) => (
-                <div key={item.id} className="space-y-2 border border-black bg-white p-3 text-sm">
-                  <div className="text-xs text-muted-foreground">{formatDate(item.createdAt)} · saved to {item.sourcePath}</div>
-                  <p>{item.authorComment}</p>
-                  <pre className="whitespace-pre-wrap border border-black bg-white p-3 font-ui text-xs text-black">{item.improvementDraft}</pre>
-                </div>
-              ))}
-            </div>
-          ) : null}
-            </section>
-          </>
+            {comments.length ? (
+              <div className="flex flex-col gap-3">
+                {comments.map((item) => (
+                  <div key={item.id} className="comment-card">
+                    <div className="entry-date" style={{ textTransform: "none", letterSpacing: 0 }}>
+                      {formatDate(item.createdAt)} · saved to {item.sourcePath}
+                    </div>
+                    <p style={{ marginTop: "0.4rem", color: "var(--modal-cream)" }}>{item.authorComment}</p>
+                    <pre>{item.improvementDraft}</pre>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </section>
         ) : null}
 
-        <Separator />
-
-        <section className="space-y-2">
-          <div className="text-sm font-medium">Report text</div>
-          <div className="ribbon-body space-y-2 bg-[var(--tint-sage)] p-4">
-            {report.content.split("\n").map(renderMarkdownLine)}
-          </div>
+        <section>
+          <div className="section-label">Report</div>
+          <div className="report-prose">{renderMarkdown(report.content)}</div>
         </section>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }
