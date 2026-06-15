@@ -68,6 +68,13 @@ const projectConfigs: ProjectConfig[] = [
     defaultDir: path.join(reportsRoot, "moltbook"),
   },
   {
+    id: "property-scout",
+    name: "Property scout",
+    description: "English buyer-side scouting reports for Polish countryside properties and rural land opportunities.",
+    envVar: "HERMES_PROPERTY_REPORTS_DIR",
+    defaultDir: path.join(reportsRoot, "property-scout"),
+  },
+  {
     id: "project-ideas",
     name: "Project ideas",
     description: "Research-backed MVP ideas with difficulty, monetisation options, competitor notes, risks, and next-step recommendations.",
