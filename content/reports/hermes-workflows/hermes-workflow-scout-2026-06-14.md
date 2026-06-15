@@ -1,128 +1,128 @@
 ## Hermes workflow scout — 2026-06-14
 
-- Krótki werdykt dnia: dziś najmocniejsze są repozytoria pokazujące **persistent agent workflows jako operacje biznesowe**, a nie pojedyncze prompty: SDR/lead-gen na cronach i kanałach wiadomości, content review pipeline’y, oraz “digital employees” dostarczający codzienne raporty do Telegrama. X/Twitter i Reddit były praktycznie nieużyteczne z tej sesji: Google zablokował wyszukiwanie, Reddit JSON zwrócił 403, a wyniki Binga dla X/Reddit były słabe lub śmieciowe. Dlatego poniżej priorytetowo biorę świeżo aktualizowane GitHuby, oficjalne docs Hermes i repo z realnymi plikami/architekturą.
+- Short verdict of the day: today the strongest finds are repositories showing **persistent agent workflows as business operations**, not single prompts: SDR/lead-gen on crons and messaging channels, content review pipelines, and “digital employees” delivering daily reports to Telegram. X/Twitter and Reddit were practically unusable this session: Google blocked search, Reddit JSON returned 403, and Bing results for X/Reddit were weak or junk. So below I prioritize freshly updated GitHub repos, official Hermes docs, and repos with real files/architecture.
 
-## Top workflowy / use case'y
+## Top workflows / use cases
 
-1. **B2B SDR agent z 10-stage pipeline, cronami i multi-channel follow-up**
-   - Źródło: [GitHub / iPythoning / b2b-sdr-agent-template](https://github.com/iPythoning/b2b-sdr-agent-template) — mocne źródło: repo aktualizowane dziś, opisuje OpenClaw, 10 cron jobs, memory, WhatsApp/Telegram/Email; część claimów sprzedażowych traktować jako promocyjne.
-   - Co robi: szablon AI SDR dla B2B export: prospecting, sekwencje kontaktu, pamięć, kanały WhatsApp/Telegram/Email i health-checki wdrożeniowe. Najbliższe Hermesowi mentalnie: persistent agent działający codziennie, a nie “chatbot”.
-   - Jak odtworzyć w Hermesie: osobny profil `sdr`, cron joby dla prospectingu/follow-upów, Telegram gateway jako inbox, skill z buyer-personą i ICP, pliki CSV/Sheets jako baza leadów, web/search do researchu firm, Gmail/CRM przez API lub webhooki.
-   - Potencjał biznesowy: lead generation i sprzedaż — można zrobić codzienny “lead brief” + drafty cold emaili + reminder follow-upów. Dla Konrada sensowne jako system do wyszukiwania AI/design/product firm i partnerstw.
-   - Ryzyko/uwaga: deliverability, zgody marketingowe, halucynacje w personalizacji, konieczny human review przed wysyłką.
+1. **B2B SDR agent with a 10-stage pipeline, crons, and multi-channel follow-up**
+   - Source: [GitHub / iPythoning / b2b-sdr-agent-template](https://github.com/iPythoning/b2b-sdr-agent-template) — strong source: repo updated today, describes OpenClaw, 10 cron jobs, memory, WhatsApp/Telegram/Email; treat some of the sales claims as promotional.
+   - What it does: an AI SDR template for B2B export: prospecting, contact sequences, memory, WhatsApp/Telegram/Email channels, and deployment health checks. Mentally closest to Hermes: a persistent agent running daily, not a “chatbot.”
+   - How to recreate in Hermes: a dedicated `sdr` profile, cron jobs for prospecting/follow-ups, Telegram gateway as the inbox, a skill with the buyer persona and ICP, CSV/Sheets files as the lead database, web/search for company research, Gmail/CRM via API or webhooks.
+   - Business potential: lead generation and sales — you could produce a daily “lead brief” + cold email drafts + follow-up reminders. For Konrad, useful as a system for finding AI/design/product companies and partnerships.
+   - Risk/note: deliverability, marketing consent, hallucinations in personalization; human review before sending is required.
 
-2. **Hermes Daily Automation: zespół codziennych “digital employees” z dostawą do Telegrama**
-   - Źródło: [GitHub / schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation) — bardzo trafne źródło Hermesowe; README opisuje 10+ zaplanowanych zadań, Telegram delivery i self-review.
-   - Co robi: zestaw szablonów na Hermes Agent, które codziennie dostarczają news digest, kurs/learning, TTS audio, interview prep, finance plan i nightly self-review pamięci.
-   - Jak odtworzyć w Hermesie: `hermes cron create`, `deliver: origin` lub Telegram gateway, osobne skills dla briefów, memory włączone dla retrospekcji, ewentualnie folder Markdown jako log raportów. Setup komend zgodny z Hermes: `hermes setup`, `hermes gateway setup`, `hermes cron create "0 8 * * *"`.
-   - Potencjał biznesowy: content ops i personal knowledge management — z takiego systemu można robić codzienny feed pomysłów na posty, artykuły SEO, lead magnets i eksperymenty produktowe.
-   - Ryzyko/uwaga: jakość zależy od dostępności web/search i modelu; przy słabym modelu trzeba robić deterministyczną kolekcję źródeł i dopiero potem ranking.
+2. **Hermes Daily Automation: a team of daily “digital employees” delivered to Telegram**
+   - Source: [GitHub / schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation) — a very on-point Hermes source; the README describes 10+ scheduled tasks, Telegram delivery, and self-review.
+   - What it does: a set of Hermes Agent templates that deliver a daily news digest, a course/learning item, TTS audio, interview prep, a finance plan, and a nightly self-review of memory.
+   - How to recreate in Hermes: `hermes cron create`, `deliver: origin` or the Telegram gateway, separate skills for the briefs, memory enabled for retrospection, optionally a Markdown folder as a report log. Setup commands consistent with Hermes: `hermes setup`, `hermes gateway setup`, `hermes cron create "0 8 * * *"`.
+   - Business potential: content ops and personal knowledge management — from such a system you can produce a daily feed of post ideas, SEO articles, lead magnets, and product experiments.
+   - Risk/note: quality depends on the availability of web/search and the model; with a weak model you need a deterministic collection of sources first, and only then ranking.
 
-3. **Multi-instance Hermes: CEO + CTO agenci na VPS z osobnymi Telegram botami**
-   - Źródło: [GitHub / geraledesma / hermes-agent-automations](https://github.com/geraledesma/hermes-agent-automations) — dobre źródło architektoniczne; repo opisuje multi-instance autonomous agent architecture, ale trzeba weryfikować szczegóły deploymentu przed kopiowaniem.
-   - Co robi: dwa niezależne agenty Hermes na VPS: “CEO” do planowania/kalendarza/rutyn i “CTO” do GitHub/code review/tool discovery; komunikacja przez Telegram i crony.
-   - Jak odtworzyć w Hermesie: użyć Hermes profiles (`hermes profile create ceo`, `hermes profile create cto`), osobne gateway credentials, profile-scoped cron jobs, wspólny folder `reports/` lub kanban board do wymiany zadań. Nie uruchamiać dwóch gatewayów na tych samych tokenach botów.
-   - Potencjał biznesowy: agency/product ops — CEO-agent robi research rynku i plan publikacji, CTO-agent sprawdza repo, issues, landing pages, performance i SEO/AI-readiness.
-   - Ryzyko/uwaga: credential conflicts w gatewayu, koszty tokenów, konieczny jasny zakres uprawnień per profil.
+3. **Multi-instance Hermes: CEO + CTO agents on a VPS with separate Telegram bots**
+   - Source: [GitHub / geraledesma / hermes-agent-automations](https://github.com/geraledesma/hermes-agent-automations) — a good architectural source; the repo describes a multi-instance autonomous agent architecture, but verify deployment details before copying.
+   - What it does: two independent Hermes agents on a VPS: a “CEO” for planning/calendar/routines and a “CTO” for GitHub/code review/tool discovery; communication via Telegram and crons.
+   - How to recreate in Hermes: use Hermes profiles (`hermes profile create ceo`, `hermes profile create cto`), separate gateway credentials, profile-scoped cron jobs, a shared `reports/` folder or kanban board to exchange tasks. Don’t run two gateways on the same bot tokens.
+   - Business potential: agency/product ops — the CEO agent does market research and a publishing plan, the CTO agent checks repos, issues, landing pages, performance, and SEO/AI-readiness.
+   - Risk/note: gateway credential conflicts, token costs; you need a clear permission scope per profile.
 
-4. **n8n lead-gen researcher: webhook → research firmy → tech-stack → personalizowany outreach**
-   - Źródło: [GitHub / byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent) — świeże repo, konkretne kroki i przykładowy payload; ma mało gwiazdek, więc traktować jako implementację referencyjną, nie “sprawdzony produkt”.
-   - Co robi: n8n przyjmuje `company_name` i `website`, używa Gemini, Tavily i scraperów do researchu firmy, value proposition, launchy i infrastruktury, a potem zapisuje dane do pipeline’u.
-   - Jak odtworzyć w Hermesie: webhook/subskrypcja w Hermes lub prosty plik wejściowy CSV; cron przetwarza N firm dziennie; web/search i browser do researchu; wynik do Google Sheet/Markdown; osobny krok generuje draft emaila i oznacza “do akceptacji”.
-   - Potencjał biznesowy: cold outreach i partnerstwa — bardzo dobry workflow do budowania listy potencjalnych klientów agencyjnych lub sponsorów newslettera.
-   - Ryzyko/uwaga: web scraping może być niestabilny; Tavily/Serper/Hunter wymagają API; wysyłka maili tylko po manual review.
+4. **n8n lead-gen researcher: webhook → company research → tech stack → personalized outreach**
+   - Source: [GitHub / byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent) — a fresh repo with concrete steps and a sample payload; few stars, so treat it as a reference implementation, not a “proven product.”
+   - What it does: n8n takes `company_name` and `website`, uses Gemini, Tavily, and scrapers to research the company, value proposition, launches, and infrastructure, then writes the data into a pipeline.
+   - How to recreate in Hermes: a webhook/subscription in Hermes or a simple CSV input file; a cron processes N companies per day; web/search and browser for research; output to Google Sheet/Markdown; a separate step generates the email draft and marks it “for approval.”
+   - Business potential: cold outreach and partnerships — a very good workflow for building a list of potential agency clients or newsletter sponsors.
+   - Risk/note: web scraping can be unstable; Tavily/Serper/Hunter require APIs; send emails only after manual review.
 
 5. **Agentic AI Marketing Workflow: Serper + Hunter + Groq + Gmail + Sheets + LinkedIn posts**
-   - Źródło: [GitHub / Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) — mocny practical blueprint: README podaje integracje, `.env`, Docker Compose i human-in-the-loop.
-   - Co robi: szuka firm w branży i mieście przez Serper, weryfikuje maile Hunterem, zapisuje do Google Sheets, generuje spersonalizowane emaile przez Groq, wysyła Gmail i tworzy posty LinkedIn.
-   - Jak odtworzyć w Hermesie: Hermes cron jako orchestrator, Google Sheets jako stan leadów, web/search dla Serper/Tavily, Gmail API albo draft-only workflow, skill “lead qualification”, Telegram review step: “approve/reject”.
-   - Potencjał biznesowy: end-to-end growth loop — lista leadów, maile i content społecznościowy z jednego researchu. Dla Konrada: targetować studia design/AI, founderów i SaaS-y potrzebujące content/design systems.
-   - Ryzyko/uwaga: Hunter/Gmail OAuth i compliance; LinkedIn automatyzacja może łamać ToS, więc publikację lepiej zostawić jako draft.
+   - Source: [GitHub / Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) — a strong practical blueprint: the README lists integrations, `.env`, Docker Compose, and human-in-the-loop.
+   - What it does: finds companies by industry and city via Serper, verifies emails with Hunter, saves to Google Sheets, generates personalized emails via Groq, sends with Gmail, and creates LinkedIn posts.
+   - How to recreate in Hermes: Hermes cron as the orchestrator, Google Sheets as lead state, web/search for Serper/Tavily, Gmail API or a draft-only workflow, a “lead qualification” skill, a Telegram review step: “approve/reject.”
+   - Business potential: an end-to-end growth loop — a lead list, emails, and social content from a single research pass. For Konrad: target design/AI studios, founders, and SaaS companies that need content/design systems.
+   - Risk/note: Hunter/Gmail OAuth and compliance; LinkedIn automation can violate ToS, so it’s better to leave publishing as a draft.
 
 6. **Content review agent: grammar + SEO + readability + rewrite + report**
-   - Źródło: [GitHub / KenBoller / ai-content-review-agent](https://github.com/KenBoller/ai-content-review-agent) — dobre źródło dla content ops; LangGraph, lokalny Ollama i dashboard wyników.
-   - Co robi: wieloetapowy review treści: gramatyka, SEO, readability, styl, scoring, meta title/description i rewrite gotowy do publikacji.
-   - Jak odtworzyć w Hermesie: folder `drafts/` → cron lub ręczny prompt sprawdza nowe Markdowni → Hermes skill “content-review” z kryteriami brand voice/SEO → wynik jako `.review.md` + Telegram summary. Można użyć lokalnego modelu do pierwszej oceny i mocniejszego modelu do finalnego rewrite.
-   - Potencjał biznesowy: blogi, SEO, newsletter, landing pages — oszczędza czas redakcji i wymusza checklistę jakości przed publikacją.
-   - Ryzyko/uwaga: SEO scoring bez danych z GSC/Ahrefs jest tylko heurystyką; konieczny ludzki edytor przed publikacją.
+   - Source: [GitHub / KenBoller / ai-content-review-agent](https://github.com/KenBoller/ai-content-review-agent) — a good source for content ops; LangGraph, local Ollama, and a results dashboard.
+   - What it does: a multi-stage content review: grammar, SEO, readability, style, scoring, meta title/description, and a publish-ready rewrite.
+   - How to recreate in Hermes: a `drafts/` folder → a cron or manual prompt checks new Markdown files → a Hermes “content-review” skill with brand-voice/SEO criteria → output as `.review.md` + a Telegram summary. You can use a local model for the first pass and a stronger model for the final rewrite.
+   - Business potential: blogs, SEO, newsletter, landing pages — saves editing time and enforces a quality checklist before publishing.
+   - Risk/note: SEO scoring without data from GSC/Ahrefs is only a heuristic; a human editor is required before publishing.
 
-7. **E-commerce listing agent: zdjęcie produktu → title/category/attributes/SEO keywords**
-   - Źródło: [GitHub / TN108 / Multimodal-AI-E-commerce-Intelligence-Automation-Agent](https://github.com/TN108/Multimodal-AI-E-commerce-Intelligence-Automation-Agent) — wczesny MVP, ale bardzo konkretny flow produktowy.
-   - Co robi: upload zdjęcia produktu, model vision analizuje obraz, backend generuje JSON z tytułem, kategorią, atrybutami, opisem i słowami kluczowymi SEO.
-   - Jak odtworzyć w Hermesie: Hermes jako batch operator: folder ze zdjęciami + CSV produktów, tool vision/image analysis, skill z zasadami marketplace, zapis JSON/Markdown, opcjonalnie wysyłka do sklepu przez API.
-   - Potencjał biznesowy: e-commerce content ops — szybkie wystawianie produktów, poprawa opisów i SEO na marketplace’ach.
-   - Ryzyko/uwaga: hallucynacje cech produktu są groźne prawnie; atrybuty techniczne muszą pochodzić z danych producenta albo manual check.
+7. **E-commerce listing agent: product photo → title/category/attributes/SEO keywords**
+   - Source: [GitHub / TN108 / Multimodal-AI-E-commerce-Intelligence-Automation-Agent](https://github.com/TN108/Multimodal-AI-E-commerce-Intelligence-Automation-Agent) — an early MVP, but a very concrete product flow.
+   - What it does: upload a product photo, a vision model analyzes the image, the backend generates JSON with a title, category, attributes, description, and SEO keywords.
+   - How to recreate in Hermes: Hermes as a batch operator: a folder of photos + a product CSV, a vision/image-analysis tool, a skill with marketplace rules, output to JSON/Markdown, optionally pushed to the store via API.
+   - Business potential: e-commerce content ops — fast product listing, improved descriptions, and SEO on marketplaces.
+   - Risk/note: hallucinated product features are legally risky; technical attributes must come from manufacturer data or a manual check.
 
-8. **Redbook/Xiaohongshu carousel director jako przenośny agent skill do social contentu**
-   - Źródło: [GitHub / mythkiven / redbook-director-skill](https://github.com/mythkiven/redbook-director-skill) — wartościowe jako pattern “skill-first content workflow”; chińskojęzyczne, ale struktura skillu jest łatwa do przeniesienia.
-   - Co robi: agent skill planuje karuzelę RedNote/Xiaohongshu: koncepcja, styl wizualny, struktura slajdów, image prompts, caption i checklista jakości.
-   - Jak odtworzyć w Hermesie: stworzyć skill `linkedin-carousel-director` lub `ai-design-post-director`, który bierze temat i robi: hook, 6–8 slajdów, prompt grafiki, caption, CTA, checklistę. Cron może codziennie generować 3 drafty z research briefów.
-   - Potencjał biznesowy: social media i visibility — szybki pipeline na LinkedIn/X/Instagram karuzele z własnych notatek i raportów.
-   - Ryzyko/uwaga: bez własnego POV wyjdzie generyczny content; trzeba dodać brand voice Konrada i ręczną selekcję.
+8. **Redbook/Xiaohongshu carousel director as a portable agent skill for social content**
+   - Source: [GitHub / mythkiven / redbook-director-skill](https://github.com/mythkiven/redbook-director-skill) — valuable as a “skill-first content workflow” pattern; it’s Chinese-language, but the skill structure is easy to port.
+   - What it does: an agent skill plans a RedNote/Xiaohongshu carousel: concept, visual style, slide structure, image prompts, caption, and a quality checklist.
+   - How to recreate in Hermes: create a `linkedin-carousel-director` or `ai-design-post-director` skill that takes a topic and produces: a hook, 6–8 slides, an image prompt, a caption, a CTA, and a checklist. A cron can generate 3 drafts daily from research briefs.
+   - Business potential: social media and visibility — a fast pipeline for LinkedIn/X/Instagram carousels from your own notes and reports.
+   - Risk/note: without your own POV the content will come out generic; you need to add Konrad’s brand voice and manual selection.
 
-9. **Telegram multi-agent fleet z memory, message bus i nightly dream cycles**
-   - Źródło: [GitHub / dream77r / my-claude-bot](https://github.com/dream77r/my-claude-bot) — dobre źródło inspiracyjne dla architektury persistent agents; to nie Hermes, ale wzorce są przenaszalne.
-   - Co robi: bot Telegram oparty o Claude subscription, z orchestrator-agentem, workerami, katalogami sandbox, shared MessageBus, git-versioned wiki memory i nocnymi cyklami poprawy.
-   - Jak odtworzyć w Hermesie: profile + Kanban zamiast własnego MessageBus, osobne workdiry per agent, memory/skille, cron “nightly self-review”, Telegram gateway jako interfejs. Dla długich zadań używać `terminal(background=True, notify_on_complete=True)` albo cron, nie blokować głównej sesji.
-   - Potencjał biznesowy: osobisty operating system — researcher, writer, sales scout, dev assistant i reviewer mogą działać jako role z oddzielną pamięcią.
-   - Ryzyko/uwaga: bezpieczeństwo plików i zakres uprawnień; self-improvement bez limitów może produkować chaos.
+9. **Telegram multi-agent fleet with memory, a message bus, and nightly dream cycles**
+   - Source: [GitHub / dream77r / my-claude-bot](https://github.com/dream77r/my-claude-bot) — a good inspirational source for persistent-agent architecture; it’s not Hermes, but the patterns are portable.
+   - What it does: a Telegram bot built on a Claude subscription, with an orchestrator agent, workers, sandbox directories, a shared MessageBus, git-versioned wiki memory, and nightly improvement cycles.
+   - How to recreate in Hermes: profiles + Kanban instead of a custom MessageBus, separate work directories per agent, memory/skills, a “nightly self-review” cron, the Telegram gateway as the interface. For long tasks use `terminal(background=True, notify_on_complete=True)` or a cron — don’t block the main session.
+   - Business potential: a personal operating system — researcher, writer, sales scout, dev assistant, and reviewer can run as roles with separate memory.
+   - Risk/note: file security and permission scope; self-improvement without limits can produce chaos.
 
-10. **Business operations skills: ROI, competitive intelligence, operations audit jako “agency discovery engine”**
-   - Źródło: [GitHub / Adri3l-R3nan / cognify-skills](https://github.com/Adri3l-R3nan/cognify-skills) — dobra biblioteka skill-patternów; nie jest Hermes-specific, ale pasuje do Hermes skills.
-   - Co robi: zestaw 19 business operation skills: workflow analysis, ROI analyzer, competitive intelligence, strategic planning, operations audit, client discovery.
-   - Jak odtworzyć w Hermesie: zbudować własny skill `client-discovery-and-roi` dla leadów: Hermes zbiera firmę, stronę, stack, content gaps, proponuje 3 automatyzacje i szacuje ROI/effort. Wynik do Markdown + CRM.
-   - Potencjał biznesowy: sprzedaż usług/consultingu — automatycznie generowane audyty jako pre-sales asset i materiał do cold emaila.
-   - Ryzyko/uwaga: ROI bez danych klienta to hipoteza; oznaczać assumptions i prosić o discovery call.
+10. **Business operations skills: ROI, competitive intelligence, operations audit as an “agency discovery engine”**
+    - Source: [GitHub / Adri3l-R3nan / cognify-skills](https://github.com/Adri3l-R3nan/cognify-skills) — a good library of skill patterns; not Hermes-specific, but it fits Hermes skills.
+    - What it does: a set of 19 business operations skills: workflow analysis, ROI analyzer, competitive intelligence, strategic planning, operations audit, client discovery.
+    - How to recreate in Hermes: build your own `client-discovery-and-roi` skill for leads: Hermes gathers the company, website, stack, and content gaps, proposes 3 automations, and estimates ROI/effort. Output to Markdown + CRM.
+    - Business potential: selling services/consulting — automatically generated audits as a pre-sales asset and cold-email material.
+    - Risk/note: ROI without client data is a hypothesis; flag assumptions and ask for a discovery call.
 
-## 3 workflowy do przetestowania przez Konrada
+## 3 workflows for Konrad to test
 
 - **AI/design partner scout + draft cold email**
-  - Źródło: [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) i [byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent).
-  - Pierwszy krok: zdefiniować ICP: “founderzy SaaS/AI tools, studia design, agencje content/SEO, które potrzebują AI workflow design”.
-  - Minimalny setup: Hermes cron raz dziennie, Google Sheet/CSV z leadami, web/search, skill do kwalifikacji, Telegram approval.
-  - Miara sukcesu: 20 zakwalifikowanych leadów/tydzień, 5 maili zatwierdzonych ręcznie, odpowiedzi > 5%.
+  - Source: [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) and [byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent).
+  - First step: define the ICP: “SaaS/AI tools founders, design studios, content/SEO agencies that need AI workflow design.”
+  - Minimal setup: a Hermes cron once a day, a Google Sheet/CSV of leads, web/search, a qualification skill, Telegram approval.
+  - Success metric: 20 qualified leads/week, 5 emails approved manually, reply rate > 5%.
 
-- **Daily content idea factory z raportów i linków**
-  - Źródło: [schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation) oraz oficjalne [Hermes cron docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron).
-  - Pierwszy krok: osobny cron “AI/design visibility brief” zapisujący Markdown i generujący 3 hooks na LinkedIn/X.
-  - Minimalny setup: folder `/Desktop/hermes/content-ideas/`, skill brand voice, Telegram delivery, web/search, opcjonalnie memory dla preferencji tematów.
-  - Miara sukcesu: 5 dobrych draftów postów tygodniowo i minimum 1 opublikowany post/dzień roboczy.
+- **Daily content idea factory from reports and links**
+  - Source: [schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation) and the official [Hermes cron docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron).
+  - First step: a dedicated “AI/design visibility brief” cron that saves Markdown and generates 3 hooks for LinkedIn/X.
+  - Minimal setup: a `/Desktop/hermes/content-ideas/` folder, a brand-voice skill, Telegram delivery, web/search, optionally memory for topic preferences.
+  - Success metric: 5 good post drafts per week and at least 1 published post per working day.
 
-- **Content review gate dla bloga/landing pages**
-  - Źródło: [KenBoller / ai-content-review-agent](https://github.com/KenBoller/ai-content-review-agent).
-  - Pierwszy krok: stworzyć Hermes skill z checklistą: clarity, SEO intent, examples, CTA, originality, “Konrad voice”.
-  - Minimalny setup: folder `drafts/`, komenda/cron sprawdzający nowe pliki, output `.review.md`, finalne poprawki tylko po akceptacji.
-  - Miara sukcesu: każdy draft ma score + listę poprawek; czas redakcji spada o 30–50% subiektywnie po 2 tygodniach.
+- **Content review gate for the blog/landing pages**
+  - Source: [KenBoller / ai-content-review-agent](https://github.com/KenBoller/ai-content-review-agent).
+  - First step: create a Hermes skill with a checklist: clarity, SEO intent, examples, CTA, originality, “Konrad voice.”
+  - Minimal setup: a `drafts/` folder, a command/cron that checks new files, output `.review.md`, final edits only after approval.
+  - Success metric: every draft has a score + a list of fixes; editing time drops 30–50% subjectively after 2 weeks.
 
 ## Setup notes / tutorial nuggets
 
-- **Hermes cron jako rdzeń persistent workflow:** oficjalny pattern to `hermes cron create SCHED`, np. `hermes cron create "0 8 * * *"`, z promptem self-contained i dostawą do obecnego kanału lub Telegrama. Źródło: [Hermes docs / Cron](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron).
+- **Hermes cron as the core of a persistent workflow:** the official pattern is `hermes cron create SCHED`, e.g. `hermes cron create "0 8 * * *"`, with a self-contained prompt and delivery to the current channel or Telegram. Source: [Hermes docs / Cron](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron).
 
-- **Gateway jako delivery layer, nie tylko chat:** do raportów i approval loopów używać Telegram/Slack/Email gateway; źródła typu `hermes-daily-automation` pokazują wartość “wynik czeka rano w Telegramie”. Źródło: [Hermes docs / Messaging](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) i [schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation).
+- **Gateway as a delivery layer, not just chat:** for reports and approval loops, use the Telegram/Slack/Email gateway; sources like `hermes-daily-automation` show the value of “the result waits in Telegram in the morning.” Source: [Hermes docs / Messaging](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) and [schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation).
 
-- **Profile zamiast jednej osobowości:** multi-agent CEO/CTO najlepiej robić przez profile z osobnym configiem, pamięcią i tokenami, nie tylko promptem roli. Źródło: [Hermes docs / Profiles](https://hermes-agent.nousresearch.com/docs/user-guide/profiles) i [geraledesma / hermes-agent-automations](https://github.com/geraledesma/hermes-agent-automations).
+- **Profiles instead of one personality:** a multi-agent CEO/CTO is best done with profiles that have separate config, memory, and tokens, not just a role prompt. Source: [Hermes docs / Profiles](https://hermes-agent.nousresearch.com/docs/user-guide/profiles) and [geraledesma / hermes-agent-automations](https://github.com/geraledesma/hermes-agent-automations).
 
-- **Human-in-the-loop w lead-gen:** w workflowach lead-gen najbezpieczniejszy pattern to “research + draft + approval”, dopiero potem wysyłka. Źródło: [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow).
+- **Human-in-the-loop in lead-gen:** in lead-gen workflows the safest pattern is “research + draft + approval,” and only then sending. Source: [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow).
 
-- **API prerequisites dla marketing agentów:** Serper.dev, Hunter.io, Groq, Google Sheets/Gmail OAuth i Docker Compose pojawiają się jako konkretne zależności w n8n marketing workflow. W Hermesie odpowiednikiem jest trzymanie sekretów w `.env`, a konfiguracji w `config.yaml`. Źródło: [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) oraz [Hermes docs / Configuration](https://hermes-agent.nousresearch.com/docs/user-guide/configuration).
+- **API prerequisites for marketing agents:** Serper.dev, Hunter.io, Groq, Google Sheets/Gmail OAuth, and Docker Compose appear as concrete dependencies in the n8n marketing workflow. In Hermes the equivalent is keeping secrets in `.env` and configuration in `config.yaml`. Source: [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) and [Hermes docs / Configuration](https://hermes-agent.nousresearch.com/docs/user-guide/configuration).
 
-- **Skill-first content workflows:** zamiast pisać za każdym razem długi prompt, opakować proces jako skill: research → struktura → draft → self-check. Dobre wzorce: [mythkiven / redbook-director-skill](https://github.com/mythkiven/redbook-director-skill) i [Adri3l-R3nan / cognify-skills](https://github.com/Adri3l-R3nan/cognify-skills).
+- **Skill-first content workflows:** instead of writing a long prompt every time, wrap the process as a skill: research → structure → draft → self-check. Good patterns: [mythkiven / redbook-director-skill](https://github.com/mythkiven/redbook-director-skill) and [Adri3l-R3nan / cognify-skills](https://github.com/Adri3l-R3nan/cognify-skills).
 
-- **Nie ufać w pełni web automation przy cold emailu:** repozytoria używają scraperów i Tavily/Serper, ale w Hermesie lepiej mieć bounded automation: limit firm dziennie, zapisywanie źródeł, oznaczanie niepewności, żadnej automatycznej wysyłki bez review. Źródło: [byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent).
+- **Don’t fully trust web automation for cold email:** the repos use scrapers and Tavily/Serper, but in Hermes it’s better to keep bounded automation: a daily company limit, saving sources, flagging uncertainty, and no automatic sending without review. Source: [byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent).
 
 ## Link dump
 
-- [iPythoning / b2b-sdr-agent-template](https://github.com/iPythoning/b2b-sdr-agent-template) — najpełniejszy dziś wzorzec persistent SDR: crony, memory, Telegram/WhatsApp/Email.
-- [schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation) — praktyczne szablony Hermes do codziennych pushy i Telegram delivery.
-- [geraledesma / hermes-agent-automations](https://github.com/geraledesma/hermes-agent-automations) — przykład wielu instancji Hermes na VPS z rolami CEO/CTO.
-- [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) — konkretny n8n pipeline: Serper, Hunter, Groq, Gmail, Sheets, human review.
-- [byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent) — webhook-driven company research i personalized outreach generation.
-- [KenBoller / ai-content-review-agent](https://github.com/KenBoller/ai-content-review-agent) — dobry blueprint na SEO/content review gate.
-- [TN108 / Multimodal-AI-E-commerce-Intelligence-Automation-Agent](https://github.com/TN108/Multimodal-AI-E-commerce-Intelligence-Automation-Agent) — MVP product listing + SEO keywords z vision modelu.
-- [mythkiven / redbook-director-skill](https://github.com/mythkiven/redbook-director-skill) — skill-first social carousel workflow do adaptacji na LinkedIn/AI/design.
-- [dream77r / my-claude-bot](https://github.com/dream77r/my-claude-bot) — inspiracja dla Telegram multi-agent fleet z memory i nightly self-improvement.
-- [Hermes docs / Cron](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron) — źródło prawdy dla harmonogramów i recurring reports w Hermesie.
-- [Hermes docs / Messaging Gateway](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) — źródło prawdy dla Telegram/Slack/Email delivery.
-- [Hermes docs / Profiles](https://hermes-agent.nousresearch.com/docs/user-guide/profiles) — źródło prawdy dla oddzielnych agentów/profili.
+- [iPythoning / b2b-sdr-agent-template](https://github.com/iPythoning/b2b-sdr-agent-template) — today’s most complete persistent SDR pattern: crons, memory, Telegram/WhatsApp/Email.
+- [schbxg / hermes-daily-automation](https://github.com/schbxg/hermes-daily-automation) — practical Hermes templates for daily pushes and Telegram delivery.
+- [geraledesma / hermes-agent-automations](https://github.com/geraledesma/hermes-agent-automations) — an example of multiple Hermes instances on a VPS with CEO/CTO roles.
+- [Nadeer00 / agentic-ai-marketing-workflow](https://github.com/Nadeer00/agentic-ai-marketing-workflow) — a concrete n8n pipeline: Serper, Hunter, Groq, Gmail, Sheets, human review.
+- [byg16 / ai-lead-gen-agent](https://github.com/byg16/ai-lead-gen-agent) — webhook-driven company research and personalized outreach generation.
+- [KenBoller / ai-content-review-agent](https://github.com/KenBoller/ai-content-review-agent) — a good blueprint for an SEO/content review gate.
+- [TN108 / Multimodal-AI-E-commerce-Intelligence-Automation-Agent](https://github.com/TN108/Multimodal-AI-E-commerce-Intelligence-Automation-Agent) — an MVP for product listing + SEO keywords from a vision model.
+- [mythkiven / redbook-director-skill](https://github.com/mythkiven/redbook-director-skill) — a skill-first social carousel workflow to adapt for LinkedIn/AI/design.
+- [dream77r / my-claude-bot](https://github.com/dream77r/my-claude-bot) — inspiration for a Telegram multi-agent fleet with memory and nightly self-improvement.
+- [Hermes docs / Cron](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron) — the source of truth for schedules and recurring reports in Hermes.
+- [Hermes docs / Messaging Gateway](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) — the source of truth for Telegram/Slack/Email delivery.
+- [Hermes docs / Profiles](https://hermes-agent.nousresearch.com/docs/user-guide/profiles) — the source of truth for separate agents/profiles.
 
-Zapisano też do: /Users/koni/Desktop/hermes/usecases/hermes-workflow-scout-2026-06-14.md
+Also saved to: /Users/koni/Desktop/hermes/usecases/hermes-workflow-scout-2026-06-14.md

@@ -1,131 +1,131 @@
 # Hermes workflow scout — 2026-06-13
 
-Uwaga: X i Reddit często pokazują tylko publiczne/snippetowane treści bez pełnych wątków, więc oznaczam mocniejsze źródła tam, gdzie dało się wejść w pełny opis.
+Note: X and Reddit often expose only public/snippeted content without full threads, so I flag the stronger sources where it was possible to read the full description.
 
-## 15 najciekawszych workflowów / use case’ów do odtworzenia w Hermesie
+## 15 most interesting workflows / use cases to recreate in Hermes
 
-1. **YouTube Shorts autoposter z potwierdzeniami**
-   - Źródło: Reddit / r/organicsocial — [How we’re using Hermes Agent for YouTube Shorts automation](https://www.reddit.com/r/organicsocial/comments/1t60nyh/how_were_using_hermes_agent_for_youtube_shorts/)
-   - Co robi: Hermes dostaje folder gotowych filmów, reguły tytułów/opisów, pilnuje logu już wrzuconych materiałów i wysyła potwierdzenie po uploadzie.
-   - Jak odtworzyć: `cron` + folder queue + log CSV/SQLite + YouTube API/warstwa typu Genviral + Telegram confirmation.
-   - Potencjał: bardzo dobry dla content repurposingu: Analog Hive, AI/design clips, shorts z tutoriali lub backstage’u.
-   - Uwaga: najważniejszy pattern to **confirmation loop** — bez niego automatyzacje potrafią cicho nie działać przez dni.
+1. **YouTube Shorts autoposter with confirmations**
+   - Source: Reddit / r/organicsocial — [How we’re using Hermes Agent for YouTube Shorts automation](https://www.reddit.com/r/organicsocial/comments/1t60nyh/how_were_using_hermes_agent_for_youtube_shorts/)
+   - What it does: Hermes gets a folder of finished videos and title/description rules, tracks a log of already-uploaded material, and sends a confirmation after each upload.
+   - How to recreate: `cron` + folder queue + CSV/SQLite log + YouTube API / a Genviral-style layer + Telegram confirmation.
+   - Potential: very good for content repurposing: Analog Hive, AI/design clips, shorts from tutorials or backstage footage.
+   - Note: the most important pattern is the **confirmation loop** — without it, automations can silently fail for days.
 
-2. **SEO Super Agent: content calendar → briefy → drafty → internal linking**
-   - Źródło: Julian Goldie — [Hermes AI SEO Super Agent](https://juliangoldie.com/hermes-ai-seo-super-agent)
-   - Co robi: Hermes jako system do keyword researchu, kalendarzy treści, briefów, blog draftów, linkowania wewnętrznego i quality checks.
-   - Jak odtworzyć: profile/role: Researcher, Brief Writer, Editor, Internal Linking, QA; plus `cron`, web search, markdown files, ewentualnie Ahrefs/DataForSEO/Firecrawl API.
-   - Potencjał: mocne dla budowania visibility w AI/design i długiego ogona SEO pod produkty.
-   - Uwaga: źródło jest marketingowe, ale workflow jest sensowny. Wymaga manual review przed publikacją.
+2. **SEO Super Agent: content calendar → briefs → drafts → internal linking**
+   - Source: Julian Goldie — [Hermes AI SEO Super Agent](https://juliangoldie.com/hermes-ai-seo-super-agent)
+   - What it does: Hermes as a system for keyword research, content calendars, briefs, blog drafts, internal linking, and quality checks.
+   - How to recreate: profiles/roles: Researcher, Brief Writer, Editor, Internal Linking, QA; plus `cron`, web search, markdown files, and optionally Ahrefs/DataForSEO/Firecrawl APIs.
+   - Potential: strong for building visibility in AI/design and for long-tail SEO around products.
+   - Note: the source is promotional, but the workflow is sound. Requires manual review before publishing.
 
 3. **24/7 recurring workflow: daily briefs, weekly reports, competitor checks**
-   - Źródło: X / Julian Goldie — [Hermes Agent Claude Code Builds A 24/7 AI Workflow](https://x.com/JulianGoldieSEO/status/2054640784159408361)
-   - Co robi: Claude/LLM jako “mózg” planujący, Hermes jako runtime wykonujący powtarzalne prace: research briefy, competitor checks, content briefs.
-   - Jak odtworzyć: `cronjob` + `web` + pliki markdown + Telegram delivery + skilli dla formatów raportów.
-   - Potencjał: idealne jako “codzienny operator” dla market researchu, konkurencji, contentu i inspiracji.
-   - Uwaga: warto zacząć od jednego workflowu, nie od “zautomatyzuj wszystko”.
+   - Source: X / Julian Goldie — [Hermes Agent Claude Code Builds A 24/7 AI Workflow](https://x.com/JulianGoldieSEO/status/2054640784159408361)
+   - What it does: Claude/LLM as the planning “brain,” Hermes as the runtime executing repeatable work: research briefs, competitor checks, content briefs.
+   - How to recreate: `cronjob` + `web` + markdown files + Telegram delivery + skills for report formats.
+   - Potential: ideal as a “daily operator” for market research, competitors, content, and inspiration.
+   - Note: it’s worth starting with a single workflow, not “automate everything.”
 
-4. **13-agent marketing team z task database i peer review**
-   - Źródło: Reddit / r/nocode — [How I automated my entire marketing workflow with AI agents](https://www.reddit.com/r/nocode/comments/1rg4e9v/)
-   - Co robi: autor zbudował zespół 13 agentów dla marketingu AI video platformy Fruityo: research, strategia, copywriting, design, execution, devil’s advocate, review.
-   - Jak odtworzyć w Hermesie: Hermes profiles lub Kanban + SQLite/PocketBase/Airtable + stany `backlog → todo → in_progress → peer_review → review → approved → done`.
-   - Potencjał: bardzo mocny pattern dla content ops i kampanii, bo wymusza review zamiast automatycznego publikowania śmieci.
-   - Uwaga: to było na OpenClaw, ale architektura idealnie mapuje się na Hermes Kanban/profiles.
+4. **13-agent marketing team with a task database and peer review**
+   - Source: Reddit / r/nocode — [How I automated my entire marketing workflow with AI agents](https://www.reddit.com/r/nocode/comments/1rg4e9v/)
+   - What it does: the author built a team of 13 agents for marketing the AI video platform Fruityo: research, strategy, copywriting, design, execution, devil’s advocate, review.
+   - How to recreate in Hermes: Hermes profiles or Kanban + SQLite/PocketBase/Airtable + states `backlog → todo → in_progress → peer_review → review → approved → done`.
+   - Potential: a very strong pattern for content ops and campaigns, because it forces review instead of auto-publishing junk.
+   - Note: this was on OpenClaw, but the architecture maps perfectly onto Hermes Kanban/profiles.
 
-5. **Hermes jako 5-osobowy zespół przez Kanban**
-   - Źródło: Reddit / r/hermesagent — [I turned Hermes Agent into a 5-person team](https://www.reddit.com/r/hermesagent/comments/1ty73ia/i_turned_hermes_agent_into_a_5person_team_3/)
-   - Co robi: kilka agentów z rolami claimuje taski, komentuje, blokuje, oddaje zadania, pracuje równolegle.
-   - Jak odtworzyć: `hermes kanban init`, profile workers, osobne skills dla strategii/copy/researchu/review.
-   - Potencjał: dobry backbone pod “mini-agencję” content/SEO/sales.
-   - Uwaga: pełna treść była słabo dostępna, ale sam pattern jest zgodny z oficjalnym Hermes Kanban.
+5. **Hermes as a 5-person team via Kanban**
+   - Source: Reddit / r/hermesagent — [I turned Hermes Agent into a 5-person team](https://www.reddit.com/r/hermesagent/comments/1ty73ia/i_turned_hermes_agent_into_a_5person_team_3/)
+   - What it does: several role-based agents claim tasks, comment, block, hand off work, and run in parallel.
+   - How to recreate: `hermes kanban init`, worker profiles, separate skills for strategy/copy/research/review.
+   - Potential: a good backbone for a “mini-agency” doing content/SEO/sales.
+   - Note: the full content was poorly accessible, but the pattern itself aligns with the official Hermes Kanban.
 
 6. **Lead generation / prospecting agent**
-   - Źródła: GitHub — [hermes-agent-prospecting-system](https://github.com/CarlTheYoda/hermes-agent-prospecting-system), DEV — [How I Built a Hermes Agent for Lead Generation](https://dev.to/nimay_04/how-i-built-a-hermes-agent-for-lead-generation-that-finds-and-qualifies-better-prospects-1hm6)
-   - Co robi: szuka firm zgodnych z ICP, kwalifikuje leady, scoringuje, eksportuje CSV/CRM-ready output.
-   - Jak odtworzyć: ICP markdown + web search/browser + scoring rubric + CSV/SQLite + enrichment API + CRM/Sheets.
-   - Potencjał: bezpośrednio sprzedażowy — lista prospektów dla Analog Hive, usług AI/design, konsultingu.
-   - Uwaga: jeśli idzie w cold email, trzeba trzymać deliverability i zgodność prawną; nie wysyłać masowo bez kontroli.
+   - Sources: GitHub — [hermes-agent-prospecting-system](https://github.com/CarlTheYoda/hermes-agent-prospecting-system), DEV — [How I Built a Hermes Agent for Lead Generation](https://dev.to/nimay_04/how-i-built-a-hermes-agent-for-lead-generation-that-finds-and-qualifies-better-prospects-1hm6)
+   - What it does: finds companies matching the ICP, qualifies leads, scores them, and exports CSV/CRM-ready output.
+   - How to recreate: ICP markdown + web search/browser + scoring rubric + CSV/SQLite + enrichment API + CRM/Sheets.
+   - Potential: directly sales-oriented — a prospect list for Analog Hive, AI/design services, consulting.
+   - Note: if it goes toward cold email, you must protect deliverability and legal compliance; don’t send en masse without controls.
 
-7. **Cold email follow-up guardrail: nie follow-upuj, jeśli ktoś odpisał**
-   - Źródło: GitHub snippet — [hermes-agent-prospecting-system](https://github.com/CarlTheYoda/hermes-agent-prospecting-system)
-   - Co robi: przed wysłaniem follow-upów system skanuje Gmail/Inbox i aktualizuje status leada, żeby nie spamować osób, które odpowiedziały.
-   - Jak odtworzyć: Gmail/IMAP skill + CSV/SQLite leads table + `cron` + statusy `new/contacted/replied/do_not_contact`.
-   - Potencjał: bardzo praktyczne, bo chroni reputację domeny i relacje.
-   - Uwaga: to powinno być semi-automated z human approval przed wysyłką.
+7. **Cold email follow-up guardrail: don’t follow up if someone replied**
+   - Source: GitHub snippet — [hermes-agent-prospecting-system](https://github.com/CarlTheYoda/hermes-agent-prospecting-system)
+   - What it does: before sending follow-ups, the system scans Gmail/Inbox and updates each lead’s status so it doesn’t spam people who already replied.
+   - How to recreate: Gmail/IMAP skill + CSV/SQLite leads table + `cron` + statuses `new/contacted/replied/do_not_contact`.
+   - Potential: very practical, because it protects domain reputation and relationships.
+   - Note: this should be semi-automated with human approval before sending.
 
 8. **AI SEO competitor analysis + full blog drafts**
-   - Źródło: Reddit / r/n8n — [n8n AI Agent for SEO competitor analysis](https://www.reddit.com/r/n8n/comments/1olur30/i_built_an_n8n_ai_agent_that_does_seo_competitor/)
-   - Co robi: agent bierze keyword, pobiera SERP/konkurencję przez DataForSEO, scrape’uje Firecrawl, tworzy analizę i draft blog posta.
-   - Jak odtworzyć w Hermesie: DataForSEO API + Firecrawl/browser + markdown brief template + editorial review skill.
-   - Potencjał: bardzo dobry do skalowania blogów i topical authority.
-   - Uwaga: publikowanie “full blog posts” bez edycji to ryzyko jakościowe. Lepiej używać tego do briefów i pierwszych draftów.
+   - Source: Reddit / r/n8n — [n8n AI Agent for SEO competitor analysis](https://www.reddit.com/r/n8n/comments/1olur30/i_built_an_n8n_ai_agent_that_does_seo_competitor/)
+   - What it does: the agent takes a keyword, pulls SERP/competitors via DataForSEO, scrapes with Firecrawl, and produces an analysis and a blog post draft.
+   - How to recreate in Hermes: DataForSEO API + Firecrawl/browser + markdown brief template + editorial review skill.
+   - Potential: very good for scaling blogs and topical authority.
+   - Note: publishing “full blog posts” without editing is a quality risk. Better to use it for briefs and first drafts.
 
-9. **Content team AI hackathon: budowanie małych narzędzi na bolączki**
-   - Źródło: Ahrefs — [We Ran an AI Hackathon for Our Content Team](https://ahrefs.com/blog/agent-a-hackathon/)
-   - Co robi: zespół contentowy blokuje tydzień, każdy spisuje powtarzalne frustracje i buduje małe automatyzacje.
-   - Jak odtworzyć w Hermesie: jednodniowy “workflow sprint”: lista frustracji → 3 prototypy → skill dla każdego powtarzalnego procesu.
-   - Potencjał: świetne dla Ciebie: można zrobić własny “AI design/content ops hackathon”.
-   - Uwaga: najważniejszy insight: **zacząć od memory layer i konkretnych frustracji**, nie od narzędzia.
+9. **Content team AI hackathon: building small tools for real pain points**
+   - Source: Ahrefs — [We Ran an AI Hackathon for Our Content Team](https://ahrefs.com/blog/agent-a-hackathon/)
+   - What it does: the content team blocks off a week, everyone writes down their repetitive frustrations and builds small automations.
+   - How to recreate in Hermes: a one-day “workflow sprint”: list of frustrations → 3 prototypes → a skill for each repeatable process.
+   - Potential: great for you: you could run your own “AI design/content ops hackathon.”
+   - Note: the key insight: **start from the memory layer and concrete frustrations**, not from the tool.
 
-10. **Daily personal/business brief przez Telegram**
-   - Źródło: oficjalne docs — [Hermes User Stories](https://hermes-agent.nousresearch.com/docs/user-stories)
-   - Co robi: codzienne briefy: inbox summary, HN/AI news, competitor checks, project standups.
-   - Jak odtworzyć: `cronjob` + web/email/calendar + Telegram delivery + krótki format decyzyjny.
-   - Potencjał: dobry “CEO morning brief” dla solopreneura.
-   - Uwaga: brief musi mieć filtr jakości; inaczej robi się newsletterowy szum.
+10. **Daily personal/business brief via Telegram**
+    - Source: official docs — [Hermes User Stories](https://hermes-agent.nousresearch.com/docs/user-stories)
+    - What it does: daily briefs: inbox summary, HN/AI news, competitor checks, project standups.
+    - How to recreate: `cronjob` + web/email/calendar + Telegram delivery + a short decision-oriented format.
+    - Potential: a good “CEO morning brief” for a solopreneur.
+    - Note: the brief needs a quality filter; otherwise it turns into newsletter noise.
 
-11. **Obsidian / Markdown vault jako operacyjna pamięć projektów**
-   - Źródło: [Hermes User Stories](https://hermes-agent.nousresearch.com/docs/user-stories) + Reddit snippets
-   - Co robi: Hermes zapisuje research, decyzje, automatyzacje, learning files i projekty do lokalnego vaulta.
-   - Jak odtworzyć: folder `~/konrad-brain/...` + ustalone templates + `markdown-working-memory`/Obsidian skill + pytanie przed sensitive info.
-   - Potencjał: kumulatywna przewaga — agent coraz mniej pyta o kontekst.
-   - Uwaga: trzeba pilnować, co trafia do trwałej pamięci, żeby nie zaśmiecić braina.
+11. **Obsidian / Markdown vault as operational project memory**
+    - Source: [Hermes User Stories](https://hermes-agent.nousresearch.com/docs/user-stories) + Reddit snippets
+    - What it does: Hermes saves research, decisions, automations, learning files, and projects to a local vault.
+    - How to recreate: a `~/konrad-brain/...` folder + agreed templates + a `markdown-working-memory`/Obsidian skill + asking before storing sensitive info.
+    - Potential: a cumulative advantage — the agent asks for context less and less over time.
+    - Note: you have to watch what goes into persistent memory so you don’t clutter the brain.
 
-12. **Self-improving skills: agent pisze własne procedury po trudnych zadaniach**
-   - Źródło: [Hermes User Stories](https://hermes-agent.nousresearch.com/docs/user-stories), oficjalne Hermes docs
-   - Co robi: po złożonym workflow Hermes tworzy `SKILL.md`, dzięki czemu kolejne podobne zadania są szybsze i tańsze.
-   - Jak odtworzyć: po każdym powtarzalnym workflowie: “zapisz to jako skill”; potem cron może ładować skill automatycznie.
-   - Potencjał: najlepszy “moat” Hermesa — procesy content/SEO/sales robią się coraz bardziej Twoje.
-   - Uwaga: skills trzeba utrzymywać; stare instrukcje mogą szkodzić.
+12. **Self-improving skills: the agent writes its own procedures after hard tasks**
+    - Source: [Hermes User Stories](https://hermes-agent.nousresearch.com/docs/user-stories), official Hermes docs
+    - What it does: after a complex workflow, Hermes creates a `SKILL.md`, so similar future tasks are faster and cheaper.
+    - How to recreate: after every repeatable workflow: “save this as a skill”; then cron can load the skill automatically.
+    - Potential: Hermes’s best “moat” — your content/SEO/sales processes become increasingly your own.
+    - Note: skills need maintenance; stale instructions can do harm.
 
-13. **Tanie modele + dobre skills zamiast drogich modeli do wszystkiego**
-   - Źródła: Reddit snippets — [One month with Hermes Agent](https://old.reddit.com/r/hermesagent/comments/1t29ogw/one_month_with_hermes_agent_what_i_wish_i_knew/), LocalLLaMA — [Anybody who tried Hermes-Agent?](https://www.reddit.com/r/LocalLLaMA/comments/1ro9lph/anybody_who_tried_hermes-agent/)
-   - Co robi: użytkownicy raportują, że planowanie, jasne configi i skills pozwalają używać tańszych modeli do researchu/general tasks.
-   - Jak odtworzyć: mocniejszy model jako główny do planowania, tańsze modele dla prostych cronów/reformatowania/subtasks.
-   - Potencjał: obniża koszt always-on automatyzacji.
-   - Uwaga: nie przesadzać z oszczędzaniem na modelu głównym — słaby planner psuje cały workflow.
+13. **Cheap models + good skills instead of expensive models for everything**
+    - Sources: Reddit snippets — [One month with Hermes Agent](https://old.reddit.com/r/hermesagent/comments/1t29ogw/one_month_with_hermes_agent_what_i_wish_i_knew/), LocalLLaMA — [Anybody who tried Hermes-Agent?](https://www.reddit.com/r/LocalLLaMA/comments/1ro9lph/anybody_who_tried_hermes-agent/)
+    - What it does: users report that planning, clear configs, and skills let them use cheaper models for research/general tasks.
+    - How to recreate: a stronger model as the main planner, cheaper models for simple crons/reformatting/subtasks.
+    - Potential: lowers the cost of always-on automation.
+    - Note: don’t overdo it saving on the main model — a weak planner ruins the whole workflow.
 
-14. **Always-on Hermes na VPS / mini PC / Raspberry Pi**
-   - Źródła: Reddit / r/VPS — [I want to run Hermes Agent on a VPS](https://www.reddit.com/r/VPS/comments/1tuh4r9/i_want_to_run_hermes_agent_on_a_vps_which_vps_is/), Zeabur — [Hermes Agent Deploy Guide](https://zeabur.com/templates/RTWI4O)
-   - Co robi: Hermes działa 24/7 jako proces na serwerze i piszesz do niego przez Telegram.
-   - Jak odtworzyć: VPS 2C/4GB minimum, 4C/8GB komfortowo; `hermes gateway setup/start`; cron jobs; backups.
-   - Potencjał: agent naprawdę “żyje”, a nie czeka w zakładce przeglądarki.
-   - Uwaga: dashboard publiczny wymaga ostrożności; messaging działa outbound, zwykle bez publicznego portu.
+14. **Always-on Hermes on a VPS / mini PC / Raspberry Pi**
+    - Sources: Reddit / r/VPS — [I want to run Hermes Agent on a VPS](https://www.reddit.com/r/VPS/comments/1tuh4r9/i_want_to_run_hermes_agent_on_a_vps_which_vps_is/), Zeabur — [Hermes Agent Deploy Guide](https://zeabur.com/templates/RTWI4O)
+    - What it does: Hermes runs 24/7 as a process on a server and you message it via Telegram.
+    - How to recreate: VPS 2C/4GB minimum, 4C/8GB comfortable; `hermes gateway setup/start`; cron jobs; backups.
+    - Potential: the agent really “lives” instead of waiting in a browser tab.
+    - Note: a public dashboard requires caution; messaging is outbound, usually without a public port.
 
 15. **Second-hand / marketplace monitor**
-   - Źródło: LocalLLaMA snippet / user stories — przykład: agent szuka rzeczy na second-hand markets i mailuje ciekawe znaleziska.
-   - Co robi: cyklicznie monitoruje oferty według kryteriów, filtruje, wysyła shortlistę.
-   - Jak odtworzyć: `cron` + web/browser + scoring rubric + email/Telegram + log znanych ofert.
-   - Potencjał: można przenieść na nieruchomości, sprzęt foto, vintage cameras, domeny, SaaS acquisition targets.
-   - Uwaga: trzeba trzymać deduplikację i kryteria “co jest naprawdę warte uwagi”.
+    - Source: LocalLLaMA snippet / user stories — example: an agent searches second-hand markets and emails interesting finds.
+    - What it does: periodically monitors listings against criteria, filters them, and sends a shortlist.
+    - How to recreate: `cron` + web/browser + scoring rubric + email/Telegram + a log of known listings.
+    - Potential: can be ported to real estate, photo gear, vintage cameras, domains, SaaS acquisition targets.
+    - Note: you must maintain deduplication and clear criteria for “what’s actually worth attention.”
 
-## 3 workflowy, które szczególnie warto przetestować u Ciebie
+## 3 workflows especially worth testing for you
 
 1. **AI/design visibility scout → LinkedIn/content brief**
-   - Minimalny setup: codzienny cron zbiera 5 trendów z AI design/product, wybiera 1 angle, robi szkic posta.
-   - Miara sukcesu: 3 gotowe posty tygodniowo, które faktycznie publikujesz.
+   - Minimal setup: a daily cron gathers 5 trends from AI design/product, picks 1 angle, drafts a post.
+   - Success metric: 3 finished posts per week that you actually publish.
 
 2. **Analog Hive SEO/content machine**
-   - Minimalny setup: lista 30 tematów wokół film developing, lab workflows, analog photography; Hermes robi briefy i internal link plan.
-   - Miara sukcesu: 4 mocne artykuły/miesiąc + rosnące impressions/search clicks.
+   - Minimal setup: a list of 30 topics around film developing, lab workflows, analog photography; Hermes writes briefs and an internal link plan.
+   - Success metric: 4 strong articles/month + growing impressions/search clicks.
 
-3. **Prospecting agent dla partnerstw / klientów**
-   - Minimalny setup: ICP markdown + lista źródeł + scoring CSV + manual approval.
-   - Miara sukcesu: 20 dobrze dopasowanych leadów tygodniowo, nie masowy spam.
+3. **Prospecting agent for partnerships / clients**
+   - Minimal setup: ICP markdown + a list of sources + scoring CSV + manual approval.
+   - Success metric: 20 well-matched leads per week, not mass spam.
 
 ## Setup nuggets
 
-- Oficjalny install Hermesa:
+- Official Hermes install:
 
 ```bash
 curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
@@ -134,16 +134,16 @@ hermes model
 hermes gateway setup
 ```
 
-- Pattern dla workflowów:
-  - `cron` uruchamia research/automation
-  - `skills` trzymają procedury i format jakości
-  - `memory`/Markdown trzyma kontekst projektu
-  - Telegram daje potwierdzenia i approval loop
-  - log CSV/SQLite zapobiega duplikatom
-- Najbardziej powtarzająca się rada ze źródeł: Hermes jest najlepszy, gdy **workflow jest już jasno opisany**. Nie “rób marketing”, tylko “codziennie znajdź 10 tematów, oceń według X, zapisz 3 briefy, wyślij do review”.
+- Pattern for workflows:
+  - `cron` triggers research/automation
+  - `skills` hold procedures and the quality format
+  - `memory`/Markdown holds project context
+  - Telegram provides confirmations and the approval loop
+  - a CSV/SQLite log prevents duplicates
+- The most recurring advice from the sources: Hermes is best when the **workflow is already clearly described**. Not “do marketing,” but “every day find 10 topics, score them by X, save 3 briefs, send to review.”
 
 ## Cron
 
-Od jutra o 13:00 świeża wersja scoutingu jest wysyłana automatycznie do Telegrama i ma być zapisywana jako plik Markdown w folderze:
+Starting tomorrow at 13:00, a fresh version of the scouting report is sent automatically to Telegram and should be saved as a Markdown file in the folder:
 
 `/Users/koni/Desktop/hermes/Usecases/`
