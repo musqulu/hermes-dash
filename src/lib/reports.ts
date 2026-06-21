@@ -14,6 +14,7 @@ export type Report = {
   projectId: string;
   title: string;
   summary: string;
+  cadence: "weekly" | "daily" | "other";
   reportDate: string;
   modifiedAt: string;
   sourcePath: string;
@@ -157,6 +158,17 @@ function inferDate(fileName: string, content: string, modifiedAt: Date) {
   return modifiedAt.toISOString().slice(0, 10);
 }
 
+function inferCadence(fileName: string, title: string): Report["cadence"] {
+  const haystack = `${fileName}\n${title}`.toLowerCase();
+  if (haystack.includes("weekly") || haystack.includes("digest") || haystack.includes("ratings")) {
+    return "weekly";
+  }
+  if (haystack.includes("daily") || /scout-20\d{2}[-_]\d{2}[-_]\d{2}/.test(haystack)) {
+    return "daily";
+  }
+  return "other";
+}
+
 function safeSegment(value: string) {
   return value.replace(/[^a-zA-Z0-9._-]/g, "-").slice(0, 120);
 }
@@ -229,12 +241,14 @@ async function readReport(filePath: string, projectId: string): Promise<Report> 
   const stats = await fs.stat(filePath);
   const fileName = path.basename(filePath);
   const id = path.basename(filePath, path.extname(filePath));
+  const title = extractTitle(content, id);
 
   return {
     id,
     projectId,
-    title: extractTitle(content, id),
+    title,
     summary: extractSummary(content),
+    cadence: inferCadence(fileName, title),
     reportDate: inferDate(fileName, content, stats.mtime),
     modifiedAt: stats.mtime.toISOString(),
     sourcePath: displayPath(filePath),

@@ -445,11 +445,22 @@
   }
   .entry-meta {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.15rem;
     font-size: 0.68rem;
     color: var(--modal-muted-2);
     font-variant-numeric: tabular-nums;
+  }
+  .entry-kind {
+    padding: 0.05rem 0.45rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(127, 238, 100, 0.24);
+    background: rgba(127, 238, 100, 0.10);
+    color: var(--modal-accent);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
   /* ---- Detail pane ---------------------------------------------------- */

@@ -9,6 +9,8 @@ type Props = {
   managementMode?: boolean;
 };
 
+type ViewFilter = "all" | "weekly";
+
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   day: "2-digit",
   month: "short",
@@ -170,6 +172,7 @@ function renderMarkdown(content: string): ReactNode[] {
 
 export function ReportDashboard({ index, managementMode = false }: Props) {
   const [query, setQuery] = useState("");
+  const [viewFilter, setViewFilter] = useState<ViewFilter>("all");
   const [activeProjectId, setActiveProjectId] = useState(index.projects[0]?.id ?? "");
   const activeProject = index.projects.find((project) => project.id === activeProjectId) ?? index.projects[0];
   const [activeIdByProject, setActiveIdByProject] = useState<Record<string, string>>(() =>
@@ -178,14 +181,19 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
 
   const reports = useMemo(() => {
     if (!activeProject) return [];
+    const scopedReports = viewFilter === "weekly"
+      ? activeProject.reports.filter((report) => report.cadence === "weekly")
+      : activeProject.reports;
     const needle = query.trim().toLowerCase();
-    if (!needle) return activeProject.reports;
+    if (!needle) return scopedReports;
 
-    return activeProject.reports.filter((report) =>
+    return scopedReports.filter((report) =>
       [report.title, report.summary, report.fileName, report.sourcePath, report.content]
         .some((value) => value.toLowerCase().includes(needle)),
     );
-  }, [activeProject, query]);
+  }, [activeProject, query, viewFilter]);
+
+  const weeklyReportCount = activeProject?.reports.filter((report) => report.cadence === "weekly").length ?? 0;
 
   const activeId = activeProject ? activeIdByProject[activeProject.id] : "";
   const active = reports.find((report) => report.id === activeId) ?? reports[0];
@@ -251,6 +259,34 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
             ))}
           </nav>
 
+          <nav className="nav-section" aria-label="Quick report views">
+            <div className="nav-label">Quick views</div>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={viewFilter === "all"}
+              onClick={() => {
+                setViewFilter("all");
+                setQuery("");
+              }}
+            >
+              <span>All reports</span>
+              <span className="nav-count">{activeProject?.reports.length ?? 0}</span>
+            </button>
+            <button
+              type="button"
+              className="nav-item"
+              data-active={viewFilter === "weekly"}
+              onClick={() => {
+                setViewFilter("weekly");
+                setQuery("");
+              }}
+            >
+              <span>Weekly digests</span>
+              <span className="nav-count">{weeklyReportCount}</span>
+            </button>
+          </nav>
+
           <div className="nav-section">
             <div className="nav-label">
               <span>Entries</span>
@@ -273,6 +309,7 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
                     <span className="entry-summary">{report.summary}</span>
                     <span className="entry-meta">
                       <span>{metricLabel(report.wordCount, "word")}</span>
+                      {report.cadence === "weekly" ? <span className="entry-kind">Weekly digest</span> : null}
                       {report.comments.length ? <span>· {metricLabel(report.comments.length, "note")}</span> : null}
                     </span>
                   </button>
