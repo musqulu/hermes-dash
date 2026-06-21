@@ -280,7 +280,11 @@ async function getProject(config: ProjectConfig): Promise<ReportProject> {
     .map((entry) => path.join(sourceDir, entry.name));
 
   const reports = await Promise.all(markdownFiles.map((filePath) => readReport(filePath, config.id)));
-  reports.sort((a, b) => new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime());
+  reports.sort((a, b) => {
+    const dateDelta = new Date(b.reportDate).getTime() - new Date(a.reportDate).getTime();
+    if (dateDelta !== 0) return dateDelta;
+    return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
+  });
 
   return {
     id: config.id,

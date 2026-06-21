@@ -201,7 +201,7 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
   const totalReports = index.projects.reduce((sum, project) => sum + project.reports.length, 0);
   const latest = index.projects
     .flatMap((project) => project.reports)
-    .sort((a, b) => new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime())[0];
+    .sort((a, b) => new Date(b.reportDate).getTime() - new Date(a.reportDate).getTime())[0];
 
   return (
     <main className="app-shell">
