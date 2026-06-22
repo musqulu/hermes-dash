@@ -42,4 +42,4 @@ Checked 5 broad search queries via DuckDuckGo/Bing from terminal plus direct Adr
 - Saved local report: `/Users/koni/Desktop/hermes/property-scout/property-scout-2026-06-22.md`
 - Saved dashboard report: `/Users/koni/Desktop/dev/hermes-dash/content/reports/property-scout/property-scout-2026-06-22.md`
 - Dashboard build result: `npm run build` succeeded.
-- GitHub push: succeeded to `main` (`b9b2fb9`, then amended with verified metadata).
+- GitHub push: succeeded to `main` (initial report commit `b9b2fb9`, metadata update `678bc5e`).
