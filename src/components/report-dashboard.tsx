@@ -28,7 +28,7 @@ function metricLabel(value: number, singular: string, plural = `${singular}s`) {
 
 /* ---- Inline markdown (bold, code, links) ----------------------------- */
 
-const inlinePattern = /(\[[^\]]+\]\((?:https?:\/\/|\/)[^)]+\))|(\*\*[^*]+\*\*)|(`[^`]+`)/g;
+const inlinePattern = /(\[[^\]]+\]\((?:https?:\/\/|\/)[^)]+\))|(\*\*[^*]+\*\*)|(`[^`]+`)|(\*[^*]+\*)/g;
 
 function renderInlineMarkdown(value: string, keyPrefix: string): ReactNode[] {
   const nodes: ReactNode[] = [];
@@ -63,6 +63,8 @@ function renderInlineMarkdown(value: string, keyPrefix: string): ReactNode[] {
       nodes.push(<strong key={key}>{token.slice(2, -2)}</strong>);
     } else if (match[3]) {
       nodes.push(<code key={key}>{token.slice(1, -1)}</code>);
+    } else if (match[4]) {
+      nodes.push(<em key={key}>{token.slice(1, -1)}</em>);
     }
 
     lastIndex = start + token.length;
@@ -82,7 +84,6 @@ function renderMarkdown(content: string): ReactNode[] {
   const blocks: ReactNode[] = [];
   let key = 0;
 
-  // Buffers for grouping list items
   let listType: "ul" | "ol" | null = null;
   let listItems: ReactNode[] = [];
 
@@ -102,7 +103,6 @@ function renderMarkdown(content: string): ReactNode[] {
     const raw = lines[idx];
     const line = raw.trim();
 
-    // Fenced code block
     if (line.startsWith("```")) {
       flushList();
       const codeLines: string[] = [];
@@ -119,12 +119,41 @@ function renderMarkdown(content: string): ReactNode[] {
       continue;
     }
 
-    if (!line) {
+    if (!line || line === "---") {
       flushList();
       continue;
     }
 
-    // Headings
+    const nextLine = lines[idx + 1]?.trim() ?? "";
+    if (line.startsWith("|") && nextLine.match(/^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/)) {
+      flushList();
+      const headers = line.split("|").map((cell) => cell.trim()).filter(Boolean);
+      const rows: string[][] = [];
+      idx += 2;
+      while (idx < lines.length && lines[idx].trim().startsWith("|")) {
+        rows.push(lines[idx].split("|").map((cell) => cell.trim()).filter(Boolean));
+        idx++;
+      }
+      idx--;
+      blocks.push(
+        <div className="table-wrap" key={`b-${key++}`}>
+          <table>
+            <thead>
+              <tr>{headers.map((header, cellIndex) => <th key={`th-${cellIndex}`}>{renderInlineMarkdown(header, `th-${idx}-${cellIndex}`)}</th>)}</tr>
+            </thead>
+            <tbody>
+              {rows.map((row, rowIndex) => (
+                <tr key={`tr-${rowIndex}`}>
+                  {row.map((cell, cellIndex) => <td key={`td-${rowIndex}-${cellIndex}`}>{renderInlineMarkdown(cell, `td-${idx}-${rowIndex}-${cellIndex}`)}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>,
+      );
+      continue;
+    }
+
     const heading = line.match(/^(#{1,6})\s+(.+)$/);
     if (heading) {
       flushList();
@@ -136,7 +165,6 @@ function renderMarkdown(content: string): ReactNode[] {
       continue;
     }
 
-    // Ordered list item
     const ordered = line.match(/^\d+\.\s+(.+)$/);
     if (ordered) {
       if (listType !== "ol") flushList();
@@ -145,7 +173,6 @@ function renderMarkdown(content: string): ReactNode[] {
       continue;
     }
 
-    // Unordered list item (supports nested indentation visually)
     const unordered = raw.match(/^(\s*)[-*]\s+(.+)$/);
     if (unordered) {
       if (listType !== "ul") flushList();
@@ -159,7 +186,6 @@ function renderMarkdown(content: string): ReactNode[] {
       continue;
     }
 
-    // Paragraph
     flushList();
     blocks.push(<p key={`b-${key++}`}>{renderInlineMarkdown(line, `p-${idx}`)}</p>);
   }
@@ -194,133 +220,107 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
   }, [activeProject, query, viewFilter]);
 
   const weeklyReportCount = activeProject?.reports.filter((report) => report.cadence === "weekly").length ?? 0;
-
   const activeId = activeProject ? activeIdByProject[activeProject.id] : "";
   const active = reports.find((report) => report.id === activeId) ?? reports[0];
-
   const totalReports = index.projects.reduce((sum, project) => sum + project.reports.length, 0);
-  const latest = index.projects
-    .flatMap((project) => project.reports)
-    .sort((a, b) => new Date(b.reportDate).getTime() - new Date(a.reportDate).getTime())[0];
 
   return (
     <main className="app-shell">
       <header className="app-header">
-        <span className="wordmark">
+        <a className="wordmark" href="/" aria-label="Hermes Dash home">
           Hermes <span className="accent">Dash</span>
-        </span>
+        </a>
         <div className="header-meta">
-          <span className="stat-chip">
-            <b>{totalReports}</b> reports
-          </span>
-          <span className="stat-chip">
-            latest <b>{latest ? formatDate(latest.reportDate) : "—"}</b>
-          </span>
+          <span className="header-note">Clean report log · {metricLabel(totalReports, "report")}</span>
           <a className="btn" href={managementMode ? "/" : "/manage"}>
             {managementMode ? "Public view" : "Manage"}
           </a>
         </div>
       </header>
 
+      <section className="project-hero" aria-label="Report collection">
+        <div>
+          <p className="eyebrow">Current collection</p>
+          <h1>{activeProject?.name ?? "Reports"}</h1>
+          <p>{activeProject?.description ?? "Read Markdown reports from the dashboard content folder."}</p>
+        </div>
+        <div className="hero-facts" aria-label="Collection facts">
+          <span>{metricLabel(activeProject?.reports.length ?? 0, "entry", "entries")}</span>
+          <span>{weeklyReportCount ? `${weeklyReportCount} weekly digests` : "Daily / ad hoc reports"}</span>
+          <span title={activeProject?.sourceDir}>{activeProject?.sourceDir ?? "No source folder"}</span>
+        </div>
+      </section>
+
+      <nav className="project-tabs" aria-label="Projects">
+        {index.projects.map((project) => (
+          <button
+            key={project.id}
+            type="button"
+            className="project-tab"
+            data-active={activeProject?.id === project.id}
+            onClick={() => {
+              setActiveProjectId(project.id);
+              setQuery("");
+              setViewFilter("all");
+            }}
+          >
+            <span>{project.name}</span>
+            <span>{project.reports.length}</span>
+          </button>
+        ))}
+      </nav>
+
       <div className="app-body">
-        <aside className="app-sidebar scroll-area">
-          <div className="search-field">
-            <Search className="h-4 w-4" aria-hidden />
-            <input
-              type="search"
-              placeholder="Search reports…"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              aria-label="Search reports"
-            />
-          </div>
-
-          {/*
-            Project navigation. Interim solution: a flat vertical list scales
-            for a handful of projects. As projects multiply this is the seam to
-            evolve — group by status/owner or make it search-driven.
-          */}
-          <nav className="nav-section" aria-label="Projects">
-            <div className="nav-label">Projects</div>
-            {index.projects.map((project) => (
-              <button
-                key={project.id}
-                type="button"
-                className="nav-item"
-                data-active={activeProject?.id === project.id}
-                onClick={() => {
-                  setActiveProjectId(project.id);
-                  setQuery("");
-                }}
-              >
-                <span>{project.name}</span>
-                <span className="nav-count">{project.reports.length}</span>
-              </button>
-            ))}
-          </nav>
-
-          <nav className="nav-section" aria-label="Quick report views">
-            <div className="nav-label">Quick views</div>
-            <button
-              type="button"
-              className="nav-item"
-              data-active={viewFilter === "all"}
-              onClick={() => {
-                setViewFilter("all");
-                setQuery("");
-              }}
-            >
-              <span>All reports</span>
-              <span className="nav-count">{activeProject?.reports.length ?? 0}</span>
-            </button>
-            <button
-              type="button"
-              className="nav-item"
-              data-active={viewFilter === "weekly"}
-              onClick={() => {
-                setViewFilter("weekly");
-                setQuery("");
-              }}
-            >
-              <span>Weekly digests</span>
-              <span className="nav-count">{weeklyReportCount}</span>
-            </button>
-          </nav>
-
-          <div className="nav-section">
-            <div className="nav-label">
-              <span>Entries</span>
-              <span>{reports.length}</span>
+        <aside className="report-list-panel">
+          <div className="list-toolbar">
+            <div className="search-field">
+              <Search className="h-4 w-4" aria-hidden />
+              <input
+                type="search"
+                placeholder="Search inside this collection…"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                aria-label="Search reports"
+              />
             </div>
-            {reports.length ? (
-              <div className="entry-list stagger" key={activeProject?.id}>
-                {reports.map((report) => (
-                  <button
-                    key={`${report.projectId}-${report.id}`}
-                    type="button"
-                    className="entry-row"
-                    data-active={active?.id === report.id}
-                    onClick={() =>
-                      setActiveIdByProject((current) => ({ ...current, [report.projectId]: report.id }))
-                    }
-                  >
-                    <span className="entry-date">{formatDate(report.reportDate)}</span>
-                    <span className="entry-title">{report.title}</span>
-                    <span className="entry-summary">{report.summary}</span>
-                    <span className="entry-meta">
-                      <span>{metricLabel(report.wordCount, "word")}</span>
-                      {report.cadence === "weekly" ? <span className="entry-kind">Weekly digest</span> : null}
-                      {report.comments.length ? <span>· {metricLabel(report.comments.length, "note")}</span> : null}
-                    </span>
-                  </button>
-                ))}
+            {weeklyReportCount ? (
+              <div className="filter-pills" aria-label="Report filters">
+                <button type="button" data-active={viewFilter === "all"} onClick={() => setViewFilter("all")}>
+                  All
+                </button>
+                <button type="button" data-active={viewFilter === "weekly"} onClick={() => setViewFilter("weekly")}>
+                  Weekly
+                </button>
               </div>
-            ) : (
-              <p className="entry-summary" style={{ padding: "0.5rem 0.8rem", whiteSpace: "normal" }}>
-                No reports match your search.
-              </p>
-            )}
+            ) : null}
           </div>
+
+          <div className="list-count">
+            <span>{reports.length} visible</span>
+            {query ? <button type="button" onClick={() => setQuery("")}>Clear search</button> : null}
+          </div>
+
+          {reports.length ? (
+            <div className="entry-list" key={`${activeProject?.id}-${viewFilter}-${query}`}>
+              {reports.map((report) => (
+                <button
+                  key={`${report.projectId}-${report.id}`}
+                  type="button"
+                  className="entry-row"
+                  data-active={active?.id === report.id}
+                  onClick={() =>
+                    setActiveIdByProject((current) => ({ ...current, [report.projectId]: report.id }))
+                  }
+                >
+                  <span className="entry-date">{formatDate(report.reportDate)}</span>
+                  <span className="entry-title">{report.title}</span>
+                  <span className="entry-summary">{report.summary}</span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <p className="empty-copy">No reports match this search.</p>
+          )}
         </aside>
 
         <ReportDetail report={active} managementMode={managementMode} hasProjects={!!activeProject} />
@@ -358,7 +358,7 @@ function ReportDetail({
           <h3>{hasProjects ? "No report selected" : "No reports yet"}</h3>
           <p>
             {hasProjects
-              ? "Pick an entry from the sidebar to read it here."
+              ? "Pick an entry from the list to read it here."
               : "Drop Markdown reports into a project folder, then refresh."}
           </p>
         </div>
@@ -397,7 +397,7 @@ function ReportDetail({
   return (
     <section className="detail-pane animate-in" key={`${report.projectId}-${report.id}`}>
       <div className="detail-head">
-        <div className="meta-line" style={{ marginTop: 0, marginBottom: "1rem", justifyContent: "space-between" }}>
+        <div className="detail-kicker">
           <span className="file-badge">
             <FileText className="h-3.5 w-3.5" aria-hidden />
             {report.fileName}
@@ -411,37 +411,11 @@ function ReportDetail({
           <span className="dot">·</span>
           <span>{metricLabel(report.sections.length, "section")}</span>
           <span className="dot">·</span>
-          <span style={{ maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis" }} title={report.sourcePath}>
-            {report.sourcePath}
-          </span>
+          <span className="source-path" title={report.sourcePath}>{report.sourcePath}</span>
         </div>
       </div>
 
       <div className="detail-body">
-        {report.highlights.length ? (
-          <section>
-            <div className="section-label">Outcomes</div>
-            <ul className="outcome-list">
-              {report.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
-
-        {report.sections.length ? (
-          <section>
-            <div className="section-label">Sections</div>
-            <div className="flex flex-wrap gap-2">
-              {report.sections.map((section) => (
-                <span key={section} className="chip">
-                  {section}
-                </span>
-              ))}
-            </div>
-          </section>
-        ) : null}
-
         {managementMode ? (
           <section className="feedback-block">
             <div className="flex items-center gap-2" style={{ color: "var(--modal-cream)", fontWeight: 500 }}>
@@ -488,7 +462,7 @@ function ReportDetail({
         ) : null}
 
         <section>
-          <div className="section-label">Report</div>
+          <div className="section-label">Full report</div>
           <div className="report-prose">{renderMarkdown(report.content)}</div>
         </section>
       </div>

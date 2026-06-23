@@ -62,18 +62,18 @@ const projectConfigs: ProjectConfig[] = [
     defaultDir: path.join(reportsRoot, "hermes-workflows"),
   },
   {
-    id: "moltbook",
-    name: "Moltbook scout",
-    description: "Read-only Moltbook learning reports about Hermes setup, agent use cases, and daily-life workflows.",
-    envVar: "HERMES_MOLTBOOK_REPORTS_DIR",
-    defaultDir: path.join(reportsRoot, "moltbook"),
-  },
-  {
     id: "property-scout",
     name: "Property scout",
     description: "English buyer-side scouting reports for Polish countryside properties and rural land opportunities.",
     envVar: "HERMES_PROPERTY_REPORTS_DIR",
     defaultDir: path.join(reportsRoot, "property-scout"),
+  },
+  {
+    id: "mac-studio-scout",
+    name: "Mac Studio scout",
+    description: "Polish marketplace watch for high-RAM Mac Studio Ultra listings, deal spotting, and configuration price tracking for local LLM rigs.",
+    envVar: "HERMES_MAC_STUDIO_REPORTS_DIR",
+    defaultDir: path.join(reportsRoot, "mac-studio-scout"),
   },
   {
     id: "project-ideas",
@@ -126,7 +126,7 @@ function extractSummary(content: string) {
     .map((item) => item.trim())
     .find((item) => item && !item.startsWith("#") && !item.startsWith("```"));
 
-  return line ? cleanMarkdown(line).slice(0, 260) : "No summary available yet.";
+  return line ? cleanMarkdown(line.replace(/^\s*(?:[-*]|\d+\.)\s+/, "")).slice(0, 260) : "No summary available yet.";
 }
 
 function extractSections(content: string) {
