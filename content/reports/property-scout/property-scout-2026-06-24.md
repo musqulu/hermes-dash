@@ -44,4 +44,4 @@ Bronikowo is the best buyer-side lead: 1.03 ha with a house at 290k PLN gives th
 - Saved local report: `/Users/koni/Desktop/hermes/property-scout/property-scout-2026-06-24.md`
 - Dashboard report copy: `/Users/koni/Desktop/dev/hermes-dash/content/reports/property-scout/property-scout-2026-06-24.md`
 - Build result: succeeded (`npm run build` completed successfully in `/Users/koni/Desktop/dev/hermes-dash`).
-- GitHub push: pending at write time.
+- GitHub push: succeeded to `main`.
