@@ -44,5 +44,5 @@ Checked within the runtime cap: Bing/DDG-style web queries for “siedlisko Lubu
 
 **Saved local path:** `/Users/koni/Desktop/hermes/property-scout/property-scout-2026-06-26.md`  
 **Dashboard path:** `/Users/koni/Desktop/dev/hermes-dash/content/reports/property-scout/property-scout-2026-06-26.md`  
-**Build result:** pending  
-**GitHub push:** pending
+**Build result:** `npm run build` succeeded (Next.js production build compiled, type-checked, generated static pages).  
+**GitHub push:** succeeded (`main` pushed to GitHub, commit `248b7ac`).
