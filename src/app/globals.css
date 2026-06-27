@@ -995,6 +995,29 @@
   border-radius: var(--radius-md);
   background: rgba(0, 0, 0, 0.18);
 }
+.open-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(127, 238, 100, 0.28);
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+}
+.open-card p {
+  max-width: 72ch;
+  color: var(--modal-cream);
+  line-height: 1.5;
+}
+.open-card .btn {
+  flex: 0 0 auto;
+}
+@media (max-width: 720px) {
+  .open-card {
+    flex-direction: column;
+  }
+}
 .empty-copy {
   padding: 1rem 0.35rem;
   color: var(--modal-muted);

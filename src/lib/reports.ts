@@ -19,6 +19,7 @@ export type Report = {
   modifiedAt: string;
   sourcePath: string;
   fileName: string;
+  primaryLink: string | null;
   wordCount: number;
   sections: string[];
   highlights: string[];
@@ -126,7 +127,15 @@ function extractSummary(content: string) {
     .map((item) => item.trim())
     .find((item) => item && !item.startsWith("#") && !item.startsWith("```"));
 
-  return line ? cleanMarkdown(line.replace(/^\s*(?:[-*]|\d+\.)\s+/, "")).slice(0, 260) : "No summary available yet.";
+  return line ? cleanMarkdown(line.replace(/^\s*(?:[-*]|\d+\.)\s+/, "")).slice(0, 180) : "No summary available yet.";
+}
+
+function extractPrimaryLink(content: string) {
+  const markdownLink = content.match(/\[[^\]]+\]\((https?:\/\/[^)\s]+)\)/);
+  if (markdownLink) return markdownLink[1];
+
+  const bareUrl = content.match(/https?:\/\/[^\s)\]>"']+/);
+  return bareUrl ? bareUrl[0].replace(/[.,;:!?]+$/, "") : null;
 }
 
 function extractSections(content: string) {
@@ -253,6 +262,7 @@ async function readReport(filePath: string, projectId: string): Promise<Report> 
     modifiedAt: stats.mtime.toISOString(),
     sourcePath: displayPath(filePath),
     fileName,
+    primaryLink: extractPrimaryLink(content),
     wordCount: content.match(/\w+/g)?.length ?? 0,
     sections: extractSections(content),
     highlights: extractHighlights(content),

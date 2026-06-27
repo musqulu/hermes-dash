@@ -231,7 +231,7 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
           Hermes <span className="accent">Dash</span>
         </a>
         <div className="header-meta">
-          <span className="header-note">Clean report log · {metricLabel(totalReports, "report")}</span>
+          <span className="header-note">One link per report · {metricLabel(totalReports, "report")}</span>
           <a className="btn" href={managementMode ? "/" : "/manage"}>
             {managementMode ? "Public view" : "Manage"}
           </a>
@@ -240,9 +240,9 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
 
       <section className="project-hero" aria-label="Report collection">
         <div>
-          <p className="eyebrow">Current collection</p>
+          <p className="eyebrow">Current feed</p>
           <h1>{activeProject?.name ?? "Reports"}</h1>
-          <p>{activeProject?.description ?? "Read Markdown reports from the dashboard content folder."}</p>
+          <p>Pick one thing worth opening; each report now leads with one sentence and one source link.</p>
         </div>
         <div className="hero-facts" aria-label="Collection facts">
           <span>{metricLabel(activeProject?.reports.length ?? 0, "entry", "entries")}</span>
@@ -407,10 +407,6 @@ function ReportDetail({
         <h1 className="detail-title">{report.title}</h1>
         <p className="detail-summary">{report.summary}</p>
         <div className="meta-line">
-          <span>{metricLabel(report.wordCount, "word")}</span>
-          <span className="dot">·</span>
-          <span>{metricLabel(report.sections.length, "section")}</span>
-          <span className="dot">·</span>
           <span className="source-path" title={report.sourcePath}>{report.sourcePath}</span>
         </div>
       </div>
@@ -461,8 +457,20 @@ function ReportDetail({
           </section>
         ) : null}
 
+        <section className="open-card">
+          <div>
+            <div className="section-label">Open this</div>
+            <p>{report.summary}</p>
+          </div>
+          {report.primaryLink ? (
+            <a className="btn btn-accent" href={report.primaryLink} target="_blank" rel="noreferrer">
+              Open link
+            </a>
+          ) : null}
+        </section>
+
         <section>
-          <div className="section-label">Full report</div>
+          <div className="section-label">Context</div>
           <div className="report-prose">{renderMarkdown(report.content)}</div>
         </section>
       </div>
