@@ -77,6 +77,13 @@ const projectConfigs: ProjectConfig[] = [
     defaultDir: path.join(reportsRoot, "mac-studio-scout"),
   },
   {
+    id: "home-ai-rig-scout",
+    name: "Home AI rig scout",
+    description: "Daily BUY/WATCH scouting for used GPU accelerators, 4-GPU workstations, and server parts for a local home AI rig in Poland/EU.",
+    envVar: "HERMES_HOME_AI_RIG_REPORTS_DIR",
+    defaultDir: path.join(reportsRoot, "home-ai-rig-scout"),
+  },
+  {
     id: "project-ideas",
     name: "Project ideas",
     description: "Research-backed MVP ideas with difficulty, monetisation options, competitor notes, risks, and next-step recommendations.",
