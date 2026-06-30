@@ -2,7 +2,7 @@
 
 Daily source: [OLX Poland](https://www.olx.pl/), [Allegro](https://allegro.pl/), [Allegro Lokalnie](https://allegrolokalnie.pl/), and eBay EU/UK/US when shipping/import risk is acceptable.
 
-This page is the buy-board for slowly building a home AI rig. Reports should mark each listing as **BUY**, **WATCH**, **PARTS NEEDED**, or **SKIP**, and explain the exact missing hardware needed to make the setup work.
+This page is the buy-board for slowly building a **lowest-possible-cost test rig** that can be a much cheaper alternative to a Mac Studio. Aim for roughly **256GB system RAM** if deals allow, accept less when the base platform is cheap and upgradeable, and prioritize cheap server/workstation/accelerator paths over expensive RTX-first builds. Reports should mark each listing as **BUY**, **WATCH**, **PARTS NEEDED**, or **SKIP**, and explain the exact missing hardware needed to make the setup work.
 
 ## What to scout
 
@@ -42,9 +42,10 @@ This page is the buy-board for slowly building a home AI rig. Reports should mar
 
 ## Default buy guidance
 
-- **Best simple path:** RTX 3090 24GB in a workstation tower first; later add a second 3090 if cooling/PSU allows.
-- **Best 48GB path:** RTX A6000 for quiet workstation use, A40 for server chassis only.
-- **Best experimental value:** MI50/MI60/MI100/MI210 only when the discount clearly compensates for ROCm and server-part friction.
+- **Best cheap base path:** used EPYC/Xeon workstation/server with 128–256GB+ DDR4 RDIMM/LRDIMM first, then add accelerators after confirming slots, risers, PSUs, airflow, and noise.
+- **Best experimental value:** Tesla P40/P100 or MI50/MI60/MI100/MI210 only when the complete support stack is still much cheaper than a Mac Studio and the card is PCIe, not SXM/OAM.
+- **RTX rule:** RTX 3090 is easy CUDA but usually expensive; include as BUY only when clearly under market or bundled into a strong-value full system.
+- **Best 48GB path:** RTX A6000/A40 only if unusually cheap; A40 needs server airflow.
 - **Avoid by default:** SXM cards without matching server/baseboard, passive cards sold as drop-in desktop GPUs, PowerEdge/Supermicro listings without risers/PSUs/caddies, vague “untested” accelerators.
 
 ## Desired Telegram output

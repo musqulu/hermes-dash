@@ -1,6 +1,6 @@
 # Home AI Rig Scout — 2026-06-30 17:48
 
-Early manual pass: OLX already has several RTX 3090 24GB leads; the cleanest first BUY/WATCH target is [ZOTAC RTX 3090 Trinity 24GB for 3 450 zł](https://www.olx.pl/d/oferta/karta-graficzna-zotac-geforce-rtx-3090-trinity-24-gb-CID99-ID18rTmI.html?search_reason=search%7Corganic), pending seller proof and cooling/PSU fit.
+Early manual pass was RTX-heavy baseline intel; going forward, the scout should treat RTX 3090s mostly as comparables and prioritize cheaper server/accelerator routes toward a ~256GB RAM test rig that beats a Mac Studio on total cost.
 
 ## Ranked leads
 
@@ -34,12 +34,12 @@ Early manual pass: OLX already has several RTX 3090 24GB leads; the cleanest fir
    Missing parts/risk: 96GB RAM is okay but not ideal; confirm PSU, cooler, motherboard, storage, OS, and whether the 3090 is healthy.
    Confidence: low/medium.
 
-## Parts-to-buy map
+## Cheapest build paths
 
-- **Easiest 3090 workstation path:** RTX 3090 24GB + quiet tower + 750–1000W quality PSU + 128GB system RAM target + NVMe model drive + Linux/CUDA setup.
-- **48GB NVIDIA path:** RTX A6000 for quiet workstation use; A40 only with high-airflow server chassis or dedicated blower/fan duct.
-- **AMD/ROCm experimental path:** MI50/MI60/MI100/MI210 only if the listing is clearly cheap and PCIe, not SXM/OAM; plan for Linux, ROCm version checks, and server-grade airflow.
-- **Rack/server path:** Supermicro/Dell GPU server only if risers, GPU power cables, caddies, PSUs, rails/noise plan, and BIOS support are included.
+- **Best cheap base path:** find a used EPYC/Xeon workstation/server with 128–256GB+ DDR4 RDIMM/LRDIMM, enough PCIe slots/risers, included PSUs/caddies, and tolerable noise/placement.
+- **Ultra-cheap accelerator path:** Tesla P40/P100 or AMD Instinct MI50/MI60/MI100/MI210 only if PCIe and the chassis/cooling/power solution keeps the full rig well below Mac Studio money.
+- **Only-if-cheap RTX path:** RTX 3090 is easy CUDA but should not dominate the scout unless under market or bundled into a very good complete machine.
+- **Rack/server path:** Supermicro/Dell GPU server only if risers, GPU power cables, caddies, PSUs, BIOS support, and noise plan are included.
 
 ## Price/market notes
 
