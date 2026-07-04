@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: Use Hermes Atlas as the fastest practical map of current Hermes Agent skills, tools, integrations, and community workflows. https://github.com/ksimback/hermes-ecosystem
+  - Evidence: Updated 2026-07-04; 1,097 GitHub stars; points to the live ecosystem directory.
+- Keep the Awesome Hermes Agent list open as a high-signal checklist for skills, plugins, MCPs, prompts, and setup resources to add to a personal operator. https://github.com/0xNyk/awesome-hermes-agent
+  - Evidence: Updated 2026-07-04; 4,416 GitHub stars; curated around Hermes Agent by Nous Research.
+- Track the official Hermes Agent repo/docs before copying community configs so Telegram, cron, skills, and desktop setup stay aligned with the current source of truth. https://github.com/NousResearch/hermes-agent
+  - Evidence: Updated 2026-07-04; official Nous Research repo; links directly to current docs.
+- Upgrade-check OpenAI Codex from the latest alpha releases if you rely on terminal code-agent loops for product builds and repo maintenance. https://github.com/openai/codex/releases
+  - Evidence: Latest checked release shown on GitHub: 0.143.0-alpha.35 published 2026-07-03.
+- Test AMCP if you want a long-running coding agent pattern with MCP integration, skills, Telegram bot control, and HTTP/WebSocket access. https://github.com/tao12345666333/amcp
+  - Evidence: Updated 2026-07-04; README describes a Lego-style coding agent CLI with built-in agent operation.
+- Hasharot is a compact reference for controlling a real local coding agent from Telegram with commands, voice, files, and multi-user access. https://github.com/Mamasodikov/hasharot
+  - Evidence: Created 2026-07-02 and updated 2026-07-04; focused specifically on Telegram control of a local agent.
+- Friday is worth studying as a local-first private control plane pattern: goal routing, approvals before risky actions, memory, and evidence-backed agent work. https://github.com/thesongzhu/Friday
+  - Evidence: Updated 2026-07-04; 899 GitHub stars; explicit approval-first/BYOK design.
+- Selene shows a desktop-first personal operator interface that connects local agents to WhatsApp, Telegram, Slack, and Discord while keeping data on-device. https://github.com/tercumantanumut/selene
+  - Evidence: Updated 2026-06-30; 169 GitHub stars; cross-channel local assistant workflow.
+- Capacitor is a practical shared-memory layer for Claude Code, Codex, and other coding agents so project context survives across tools. https://capacitor.kurrent.io/
+  - Evidence: Surfaced on Hacker News 2026-06-30; site verified reachable and describes shared memory for coding agents.
+- Browserbase MCP Server is a useful MCP candidate for research, QA, monitoring, and marketing workflows that need a browser-controlling agent. https://github.com/browserbase/mcp-server-browserbase
+  - Evidence: Updated 2026-07-01; 3,391 GitHub stars; integrates Browserbase and Stagehand for browser automation.
