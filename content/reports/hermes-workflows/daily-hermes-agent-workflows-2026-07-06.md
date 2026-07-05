@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: Hermes Atlas is a fast way to browse the Hermes Agent ecosystem by tools, skills, integrations, trending repos, and a RAG chatbot for grounded discovery. https://github.com/ksimback/hermes-ecosystem
+  - Evidence: 1,100 GitHub stars, updated 2026-07-05, README claims 80+ quality-filtered repos across 12 categories.
+- Hasharot turns Telegram into a remote control for a real local Claude Code agent with text, voice, files, commands, and team access. https://github.com/Mamasodikov/hasharot
+  - Evidence: updated 2026-07-04; architecture is Telegram → Grammy bot → Claude Agent SDK → local bash/files/code.
+- telegram-agent is a minimal serverless Telegram assistant pattern using Bun on Cloud Run, scale-to-zero costs, GitHub-backed memory, and swappable LLM providers. https://github.com/cherrythia/telegram-agent
+  - Evidence: updated 2026-07-04; separates bot code from private memory/context repos.
+- Lilo is an open-source Telegram personal assistant with practical flows for reminders, article summaries, receipt recall, meal tracking, voice notes, and calendar help. https://github.com/abi/lilo
+  - Evidence: updated 2026-07-03; README lists concrete daily assistant workflows.
+- Worktrunk is a Git worktree CLI built for running multiple coding agents in parallel without branch/worktree chaos. https://github.com/max-sixty/worktrunk
+  - Evidence: 5,732 GitHub stars, updated 2026-07-05, positioned for parallel AI agent workflows.
+- Caliper gives Hermes, Codex, and Claude Code skills a local-first reliability harness so you can run pass@k-style evals before trusting an automation. https://github.com/edonadei/caliper
+  - Evidence: updated 2026-07-05; README includes `caliper run ... --k 3 --baseline` workflow.
+- Cool Workflow wraps agent runs in a durable plan-dispatch-verify-report loop with cited reports and a local JSON ledger instead of disposable chat output. https://github.com/coo1white/cool-workflow
+  - Evidence: updated 2026-07-05; README says it does not call model APIs and records/verifies results on disk.
+- Open Dynamic Workflows uses scripts as the orchestrator for local multi-agent coding swarms across Codex, OpenCode, Cursor, Antigravity, and VS Code. https://github.com/Suraj1235/open-dynamic-workflows
+  - Evidence: updated 2026-07-05; README emphasizes local-first, BYO model, no telemetry, zero hosting cost.
+- mcp-wordpress exposes WordPress content, SEO, and marketing automation actions as MCP tools for drafting, scheduling, publishing, and managing pages/posts. https://github.com/iamsamuelfraga/mcp-wordpress
+  - Evidence: README says v1.2.0 release candidate with 73 tools and 373 tests.
+- SeedLens is a marketing MCP server for crawling pages, extracting SEO/contact data, and rendering or sending outreach emails via SMTP. https://github.com/caterpi11ar/seedlens
+  - Evidence: README lists `extract_contacts`, `extract_seo_data`, `send_marketing_email`, and `preview_marketing_email` tools.
