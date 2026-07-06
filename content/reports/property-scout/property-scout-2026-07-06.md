@@ -1,0 +1,13 @@
+# Property scout — 2026-07-06
+
+## Linked recommendations
+
+- **Strong lead / Rokitno, Lubuskie:** 559,000 PLN for a 100 m² renovation house plus 10,100 m² total land on the edge of the village, with water, sewer, electricity and three-phase power; interesting because it combines 1 ha, full utilities, nearby forest and Lake Chycina 4 km away, but the split across two plots and lack of MPZP on the 7,700 m² field need checking. [Listing](https://www.olx.pl/d/oferta/siedlisko-1-ha-w-rokitnie-pelne-media-blisko-las-jezioro-woj-lubuskie-CID3-ID19cdqD.html)
+- **Strong lead / Kościuszki, Zachodniopomorskie:** 590,000 PLN for 2.44 ha siedliskowa land with WZ, ENEA promesa, asphalt/gravel access and lake 800 m away; good land quantum at ~24 PLN/m², but verify exact WZ parameters, buildable footprint, tree restrictions and whether the agency's “no clearing needed” claim is real. [Listing](https://www.olx.pl/d/oferta/zachodniopomorskie-siedlisko-dzialka-warunki-zabudowy-kosciuszki-CID3-ID16R4wv.html)
+- **Maybe / Rusinowo near Świdwin, Zachodniopomorskie:** 230,000 PLN for a 160 m² pre-war house to renovate on 5,048 m², with claimed privacy and distance from neighbours; cheap enough to inspect, but roof, damp, utilities, access and actual renovation burden are unknown. [Listing](https://adresowo.pl/o/dom-swidwin-rusinowo-160-m2-t2a7v2)
+- **Maybe / Stare Strącze near Sława, Lubuskie:** price not visible in extracted listing, but the asset is a 140 m² house for renovation on 3,800 m² with outbuildings, orchard, water, electricity and septic near Sława lake; worth tracking only if price is well below competing renovated stock, because land area is modest and one side fronts a main road. [Listing](https://adresowo.pl/o/dom-slawa-stare-stracze-140-m2-k6a7y4)
+- **Weak watch / Pogorzała near Świdnica, Dolnośląskie:** 34,900 PLN for 3,000 m² agricultural land at ~11.6 PLN/m², interesting only as a low-cost land-bank/speculative parcel; do not treat as a retreat lead until access, WZ/MPZP, soil class and buildability are confirmed. [Listing](https://adresowo.pl/o/dzialka-rolna-swidnica-pogorzala-3000-m2-v8z0x6)
+
+## Short evidence notes
+
+Searches covered Adresowo, OLX and one Otodom page via web search/result pages and direct listing extraction. OLX returned usable listing content for Rokitno and Kościuszki; two OLX results were gone/404. Otodom surfaced a Lubuskie house at 690,000 PLN on only 1,700 m², which is over the preferred budget/land profile and was rejected. Main diligence priorities for the top two: land registry/KW, WZ/MPZP, access rights, exact utility locations/capacity, wetland/flood/protected-area checks, and whether agricultural/forest classifications limit building or later resale.
