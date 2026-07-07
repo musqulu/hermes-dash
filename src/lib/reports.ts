@@ -77,6 +77,13 @@ const projectConfigs: ProjectConfig[] = [
     defaultDir: path.join(reportsRoot, "mac-studio-scout"),
   },
   {
+    id: "mac-studio-ultra",
+    name: "Mac Studio Ultra deals",
+    description: "Twice-daily actionable watch for high-RAM Apple Mac Studio Ultra machines in Poland for local LLM rigs.",
+    envVar: "HERMES_MAC_STUDIO_ULTRA_REPORTS_DIR",
+    defaultDir: path.join(reportsRoot, "mac-studio-ultra"),
+  },
+  {
     id: "home-ai-rig-scout",
     name: "Home AI rig scout",
     description: "Daily BUY/WATCH scouting for used GPU accelerators, 4-GPU workstations, and server parts for a local home AI rig in Poland/EU.",
