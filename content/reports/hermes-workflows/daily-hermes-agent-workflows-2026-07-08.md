@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: Circus Chief is a phone-friendly control plane for Claude Code, OpenAI Codex, and Gemini agents with Kanban-driven prompts, scheduled sessions, retries, and agent self-management. Source: https://github.com/ferrislucas/Circus-Chief
+  - Evidence: HN surfaced it on 2026-06-02; README says it supports OpenAI Codex agents and scheduled/template pipelines.
+- aharness turns Codex workflows into enforced state machines so long-running agents cannot skip gates, approvals, recovery rules, or evidence requirements. Source: https://github.com/Alfredvc/aharness
+  - Evidence: HN surfaced it on 2026-06-23; README describes typed submissions, validated transitions, and Codex compatibility.
+- Bamboo is a local-first Rust agent runtime with persistent memory, 22 built-in tools, skills, MCP, workflows, schedules, and one HTTP/SSE API. Source: https://github.com/bigduu/Bamboo-agent
+  - Evidence: GitHub search showed it updated 2026-07-07; README positions it as the local engine for assistants with memory and tooling.
+- Antigravity Telegram Suite shows a practical pattern for remote-controlling coding agents from Telegram, including model switching, workspace management, screenshots, and multi-agent workflows. Source: https://github.com/emreturkmencom/antigravity-telegram-suite
+  - Evidence: GitHub search showed it updated 2026-07-07; README focuses on headless chat and phone-based agent control.
+- Activepieces is worth testing as the automation layer around Hermes because it is an open-source Zapier alternative adding AI agents and hundreds of MCP-style integrations. Source: https://github.com/activepieces/activepieces
+  - Evidence: GitHub search showed it updated 2026-07-07 and describes AI workflow automation with many integrations.
+- OpenOutreach is a self-hosted AI outreach workflow where you describe a product and target market, then agents find LinkedIn leads and route email outreach. Source: https://github.com/eracle/OpenOutreach
+  - Evidence: README describes product-to-target-market lead discovery, profile scoring, LLM classification, and email outreach.
+- add_codexcli is a Claude Code skill that asks OpenAI Codex CLI for second opinions, context-aware reviews, and sub-agent implementation from inside an active coding session. Source: https://github.com/Yumeno/add_codexcli
+  - Evidence: README lists `/ask-codex`, `/ask-codex-with-context`, and `/codex-implement` commands.
+- BurnMeter gives a local-first usage and burn-rate dashboard for Claude Code and OpenAI Codex by reading existing session logs without API keys or cloud sync. Source: https://github.com/cihanatak/BurnMeter
+  - Evidence: GitHub search showed it updated 2026-07-07; README focuses on token usage, cost, rate-limit proximity, and per-project breakdowns.
+- MetaSearchMCP is a machine-readable metasearch MCP server for agent research pipelines, with provider fallback, deduplication, tags, HTTP API, and stdio MCP support. Source: https://github.com/gefsikatsinelou/MetaSearchMCP
+  - Evidence: GitHub search showed it updated 2026-07-07; README targets structured search for AI agents and LLM workflows.
+- Hermes Agent’s official learning path is the fastest source to map Konrad’s setup into CLI, Telegram bot, cron automation, skills, memory, and integrations. Source: https://hermes-agent.nousresearch.com/docs/getting-started/learning-path
+  - Evidence: Official docs page explicitly routes by use case across CLI assistant, Telegram/Discord bot, task automation, memory, cron, and skills.
