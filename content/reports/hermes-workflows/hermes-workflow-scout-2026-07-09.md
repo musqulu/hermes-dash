@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Instar is a close Hermes-adjacent pattern for persistent Claude Code agents with scheduling, sessions, memory, and Telegram control that is worth mining for UX and infrastructure ideas: [JKHeadley/instar](https://github.com/JKHeadley/instar)
+- Bagidea Office turns agents into a living desktop “AI office” with delegation, workflows, model swapping, voice, and Telegram/Discord/LINE channels that could inspire richer multi-agent presence and routing: [bagidea/bagidea-office](https://github.com/bagidea/bagidea-office)
+- Disp8ch is a self-hosted workspace where chat becomes visual workflows and reviewable multi-agent automations, useful as a reference for Hermes workflow/dashboard affordances: [aaronnat23/disp8ch](https://github.com/aaronnat23/disp8ch)
+- ADHDev is a self-hosted Agent Dashboard Hub for monitoring and controlling AI coding agents from one UI, directly relevant to Hermes Dash and multi-agent supervision: [vilmire/adhdev](https://github.com/vilmire/adhdev)
+- CCXRay provides a transparent HTTP proxy and dashboard for Claude Code sessions, a practical observability pattern Hermes could adapt for agent traces and debugging: [lis186/ccxray](https://github.com/lis186/ccxray)
+- ARIS packages lightweight Markdown-only skills for autonomous research loops, cross-model review, idea discovery, and experiment automation that map well onto Hermes skills plus cron scouts: [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)
+- Agent Orchestrator coordinates parallel coding agents and handles CI fixes, merge conflicts, and code reviews, making it a strong reference for Hermes worktree and kanban-style agent spawning: [AgentWrapper/agent-orchestrator](https://github.com/AgentWrapper/agent-orchestrator)
+- AnimaWorks frames “organization-as-code” with multi-model agents and memory that grows, consolidates, and forgets, useful for Hermes memory rollup and agent-organization experiments: [xuiltul/animaworks](https://github.com/xuiltul/animaworks)
+- AgencyCLI defines self-managing agent teams in Markdown/YAML with heartbeat scheduling, inbox messaging, delegation, and multi-agent autonomy across Claude Code, Codex, Gemini, and Cursor: [chenhg5/agencycli](https://github.com/chenhg5/agencycli)
+- Plur is a shared-memory layer for AI agents, worth checking for simple cross-agent memory primitives that could complement Hermes profiles and long-running workflows: [plur-ai/plur](https://github.com/plur-ai/plur)
