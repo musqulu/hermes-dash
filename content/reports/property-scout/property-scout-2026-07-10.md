@@ -1,0 +1,19 @@
+# Property scout — 2026-07-10
+
+## Linked recommendations
+
+- **Best / Włostów near Żary, Lubuskie:** 1.33 ha siedlisko-start land for 100,000 PLN (~75k PLN/ha, ~7.5 PLN/m²) with partial foundations and soil classes IV–V; cheap enough to justify a call, but legal/building-continuation status must be checked. [Listing](https://www.morizon.pl/oferta/sprzedaz-dzialka-zarski-zary-13300m2-mzn2047421862)
+- **Maybe / Gadom, Zachodniopomorskie:** 7,325 m² siedlisko for 249,000 PLN (~340k PLN/ha) with an 85 m² house in bad condition, asphalt access, electricity and water; demolition/remediation risk is real, but the land/buildings/private-seller angle is interesting. [Listing](https://www.otodom.pl/pl/oferta/dzialka-siedliskowa-0-73-ha-z-nieruchmoscia-85m2-ID4C3zU)
+- **Needs diligence / Żytowań-Gubin area, Lubuskie:** 1.3736 ha for 350,000 PLN (~255k PLN/ha, 25.48 PLN/m²) with issued WZ for a house and farm building plus two access roads; price is not dirt-cheap, so confirm WZ, road legality, utilities and exact plot shape before viewing. [Listing](https://www.olx.pl/d/oferta/dzialka-w-okolicach-gubina-woj-lubuskie-o-powierzchni-1-37-ha-z-wydanymi-warunkami-zabudowy-na-siedlisko-CID3-ID1bh6K4.html)
+- **Maybe / Siemczyno near Czaplinek, Zachodniopomorskie:** 7,500 m² with 269 m² house plus 400 m² outbuildings for 550,000 PLN (~733k PLN/ha land basis), near lakes/forests and usable for agro/stables, but conservation protection and renovation burden are major diligence points. [Listing](https://www.otodom.pl/pl/oferta/siedlisko-z-widokiem-na-staw-ID4tl76)
+- **Maybe / Karsno, Zachodniopomorskie:** isolated 232.4 m² brick/stone house for 310,000 PLN on only 1,795 m²; “no neighbours” and workshop potential are good, but small land, renovation, new well requirement and agency conditions weaken it. [Listing](https://www.otodom.pl/pl/oferta/dom-bez-sasiadow-ID4yLfL)
+- **Maybe / Górki, gm. Santok, Lubuskie:** 6,400 m² siedlisko plot for 270,000 PLN (~422k PLN/ha) on a slight rise with Warta view, asphalt access, water and electricity at the boundary; nice personal-use parcel, but not a bargain unless building rights are clean. [Listing](https://www.morizon.pl/oferta/sprzedaz-dzialka-gorzowski-santok-6400m2-mzn2046455585)
+- **Weak but scenic / Kwieciszowice, Dolnośląskie:** 120 m² house for renovation at 579,000 PLN on just 1,400 m² near Izery with stream/orchard character; lifestyle location is strong, but land size is below target and price leaves little margin. [Listing](https://www.otodom.pl/pl/oferta/dom-przy-strumyku-na-pogorzu-izerskim-ID4Bg1J)
+
+## Short evidence notes
+
+Searches focused on Lubuskie, Zachodniopomorskie and Dolnośląskie siedlisko/house-with-land queries. OLX/Otodom pages were usable through their public listing metadata; Morizon listing pages exposed structured descriptions and prices. I filtered out visibly overpriced/large commercial offers and anything far above the ~600k PLN house-with-land target unless useful as a reference. The best asymmetric lead today is Włostów because 1.33 ha at ~7.5 PLN/m² is unusually cheap for land with an indicated siedlisko start, but the partial foundations could be either leverage or a legal/technical liability.
+
+## Immediate diligence questions
+
+For Włostów: ask for plot number, KW, whether the old building permit/WZ is still valid, what exactly was built, whether construction was legally started and logged, road access type, utilities, and whether the 1.33 ha parcel can be bought alone. For Gadom and Siemczyno: request roof/wall/foundation photos, utility confirmations, septic/sewage details, conservation/protection status, and realistic cleanup costs. For Żytowań: request the WZ decision PDF, map with access roads, utility distances and any agricultural-use restrictions.
