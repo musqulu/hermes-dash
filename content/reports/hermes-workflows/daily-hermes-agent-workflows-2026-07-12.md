@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: Obsidian Second Brain turns an Obsidian vault into a cross-CLI knowledge/workflow layer for Hermes, Codex, Claude Code, Gemini, OpenCode, and scheduled agents. https://github.com/eugeniughelbur/obsidian-second-brain
+  - Evidence: active July 2026 repo, 3k+ stars, 44 commands, local/hybrid search, web research, and scheduled vault-maintenance agents.
+- Hasharot is a self-hosted Telegram control surface for running a real Claude Code agent on your machine with text, voice, files, bash, coding, and team access. https://github.com/Mamasodikov/hasharot
+  - Evidence: active July 2026 repo with architecture, quick start, commands, team workflow, configuration, and memory sections.
+- Hermes Autonomous Dev Kit packages practical Hermes commands like `hb`, `hb-auto`, `hb-prod`, `hb doctor`, and `hb audit` for daily autonomous development and safer production flows. https://github.com/rianprei/hermes-autonomous-dev
+  - Evidence: active July 2026 repo focused on native Hermes mechanisms, project boundaries, audit summaries, and environment checks.
+- Tagteam runs headless coding agents such as Claude, Codex, and Gemini as supervisor, worker, relay, solo, or adversarial-review workflows with inspectable artifacts. https://github.com/cephalopod-ai/tagteam
+  - Evidence: active July 2026 Go CLI designed for logged-in local coding-agent CLIs and review/implementation loops.
+- agentsmd adds Codex CLI hooks and an AGENTS.md discipline layer so coding agents classify work, check authorization, execute, validate, and report with fresh evidence. https://github.com/sdsrss/agentsmd
+  - Evidence: active July 2026 repo with Codex marketplace install commands, safety checks, telemetry, and project-aware instruction tools.
+- create-ai-native-project scaffolds AI-native repos with AGENTS.md or CLAUDE.md, reusable skills/agents, stack boilerplate, Docker, and CI for Codex, Claude Code, and OpenCode. https://github.com/GeekyAnts/create-ai-native-project
+  - Evidence: active July 2026 CLI with `npm create ai-native-project` and `npx create-ai-native-project --boot my-app` usage.
+- Telman is a Telegram messaging toolkit with CLI plus local and remote MCP servers for letting agents send messages from terminal, MCP clients, or automation scripts. https://github.com/ubeyidah/telman
+  - Evidence: active July 2026 repo with core schemas, CLI, local stdio MCP server, and remote HTTP MCP server packages.
+- Send16 MCP gives agents 79 tools for transactional and marketing email, contacts, automations, webhooks, and a zero-DNS sandbox sender. https://github.com/spruikco/send16-mcp
+  - Evidence: active July 2026 repo with `npx send16-mcp` quick start and Claude Desktop/Claude Code configuration examples.
+- Verbatim is an AI agent pattern for auditing Google Docs marketing copy against brand guidelines and campaign briefs with inline comments and suggested edits. https://github.com/hirekarl/verbatim
+  - Evidence: active July 2026 repo with overview, design notes, current sprint, setup, and Google Docs copy-review workflow.
+- Dustin Felderhoff’s AI job-search agent is a concrete Hermes Agent system for discovery, company research, tailored materials, form filling, and outcome tracking with cron and MCP tools. https://github.com/DustinFelderhoff/ai-job-search-agent
+  - Evidence: active July 2026 repo describing Hermes Agent, self-healing cron jobs, kanban orchestration, and end-to-end personal-operator workflow.
