@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: `managed-agents` is a local-first runtime layer with sessions, tools, approvals, sandboxing, memory, credential vaults, audit trails, replayable events, and an operational dashboard that maps closely to production Hermes needs: https://github.com/sandbaseai/managed-agents
+- `agentdeck` is a mobile-first dashboard for monitoring and steering coding-agent CLI sessions, including live/idle lists, transcript viewing, usage bars, SSE updates, and message injection: https://github.com/eerovil/agentdeck
+- `leash` is a one-command agent-fleet watchdog focused on overnight runs, costs, loops, dead crons, failing workflows, a live dashboard, and Discord alerts: https://github.com/VicKayro/leash
+- `session-briefing` is a lightweight continuity pattern for pairing AGENTS.md/CLAUDE.md with timestamped project briefings and cross-project rollups so agents start with current state instead of stale context: https://github.com/CaptCanadaMan/session-briefing
+- `routine-scheduler` is a self-hosted scheduled-agent ops console with provider-agnostic routines, cron execution, live conversation watching, mid-run intervention, git-backed routine repos, and reflection passes: https://github.com/wehnsdaefflae/routine-scheduler
+- `fleet-scheduler` moves agent fleet timing from flaky GitHub cron to a Cloudflare Worker that dispatches workflows at exact minutes while keeping GitHub schedules as deduped backups: https://github.com/astroboy1183/fleet-scheduler
+- `agent-workflow-template` is a minimal TOML-plus-runner skeleton for scheduled Claude workflows that render prompts, call a model, and write date-stamped Markdown outputs: https://github.com/DJBruhhhh/agent-workflow-template
+- `frontend-visualqa` gives coding agents a reusable visual verification loop for localhost frontend claims, screenshot capture, and QA checks instead of relying only on textual tests: https://github.com/yutori-ai/frontend-visualqa
+- `autonomous-agentic-research-swarm` demonstrates repo-as-shared-memory coordination with operator/planner/worker/judge roles, contracts, workstreams, manifests, review gates, and git-scoped isolation: https://github.com/AysajanE/autonomous-agentic-research-swarm
+- `Multi-Agent-Document-Generation` is a concrete n8n workflow where Telegram requests fan out through research/create/update agents to produce and update Google Docs with memory and web search: https://github.com/Ponmathi-R/Multi-Agent-Document-Generation
