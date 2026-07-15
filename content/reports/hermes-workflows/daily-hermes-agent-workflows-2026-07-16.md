@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: OtoDock is a self-hosted platform for running Claude Code and Codex as a coordinated agent team on your own server and existing subscriptions. https://github.com/OtoDock/oto-dock/
+  - Evidence: updated 2026-07-15; README says it runs Claude Code and Codex as a team with real tools and security.
+- Hasharot is a Telegram-controlled Claude Code agent for running code, shell commands, voice, files, and multi-user access from your phone. https://github.com/Mamasodikov/hasharot
+  - Evidence: HN surfaced it on 2026-07-11; repo README emphasizes self-hosted Telegram control of a real local coding agent.
+- Trustcard is an “npm audit for MCP servers” that scores MCP servers before connecting them to an agent. https://github.com/davidnichols-ops/trustcard
+  - Evidence: HN surfaced it on 2026-07-15; README includes `npx mcp-trustcard @modelcontextprotocol/server-github`.
+- GTM Skills gives Claude Code 206 production-ready sales, outbound, ABM, PLG, customer-success, analytics, and automation skills with templates and validation scripts. https://github.com/LeadMagic/gtm-skills
+  - Evidence: updated 2026-07-14; README includes plugin install commands and describes portable `SKILL.md` folders.
+- send16-mcp exposes 79 transactional and marketing email tools to MCP clients, including a zero-DNS sandbox sender for quick agent-driven email tests. https://github.com/spruikco/send16-mcp
+  - Evidence: updated 2026-07-12; README shows `npx send16-mcp` and mentions contact, automation, webhook, and email tools.
+- Ada is a production-style Telegram personal assistant with reminders, habits, notes, journal/projects, daily digest, e-ink dashboard, and an MCP server for the same tools. https://github.com/WhiteDotz/ada
+  - Evidence: updated 2026-07-11; README says it is a sanitized snapshot of a 24/7 headless Debian home-server assistant.
+- Mnemosyne is a SQLite-backed, zero-dependency memory layer positioned for Hermes Agents and other local AI assistants. https://github.com/mnemosyne-oss/mnemosyne
+  - Evidence: updated 2026-07-15; repo has strong traction and README describes sub-millisecond AI memory.
+- agents-cli is a CLI toolchain for running coding agents in parallel teams with browser driving, Touch ID secrets, and reusable routines. https://github.com/phnx-labs/agents-cli
+  - Evidence: updated 2026-07-15; description targets CLI coding-agent orchestration across subscriptions.
+- workflow-mcp turns dynamic workflow files into a durable, resumable MCP server so different agent providers can execute the same workflow runtime. https://github.com/Juliusolsson05/workflow-mcp
+  - Evidence: updated 2026-07-15; README describes a Claude-compatible dynamic workflow runtime over MCP.
+- Hermes Agent’s main repo remains the core reference to watch for Nous Research Hermes setup, docs, Desktop, and extension patterns. https://github.com/NousResearch/hermes-agent
+  - Evidence: updated 2026-07-15; README links directly to the official Hermes Agent documentation.
