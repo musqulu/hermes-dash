@@ -1,0 +1,18 @@
+# Property scout — 2026-07-15
+
+## Linked recommendations
+
+- **Strong lead / Borów Wielki, Lubuskie:** small 55 m² house plus usable outbuildings on 3,292 m² for 180,000 PLN (~54.68 PLN/m² land), interesting because it is cheap, has a barn/workshop angle, and sits 15 min from Nowa Sól / 35 min from Zielona Góra; utilities/legal status need confirmation. [Listing](https://www.otodom.pl/pl/oferta/nieruchomosc-z-duza-dzialka-w-borowie-wielkim-ID4Brmh)
+- **Strong lead / Długie, Lubuskie:** pre-war 95 m² house on 6,100 m² for 314,000 PLN (~51.48 PLN/m² land), with asphalt access, water, electricity, sewerage and internet stated; strongest land-to-price ratio today, but check roof/damp and whether the “semi-detached” status affects privacy. [Listing](https://www.otodom.pl/pl/oferta/przedwojenny-dom-wsrod-szumu-stuletnich-debow-ID4BQg2)
+- **Maybe / Brody, Lubuskie:** 226 m² house to renovate on 3,300 m² for 330,000 PLN (~100 PLN/m² land), private sale with public-road access, water, electricity and septic stated; conservation-zone wording is the main diligence point. [Listing](https://www.otodom.pl/pl/oferta/magiczna-posiadlosc-w-brodach-ID4ATDw)
+- **Maybe / Zagórzyce, Dolnośląskie:** 3,700 m² building plot for 199,800 PLN (~54 PLN/m²), with water, electricity, septic, asphalt/hardened access and forest/lake surroundings stated; attractive for a modest private build but MPZP/WZ and exact buildable area must be checked. [Listing](https://www.otodom.pl/pl/oferta/dzialka-budowlana-wlasny-park-10-min-od-miasta-ID4yfop)
+- **Needs diligence / Młynica near Ślęża, Dolnośląskie:** 4,100 m² built agricultural/investment parcel with barn/hall for 444,000 PLN (~108 PLN/m²), fenced, asphalt access, water/electricity/septic and own water source stated; price is not cheap, but the Ślężański Park Krajobrazowy angle and buildings may justify a call if planning restrictions are workable. [Listing](https://www.otodom.pl/pl/oferta/dzialka-rolna-zabudowana-inwestycyjna-z-obora-hala-piekna-okolica-ID4APCn)
+- **Maybe / Bagno, Dolnośląskie:** 3,800 m² building plot with forest edge and MPZP claimed for 399,000 PLN (~105 PLN/m²), near rail access to Wrocław; good lifestyle/resale location, but expensive versus land-only utility and utilities were not clearly stated. [Listing](https://www.otodom.pl/pl/oferta/obnizona-cena-dzialka-budowlana-z-lasem-czeka-na-ciebie-ID4vJJk)
+
+## Short evidence and diligence notes
+
+Today’s best buyer-side value is **Borów Wielki** if the buildings are legal and utilities are functional: 180k PLN for a house + barn/workshop + 0.33 ha is unusually low enough to absorb some renovation risk. **Długie** is the cleaner land/value candidate: 0.61 ha with media and year-round access stated, but “bliźniak” means privacy and shared-boundary issues need checking before emotional engagement.
+
+Ask every seller for: KW number, cadastral plot number, MPZP/WZ status, land classes, building permits/usage status for outbuildings, utility invoices/connection confirmations, septic/sewer documentation, roof age, damp/foundation issues, heating condition, and whether access is direct public road or easement. For Brody, ask the gmina/conservator exactly what the conservation zone restricts. For Młynica, confirm Park Krajobrazowy limitations, flood/drainage risk, and whether commercial/retreat use is allowed.
+
+Negotiation posture: open with document requests, not price excitement. If roof/damp/legal gaps appear, Borów and Brody should be negotiated hard; Długie is worth a viewing if documents are clean; land-only plots should not be chased unless MPZP confirms the intended build/use.
