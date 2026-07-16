@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: Brigade gives Hermes/OpenClaw/Codex workspaces a local control plane for shared MCP catalogs, memory handoffs, verification receipts, and promotion based on real exit codes. https://github.com/escoffier-labs/brigade
+  - Evidence: updated 2026-07-16; README includes `brigade operator quickstart --target ~/agent-workspace --depth workspace --harnesses openclaw,hermes`.
+- Hermes Production Patterns is a practical collection of hardened conventions for reliable Hermes skills, cron jobs, maker/checker loops, state handling, and error discipline. https://github.com/Komagon/hermes-production-patterns
+  - Evidence: updated 2026-07-16; README says the patterns were tested in 7×24 production Hermes runs.
+- hermes-docs-mcp turns the official Hermes docs into a local SQLite FTS5 MCP server so an agent can search setup, config, skills, cron, and tool docs without scraping. https://github.com/stephenschoettler/hermes-docs-mcp
+  - Evidence: updated 2026-07-16; README includes Hermes profile YAML for wiring the MCP server.
+- Iva is a self-hosted Telegram assistant with voice, vision, layered Obsidian-compatible memory, tasks, reminders, web search providers, Google Workspace, skills, and MCP. https://github.com/smixs/iva
+  - Evidence: updated 2026-07-16; README has a one-line installer and a clear Telegram-first life-ops architecture.
+- Telegram MCP is a bidirectional bridge that lets any MCP-compatible agent pull Telegram messages and push replies or notifications without putting an LLM in the middle. https://github.com/globalion/telegram-mcp
+  - Evidence: updated 2026-07-14; README documents hosted and Docker self-host setup plus `get_new_messages` and `send_telegram_message` tools.
+- Muninn is a local-first multi-bot Telegram/Slack/web assistant platform with semantic memory, goals, scheduled tasks, proactive watchers, voice, MCP debugging, and a dashboard. https://github.com/RuneLind/muninn
+  - Evidence: updated 2026-07-16; README shows Claude CLI, Copilot SDK, Ollama, pgvector memory, watchers, and MCP tool tracing.
+- aharness makes Codex workflows executable with typed gates, validated evidence, approval states, repair paths, logs, and per-state model choices. https://github.com/Alfredvc/aharness
+  - Evidence: updated 2026-07-15; README positions it for long-running Codex work where prompts alone drift.
+- Octopus LinkedIn exposes a governed MCP workflow for LinkedIn draft, review, approval, publishing, comment triage, A/B variants, repurposing, and engagement reads. https://github.com/octoryn/octopus-linkedin
+  - Evidence: updated 2026-07-15; README defaults to draft-review-publish gates and disables direct outbound tools unless explicitly enabled.
+- Fluxito gives MCP clients a marketing-analytics operations layer for tracking plans, GTM/GA4 implementation, audits, ad-platform actions, dashboards, and scheduled reports. https://github.com/digitalXperiments/fluxito
+  - Evidence: updated 2026-07-14; README lists 27 platforms, live tag audits, campaign write operations, and MCP/skills support.
+- Cybara is a self-hosted agent runtime with web/TUI/desktop interfaces, persisted workspaces, approvals, MCP support, browser automation, channel adapters, and local operator control. https://github.com/metaspartan/cybara
+  - Evidence: HN surfaced it on 2026-07-16; README includes quick install commands and screenshots for coding/operator workflows.
