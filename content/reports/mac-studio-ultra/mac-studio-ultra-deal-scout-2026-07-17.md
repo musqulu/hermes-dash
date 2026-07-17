@@ -4,7 +4,7 @@ Date: 2026-07-17
 
 ## Candidates
 
-- **WATCH (best current lead; verify before moving money):** [Mac Studio M3 Ultra 28C/60C GPU 96GB RAM 2TB SSD – gwarancja do 2027](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-28c-60c-gpu-96gb-ram-2tb-ssd-gwarancja-do-2027-CID99-ID1bsKIs.html) — 22,000 PLN, OLX, Białystok Centrum; claimed M3 Ultra / 96 GB RAM / 2 TB SSD / 60-core GPU, new, official Polish distribution, purchased 10 Jul 2026, Apple warranty to 9 Jul 2027, private seller Robert (OLX since Jan 2013, no rating, last online 15 Jul), pickup in Białystok or courier, no public phone visible after normal page interaction/login prompt, contact via OLX platform message; ask for serial/warranty screenshot, invoice/proof of purchase, exact config screenshot, and in-person test/pickup.
+- **WATCH (best current lead; verify before moving money):** [Mac Studio M3 Ultra 28C/60C GPU 96GB RAM 2TB SSD – gwarancja do 2027](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-28c-60c-gpu-96gb-ram-2tb-ssd-gwarancja-do-2027-CID99-ID1bsKIs.html) — 22,000 PLN, OLX, Białystok Centrum; claimed M3 Ultra / 96 GB RAM / 2 TB SSD / 60-core GPU, new, official Polish distribution, purchased 10 Jul 2026, Apple warranty to 9 Jul 2027, serial claimed visible in photos, private seller Robert (OLX since Jan 2013, no rating, last online 15 Jul), pickup in Białystok or courier, available for pickup from 21 Jul, no public phone visible after normal page interaction/login prompt, contact via OLX platform message; ask for serial/warranty screenshot, invoice/proof of purchase, exact config screenshot, and in-person test/pickup.
 - **IGNORE (high-RAM Ultra claim but non-actionable price):** [apple mac studio m3 ultra 512GB RAM! 80gpu 40cpu 16tb ssd](https://www.olx.pl/d/oferta/apple-mac-studio-m3-ultra-512gb-ram-80gpu-40cpu-16tb-ssd-CID99-ID1bkFnk.html) — 200,000 PLN, OLX, Warszawa Śródmieście; claimed M3 Ultra / 512 GB RAM / 16 TB SSD / 80-core GPU, used, contact via OLX platform message; useful only as an extreme high-RAM asking-price comp.
 - **IGNORE (not Ultra / 64 GB comp only):** [Apple Mac Studio M4 Max 16C CPU 40C GPU 64GB RAM 512GB SSD - nowy](https://www.olx.pl/d/oferta/apple-mac-studio-m4-max-16c-cpu-40c-gpu-64gb-ram-512gb-ssd-nowy-CID99-ID1boQyZ.html) — 15,000 PLN negotiable, OLX, Szczecinek; M4 Max 64 GB / 512 GB, new, not Ultra and below ideal RAM target, included only as a modern Max comp.
 - **IGNORE (not Ultra / 64 GB comp only):** [Apple Mac Studio M2 Max SSD 1Tb / RAM 64Gb, GPU 38 cores, Sequoia 15.5](https://www.olx.pl/d/oferta/apple-mac-studio-m2-max-ssd-1tb-ram-64gb-gpu-38-cores-sequoia-15-5-CID99-ID16fGm1.html) — 8,000 PLN negotiable, OLX, Świnoujście; M2 Max 64 GB / 1 TB, not Ultra, contact via OLX platform message.
@@ -13,14 +13,14 @@ Date: 2026-07-17
 
 ## Price-history notes
 
-- **M3 Ultra / 96 GB / 2 TB:** current OLX lead remains 22,000 PLN; interesting because Ultra inventory is thin and it is below retail, but still a WATCH rather than BUY until serial, proof of purchase, Apple warranty, and safe pickup/test are verified.
+- **M3 Ultra / 96 GB / 2 TB:** current OLX lead remains 22,000 PLN and was refreshed today; interesting because Ultra inventory is thin and it is below retail, but still a WATCH rather than BUY until serial, proof of purchase, Apple warranty, and safe pickup/test are verified.
 - **M3 Ultra / 512 GB / 16 TB:** visible asking comp remains 200,000 PLN, not actionable.
 - **M2 Ultra / 64 GB / 1 TB:** recent public band in earlier runs was roughly 13,500–14,500 PLN, but no live M2 Ultra listing surfaced today; 64 GB remains only a comp for local LLM rigs.
 - **128 GB+ Ultra:** no credible public 128 GB+ Ultra listing surfaced today.
 
 ## Source coverage
 
-- OLX Poland checked first for Mac Studio Ultra / M1 Ultra / M2 Ultra plus broader Mac Studio high-RAM comps; one credible 96 GB M3 Ultra WATCH lead surfaced, plus non-actionable comps.
-- Allegro main checked second for Mac Studio Ultra / M1 Ultra / M2 Ultra; direct browsing hit a DataDome CAPTCHA, so no current Allegro main offer could be credibly verified this run.
+- OLX Poland checked first for Mac Studio Ultra / M1 Ultra / M2 Ultra plus broader Mac Studio high-RAM comps; one credible 96 GB M3 Ultra WATCH lead surfaced, refreshed today, plus non-actionable comps.
+- Allegro main checked second for Mac Studio Ultra / M1 Ultra / M2 Ultra; direct browsing and a plain HTTP fetch hit DataDome/403 blocking, so no current Allegro main offer could be credibly verified this run.
 - Allegro Lokalnie checked separately for Mac Studio Ultra / M1 Ultra / M2 Ultra and broader Mac Studio; Ultra-specific searches showed no relevant Mac Studio Ultra offers, while broader search showed only non-Ultra Max comps.
 - Facebook Marketplace public search was checked for accessibility; Marketplace remained login/cookie-gated and was not bypassed.
