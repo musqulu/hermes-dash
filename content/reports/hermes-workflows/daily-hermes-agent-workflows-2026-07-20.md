@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: Hermes Agent’s main repo is the most directly relevant reminder to wire Telegram, cron, memory, subagents, and provider switching into one personal operator stack. Source: https://github.com/NousResearch/hermes-agent
+  - Evidence: updated 2026-07-19; README highlights Telegram/Slack/WhatsApp gateways, scheduled automations, self-improving skills, memory, subagents, and cloud/serverless terminal backends.
+- `telegram-mcp` gives MCP clients full Telegram user-account tooling for reading/searching chats, sending messages, files, groups, contacts, and permission-gated writes. Source: https://github.com/naim30/telegram-mcp
+  - Evidence: created/updated this week; README documents 44 tools across 7 domains, MTProto login, read/write hints, and prompt-injection sanitation.
+- `cursor-chat-bridge` lets a coding agent keep working while you reply from Telegram, Discord, or GitHub Issues, which is useful for phone-driven shipping loops. Source: https://github.com/udah1/cursor-chat-bridge
+  - Evidence: README shows per-session chat threads, summaries after each agent turn, waiting for reply, then auto-continuing.
+- `bender` is a self-hosted personal assistant pattern combining Telegram, markdown wiki, Things-style tasks, cron reminders, long-term memory, self-authored skills, and subagents. Source: https://github.com/0717376/bender
+  - Evidence: README includes FastAPI backend, Telegram bot, scheduler run history, wiki/tasks tools, background reviewer, and researcher/librarian subagents.
+- GitHub’s Agentic Workflows workshop is a practical end-to-end guide for building scheduled repository status reports and other auditable agent workflows in GitHub Actions. Source: https://github.com/githubnext/gh-aw-workshop
+  - Evidence: HN surfaced it this week; README teaches Markdown workflow definitions, `gh-aw` validation/runs, triggers, prompts, and GitHub context.
+- OtoDock packages Claude Code and Codex as a self-hosted team of agents with dashboard, schedules, triggers, memory, documents, meetings, and shared-server security. Source: https://github.com/OtoDock/oto-dock/
+  - Evidence: HN surfaced it this week; README says it runs the real Claude Code and Codex CLIs on controlled infrastructure.
+- `ai-template` is a concrete idea-to-PRD-to-spec-to-task-to-agent-execution workflow template for making coding agents more predictable on product work. Source: https://github.com/nazarovsa/ai-template
+  - Evidence: README lays out an `ai-flow/` project structure, command reference, orchestrator internals, GitHub Actions execution, and Serena memory integration.
+- `telegram_ads_mcp` is a niche but practical MCP server for letting agents inspect and manage Telegram Ads campaigns with dry-run safeguards before spend-changing actions. Source: https://github.com/Free-cat/telegram_ads_mcp
+  - Evidence: README documents Playwright-based ads.telegram.org automation for accounts, ads, stats, budgets, CPM, status, and creation/update flows.
+- `coding-agent-skill-library` offers a portable 113-skill library plus optional Neo4j GraphRAG/MCP stack for routing coding agents to reusable operating procedures. Source: https://github.com/mmccalla/coding-agent-skill-library
+  - Evidence: README lists drop-in bootstrap docs, Cursor/MCP setup, skill routing runbooks, evaluations, and local Docker stack.
+- Skillscript is a constrained, reviewable workflow language/runtime for agents to author recurring automations without unrestricted shell access. Source: https://github.com/sshwarts/skillscript
+  - Evidence: HN surfaced it recently; README positions it as agent-authored skills with human review, connectors, allowlists, policies, dashboard, and MCP endpoint.
