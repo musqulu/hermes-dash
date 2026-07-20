@@ -1,0 +1,22 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: Hermes Atlas is a community-curated directory of Hermes Agent tools, skills, plugins, deployment templates, and integrations worth mining before building your own setup: https://github.com/ksimback/hermes-ecosystem
+  - Evidence: README says it maps 80+ quality-filtered repos across 12 categories and includes a RAG-powered “Ask the Atlas”.
+- Draft’s Hermes plugin connects a Hermes session to a Foundry/Draft workspace so an agent can see a ticket queue and pick up implementation work like a practical product-building operator: https://github.com/foundryworks-dev/foundry-draft-hermes-plugin
+  - Evidence: README maps the same queue workflow to Hermes, Claude Code, and Codex plugin patterns.
+- Codex Telegram Bot turns OpenAI Codex CLI into a mobile coding assistant with project switching, resumed sessions, streamed diffs, queued follow-ups, MCP, and 24/7 service mode: https://github.com/artickc/codex-telegram-bot
+  - Evidence: README describes driving `codex app-server` JSON-RPC from Telegram across Windows, Linux, and macOS.
+- WezBridge is a headless MCP bridge for orchestrating multiple Claude Code or Codex sessions in WezTerm panes, with optional Telegram remote control and agent-to-agent messaging: https://github.com/wolverin0/wezbridge
+  - Evidence: README lists tools for discovering sessions, reading output, sending prompts, spawning panes, auto-handoff, and A2A messages.
+- mcp-telegram gives Codex, Claude Code, Cursor, Cline, and other MCP clients access to a real Telegram account for reading, searching, sending, moderation, stories, contacts, folders, and voice transcription: https://github.com/beautyfree/mcp-telegram
+  - Evidence: README claims 100+ MTProto tools and browser-based local sign-in, with sessions stored locally.
+- OpenCrow is a self-hosted multi-agent platform across Telegram, WhatsApp, and web with cron scheduling, vector memory, autonomous scrapers, and agents that can deploy code or monitor processes: https://github.com/gokhantos/opencrow
+  - Evidence: README highlights 100+ tools, 15 scrapers, scheduled idea generation, and isolated child-process supervision.
+- Hope Agent is a local-first desktop personal AI agent with memory, tool use, autonomous goal progression, and service mode for always-on cross-device assistance: https://github.com/shiwenwen/hope-agent
+  - Evidence: README positions it as a desktop-first agent that can keep advancing goals after you leave.
+- send16-mcp exposes transactional and marketing email through MCP with 79 tools for contacts, audiences, automations, templates, inbox, suppressions, webhooks, and a zero-DNS sandbox sender: https://github.com/spruikco/send16-mcp
+  - Evidence: README says agents can send a first real delivered email in seconds via `npx send16-mcp`.
+- Octopus LinkedIn provides a governed MCP workflow for LinkedIn marketing where agents draft, review, publish, comment, repurpose articles, and reply without bypassing approval gates: https://github.com/octoryn/octopus-linkedin
+  - Evidence: README emphasizes official LinkedIn API usage, draft-review-publish controls, prompts, and resources.
+- OtoDock is a self-hosted dashboard for running Claude Code and Codex as a team of company agents on your own server and existing subscriptions: https://github.com/OtoDock/oto-dock
+  - Evidence: README says it wraps the real CLIs with collaboration, tools, and security for team agent work.
