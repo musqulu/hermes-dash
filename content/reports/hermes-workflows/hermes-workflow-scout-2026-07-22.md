@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- Meltbox is a fresh “agents send you briefs” inbox pattern worth studying for proactive Hermes cron outputs and user-facing digest delivery: [meltbox.ai](https://meltbox.ai/)
+- Jaybase is an append-only fact store for AI business workflows that maps well to auditable agent memory, event logs, and rollup trails: [github.com/kyle-visner/jaybase](https://github.com/kyle-visner/jaybase)
+- JetBrains Context shows a repository-intelligence layer for coding agents that could inspire Hermes project context indexing and retrieval: [blog.jetbrains.com/ai/2026/07/introducing-jetbrains-context-repository-intelligence-for-coding-agents/](https://blog.jetbrains.com/ai/2026/07/introducing-jetbrains-context-repository-intelligence-for-coding-agents/)
+- Wolbarg argues for local-first shared agent memory on SQLite, a practical fit for Hermes profile memory, rollups, and multi-agent state sharing: [wolbarg.com/blog/why-sqlite-is-enough-for-local-ai-agent-memory](https://wolbarg.com/blog/why-sqlite-is-enough-for-local-ai-agent-memory)
+- OtoDock runs Claude Code and Codex as a team of agents on a server, useful as a reference for durable multi-agent coding orchestration: [github.com/OtoDock/oto-dock](https://github.com/OtoDock/oto-dock/)
+- gpt-workflow ports Claude Code-style workflows to GPT/Codex, with reusable prompt/process conventions for Hermes coding skills: [github.com/cyrusNuevoDia/gpt-workflow](https://github.com/cyrusNuevoDia/gpt-workflow)
+- Quickchat’s Telegram agent guide is a concrete pattern for group moderation actions like announce, pin, and moderate that Hermes gateway agents could emulate: [quickchat.ai/post/connect-ai-agent-to-telegram-bot-api](https://quickchat.ai/post/connect-ai-agent-to-telegram-bot-api)
+- Relaymux is a tmux-based meta-harness for local coding agents, directly relevant to Hermes spawned-agent supervision and pane-based progress capture: [github.com/mupt-ai/relaymux](https://github.com/mupt-ai/relaymux)
+- Batty runs a team of AI coding agents in tmux with test gating, a useful model for Hermes worktree agents that must prove changes before handoff: [github.com/battysh/batty](https://github.com/battysh/batty)
+- DAAO packages server-deployed agents behind zero-trust tunnels, relevant to persistent Hermes workers exposed safely without opening direct infrastructure: [github.com/daao-platform/daao](https://github.com/daao-platform/daao)
