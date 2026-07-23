@@ -1,0 +1,12 @@
+# Hermes/agent workflows worth opening today
+
+- 🔥 Best: `telegram-agent` gives Codex CLI, Claude Code, Cursor, Gemini CLI and other coding agents a lazy-loaded Telegram skill for catching up on chats, drafting replies, working with media and monitoring conversations. Source: https://github.com/beautyfree/telegram-agent
+- `fleet` turns a Telegram supergroup into a command center for multiple Claude Code and Codex agents, with each agent running in its own group topic. Source: https://github.com/sand0vvv/fleet
+- `HereAssistant` is a privacy-first Telegram bridge to local CLI coding agents including Claude Code, Codex CLI, Gemini CLI and Qwen Code, useful for shipping from a phone without exposing private project logs by default. Source: https://github.com/Creative-Agency-Here/HereAssistant
+- `adrex-ai` is an open-source MCP server with 54 Google Ads tools so an AI agent can inspect, report on and manage campaigns from Claude, Cursor, Codex or another MCP client. Source: https://github.com/adrex-ai/adrex-ai
+- `send16-mcp` exposes 79 email, contact, audience, automation, template and webhook tools over MCP, including a zero-DNS sandbox sender for testing agent-run marketing email flows. Source: https://github.com/spruikco/send16-mcp
+- `sprout-mcp-server` adds 28 Sprout Social MCP tools for analytics, publishing, listening, messages and case management across social channels. Source: https://github.com/oliverames/sprout-mcp-server
+- `delimit-mcp-server` acts as a merge gate for AI-written code, wrapping Claude Code, Codex, Cursor or Gemini CLI with checks, replayable receipts and signed merge attestation. Source: https://github.com/delimit-ai/delimit-mcp-server
+- `argus` supervises multi-agent coding work with git worktrees, typed worker status files and real `git diff` verification instead of trusting agent self-reports. Source: https://github.com/Elysium-Labs-EU/argus
+- Trigger.dev is a mature open-source workflow platform now positioning around deployed AI agents, useful for durable scheduled jobs, webhooks and production automations around agent tasks. Source: https://github.com/triggerdotdev/trigger.dev
+- `hermes-multiuser-web-service` shows a self-hosted multi-tenant chat UI on top of Nous Research Hermes Agent with per-user accounts, API keys, quotas, isolated memory and sandboxed file tools. Source: https://github.com/SeerBench/hermes-multiuser-web-service
