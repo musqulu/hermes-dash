@@ -1,0 +1,18 @@
+# Property scout — 2026-07-25
+
+## Linked recommendations
+
+- **Best / needs diligence — Bronikowo, Zachodniopomorskie:** 290,000 PLN for a 100 m² house on 10,300 m² near lake/forest is the cleanest asymmetric land-price lead today (~28 PLN/m² land; ~282k PLN/ha), with asphalt/utwardzony access and water, electricity, septic stated, but KW/MPZP/WZ, building condition proof, and exact remoteness need checking. [Listing](https://www.otodom.pl/pl/oferta/na-sprzedaz-siedlisko-1-03-ha-bronikowo-ID4BHeF)
+- **Strong land/retreat lead — unnamed Dolnośląskie listing near S5:** 349,999 PLN for 13,800 m² with a 75 m² unfinished building and large pond is unusually cheap per land area (~25 PLN/m²; ~254k PLN/ha), but only electricity is stated and pond/wetland legality, water/sewage, access, MPZP/WZ, and flood/drainage risk are deal-critical. [Listing](https://www.otodom.pl/pl/oferta/13-800-m-z-budynkiem-i-duzym-stawem-spokojna-okolica-6-km-od-s5-ID4Bj63)
+- **Maybe / lifestyle lead — Gubinek near Gubin, Lubuskie:** 549,000 PLN private sale for 81 m² on 8,300 m² with WZ mentioned, forest setting, asphalt access, water, electricity, phone/internet and septic is attractive if the WZ is real and transferable; at ~66 PLN/m² land it is not a steal but has good autonomy potential. [Listing](https://www.otodom.pl/pl/oferta/sielski-dom-z-dusza-pod-gubinem-0-83ha-potencjalu-z-warunkami-zabudowy-ID4AlSJ)
+- **Maybe / water-and-forest lead — Zachodniopomorskie log house with pond:** 549,000 PLN for 70 m² on 6,861 m² with own pond, lake/forest surroundings, asphalt/utwardzony access and utilities stated is worth opening, but price is now lifestyle-priced (~80 PLN/m² land) and pond legality, insulation/heating, year-round usability and seller negotiation room matter. [Listing](https://www.otodom.pl/pl/oferta/siedlisko-z-domem-z-bali-i-wlasnym-stawem-ID4C2UZ)
+- **Needs diligence — Broniszów, Lubuskie:** 279,000 PLN for a 100 m² old siedlisko on 3,129 m² with MPZP claimed, forest nearby, water/electricity/internet/septic and explicitly negotiable price is interesting as a cheap renovation play, but dirt-road access, old-house damp/roof risk and agency disclaimer about boundary accuracy are red flags. [Listing](https://www.otodom.pl/pl/oferta/enklawa-prezentuje-stare-i-klimatyczne-siedlisko-w-lubuskim-zobacz-ID4zpIF)
+- **Maybe but small land — Barcikowice/Zielona Góra, Lubuskie:** 440,000 PLN for 112 m² plus three buildings on only 1,853 m² by pine forest has better usability/services than isolation and states water/electricity/septic plus hardened access, but land is too small for the ideal buy box and expensive by land area (~237 PLN/m²). [Listing](https://www.otodom.pl/pl/oferta/dom-na-skraju-lasu-3-budynki-grunt-1853-m2-ID4C2Su)
+
+## Short evidence notes
+
+Searches checked: Otodom Lubuskie/Zachodniopomorskie/Dolnośląskie siedlisko filters under 600k PLN plus broader web searches for Lubuskie, Zachodniopomorskie, Dolnośląskie and Bieszczady rural/siedlisko phrases. Otodom result pages were accessible; direct listing pages exposed structured fields for price, house area, land area, utilities and access. Bing/Google-style web results were noisy and often surfaced generic portals rather than individual rural listings, so the credible candidates above are mainly from accessible Otodom listing pages.
+
+## Buyer-side next checks
+
+For any call, ask for KW number, plot numbers, MPZP excerpt or WZ decision, access-road legal status, building permit/legalization history, media contracts, septic/well/pond permits where relevant, flood/wetland/protected-area constraints, and recent roof/damp/heating photos before travelling.
