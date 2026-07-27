@@ -1,0 +1,17 @@
+# Property scout — 2026-07-27
+
+## Linked recommendations
+
+- **Strong lead — Barcikowice / Zielona Góra, Lubuskie:** 440,000 PLN for a 1,853 m² residential plot with a renovation house and two outbuildings, bordering pine forest while still 15 minutes from Zielona Góra; good privacy/service balance, but renovation scope and exact utilities need checking. [Listing](https://www.olx.pl/d/oferta/dom-na-skraju-lasu-3-budynki-grunt-1853-m2-CID3-ID1bz0XT.html)
+- **Maybe / diligence — Brody near Sulechów, Lubuskie:** 415,000 PLN for 4,238 m² with a house and outbuildings, seller claims investment potential and possible division into two extra building plots; interesting land-to-price ratio, but division/MPZP/WZ proof is critical. [Listing](https://www.olx.pl/d/oferta/dom-z-duza-dzialka-i-potencjalem-w-brodach-CID3-ID1bnzUI.html)
+- **Maybe / cheap renovation bet — Strzeszów, Zachodniopomorskie:** 160,000 PLN for a renovation siedlisko on 1,380 m², with water, sewer, electricity, tiled-stove heating, lake around 300 m and forest around 2 km; cheap enough to call, but land is small and building condition may be severe. [Listing](https://www.olx.pl/d/oferta/siedlisko-do-remontu-na-sprzedaz-CID3-ID1brmoz.html)
+- **Maybe — Wilków, Dolnośląskie:** 120,000 PLN for 1,800 m² split into two building plots with WZ, a private pond and forest/pond nearby at the end of a quiet village; nice personal-use micro-retreat lead, but below the 3,000 m² investment threshold and water/flood/access must be checked. [Listing](https://www.olx.pl/d/oferta/dzialka-budowlana-18a-z-wydanymi-wz-stawem-i-lasem-w-sasiedztwie-CID3-ID1bjyXd.html)
+- **Weak watch — Wapnica, Zachodniopomorskie:** 499,000 PLN for a 96 m² house on 1,400 m² with orchard/garden and pellet heating; usable but not especially asymmetric because the plot is modest and price is high per m² of land. [Listing](https://www.olx.pl/d/oferta/wapnica-duzy-dom-z-sadem-CID3-ID1bmmIC.html)
+
+## Short evidence notes
+
+- Barcikowice: extracted OLX description says 440,000 PLN, 1,853 m² plot, total built footprint 362 m², residential land classification B, public-road access, no mortgage/encumbrances, one owner. Rough land price: 238 PLN/m². Ask for KW, roof/foundation/damp photos, media, septic/sewer, and whether any buildings are legalised.
+- Brody: extracted OLX description says 415,000 PLN, 0.4238 ha fenced plot, house plus outbuildings, around 15 km to Sulechów, quiet green location, potential division claim. Rough land price: 98 PLN/m². Ask gmina/seller for MPZP/WZ extract, actual road access, media, and whether division is administratively realistic.
+- Strzeszów: extracted OLX description says 160,000 PLN, 1,380 m², house and farm buildings for renovation, water/sewer/electricity, tiled stoves, lake 300 m, forest about 2 km, direct owner and negotiable price. Rough land price: 116 PLN/m². Ask for structural condition and whether the low price hides damp/roof/legal issues.
+- Wilków: extracted OLX description says 120,000 PLN, 18 ar total as two plots, current WZ, private pond, larger pond nearby, end-of-village location, near forest. Rough land price: 67 PLN/m². Ask for WZ decision, land register, access width/type, flood/wetland constraints and buildable area around the pond.
+- Wapnica: extracted OLX description says 499,000 PLN, 96 m² house, 1,400 m² plot, pellet heating, outbuilding/workshop/storage potential and orchard/garden. Rough land price: 356 PLN/m². Only worth time if location fits strongly after map check.
