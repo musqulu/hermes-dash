@@ -1,0 +1,15 @@
+# Property scout — 2026-07-29
+
+## Linked recommendations
+
+- **🔥 Best / Studzionka, Lubuskie:** needs diligence but genuinely interesting — 380,000 PLN for 11,500 m² with an old/domestic building claim and Warta river setting, about 33 PLN/m²; check flood risk, legal access, utilities, building condition and whether the riverside/nature angle comes with restrictions. [Listing](https://www.domiporta.pl/nieruchomosci/sprzedam-dzialke-studzionka-11500m2/156382449)
+- **Needs diligence / Rów near Myślibórz, Zachodniopomorskie:** very cheap 62,000 PLN for 6,200 m², about 10 PLN/m², described as away from the village and bordering forest/meadows, but road is dirt and zoning/utilities/legal buildability are unknown. [Listing](https://www.morizon.pl/oferta/sprzedaz-dzialka-mysliborski-mysliborz-6200m2-mzn2046045680)
+- **Maybe / Ostroróg near Czaplinek, Zachodniopomorskie:** 119,000 PLN for 11,400 m², about 10.4 PLN/m², advertised as siedliskowa in forest surroundings near Lake Niewlino; must verify WZ/MPZP, access, utilities and whether any habitat/Natura constraints bite. [Listing](https://www.morizon.pl/oferta/sprzedaz-dzialka-drawski-czaplinek--11400m2-mzn2046474955)
+- **Maybe / Górki, gm. Santok, Lubuskie:** 270,000 PLN for 6,400 m², about 42 PLN/m², with asphalt access and water/electricity at the boundary plus Warta-view marketing; smaller than ideal but practical if build rights are real. [Listing](https://www.domiporta.pl/nieruchomosci/sprzedam-dzialke-gorki-6400m2/156488297)
+- **Speculative / Anielino, Zachodniopomorskie:** 450,000 PLN for 147,342 m², about 3 PLN/m², appears to be a syndyk sale of agricultural land; interesting land-bank pricing, but only worth opening if Konrad accepts auction/insolvency paperwork, agricultural limits, and likely weak home-build certainty. [Listing](https://www.morizon.pl/oferta/sprzedaz-dzialka-lobeski-dobra-147342m2-mzn2047754111)
+- **Needs diligence / Niesułów, gm. Cedynia, Zachodniopomorskie:** 266,000 PLN for a 1.35 ha built siedlisko with a 114 m² house described as demolition/rebuild level, about 19.7 PLN/m² land; price is interesting if access, KW and rebuild permissions survive scrutiny. [Listing](https://gratka.pl/nieruchomosci/dom-gryfinski-cedynia/ob/46504383)
+- **Maybe / Różanka, Kłodzko area, Dolnośląskie:** 220,000 PLN for 7,800 m², about 28 PLN/m², with fields/forest and Śnieżnik-massif landscape; below 1 ha and legal/build media status are unknown, but the retreat angle is better than typical Wrocław-edge plots. [Listing](https://www.morizon.pl/oferta/sprzedaz-dzialka-klodzki-miedzylesie-7800m2-mzn2046269216)
+
+## Short evidence notes
+
+Searches checked marketplace/search-result evidence for Lubuskie, Zachodniopomorskie and Dolnośląskie siedliska, land and house+land leads. Otodom/OLX surfaced mostly broad category pages in search snippets, so I leaned on open Domiporta, Morizon and Gratka pages with extractable listing facts. The strongest buyer-side pattern today is cheap or semi-cheap siedliskowa land in Zachodniopomorskie and Lubuskie; the main recurring kill risks are access, MPZP/WZ, agricultural restrictions, flood/Natura constraints and utility distance.
