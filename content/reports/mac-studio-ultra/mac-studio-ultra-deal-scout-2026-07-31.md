@@ -17,7 +17,7 @@ Date: 2026-07-31
 
 ## Source coverage
 
-- OLX Poland: searched first for Mac Studio Ultra, M1 Ultra, M2 Ultra, and 128GB terms; one credible high-RAM Ultra WATCH candidate is live, one extreme overpriced Ultra was checked directly, and no fresh cheap 96GB/128GB+ Ultra surfaced.
+- OLX Poland: searched first for Mac Studio Ultra, M1 Ultra, M2 Ultra, 512GB RAM, and related high-RAM terms; one credible high-RAM Ultra WATCH candidate is live, one extreme overpriced Ultra was checked directly, and no fresh cheap 96GB/128GB+ Ultra surfaced.
 - Allegro.pl: searched second for Mac Studio Ultra, but the site returned a DataDome CAPTCHA/block page, so no main Allegro candidate could be verified this run.
 - Allegro Lokalnie: searched separately for Mac Studio Ultra and Mac Studio M1 Ultra; accessible pages returned 0 listings for both queries.
 - Facebook Marketplace: public marketplace access exposed only login/cookie walls without searchable listings, so it was not used.
