@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Fleet is the closest directly reusable pattern for Hermes topic-scoped Telegram agents, with one Claude Code/Codex worker per Telegram supergroup topic and local self-hosted execution. [GitHub](https://github.com/sand0vvv/fleet)
+- ADHDev is a practical control-plane/dashboard for launching, watching, approving, steering, and landing long-running coding-agent sessions across machines and worktrees. [GitHub](https://github.com/vilmire/adhdev)
+- Tuneloop turns existing coding-agent transcripts into a local analytics dashboard for cost attribution, outcome links, autonomy scoring, tool-error categories, and re-steer patterns. [GitHub](https://github.com/tuneloop/tuneloop)
+- Echo Agent is worth studying for cross-session memory design because it combines four-layer cognitive memory, decay, contradiction detection, self-evolving skills, approvals, cron, webhooks, and multi-channel gateways. [GitHub](https://github.com/fuyuxiang/echo-agent)
+- Agentica overlaps strongly with Hermes long-run goals, including async agent execution, context compaction, cost budgets, death-spiral guards, persistent memory, self-evolving SKILL.md, goal loops, MCP/ACP, CLI, and web gateway. [GitHub](https://github.com/shibing624/agentica)
+- Doberman-Core is a focused runtime guardrail layer for coding agents, with adaptive authorization, prompt-injection defense, tool-use permissions, monitoring, audit logs, and policy enforcement before dangerous calls execute. [GitHub](https://github.com/fu351/Doberman-Core)
+- OtoDock is a self-hosted multi-agent platform for running Claude Code and Codex as a collaborative server-side workforce using bring-your-own subscriptions. [GitHub](https://github.com/OtoDock/oto-dock)
+- Peri is a small Rust coding-agent harness that claims Claude Code compatibility for skills, hooks, MCP, plugins, sub-agents, dynamic workflows, goals, artifacts, provider switching, and free web search. [GitHub](https://github.com/KonghaYao/peri)
+- Dapr Agents is relevant infrastructure for durable Hermes-style agents because it emphasizes workflow orchestration, statefulness, telemetry, security, and observable autonomous agent systems. [GitHub](https://github.com/dapr/dapr-agents)
+- Dn is an early but interesting workflow idea around collaborative planning first and agent execution second, useful for thinking about task boards and human-agent handoff. [GitHub](https://github.com/chesapeakedev/dn)
