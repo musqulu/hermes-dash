@@ -1,15 +1,15 @@
-"use client";
-
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
-import { FileText, MessageSquare, Search } from "lucide-react";
-import type { Report, ReportComment, ReportIndex } from "@/lib/reports";
+import { BarChart3, FileText, List, MessageSquare, Search, Table2 } from "lucide-react";
+import type { Report, ReportComment, ReportIndex, ReportItem } from "@/lib/reports";
 
 type Props = {
   index: ReportIndex;
   managementMode?: boolean;
+  initialView?: ViewMode;
 };
 
 type ViewFilter = "all" | "weekly";
+type ViewMode = "items" | "reports" | "prices";
 
 const dateFormatter = new Intl.DateTimeFormat("en-GB", {
   day: "2-digit",
@@ -79,6 +79,76 @@ function renderInlineMarkdown(value: string, keyPrefix: string): ReactNode[] {
 
 /* ---- Block-aware markdown renderer ----------------------------------- */
 
+type PricePoint = {
+  bucket: string;
+  label?: string;
+  min: number | null;
+  median?: number | null;
+  max?: number | null;
+  count?: number;
+};
+
+function parsePriceHistory(value: string): PricePoint[] | null {
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    if (!Array.isArray(parsed)) return null;
+
+    const rows = parsed.flatMap((item) => {
+      if (!item || typeof item !== "object") return [];
+      const row = item as Record<string, unknown>;
+      const bucket = typeof row.bucket === "string" ? row.bucket : typeof row.label === "string" ? row.label : "";
+      const min = typeof row.min === "number" ? row.min : null;
+      if (!bucket || min === null) return [];
+      return [{
+        bucket,
+        label: typeof row.label === "string" ? row.label : undefined,
+        min,
+        median: typeof row.median === "number" ? row.median : null,
+        max: typeof row.max === "number" ? row.max : null,
+        count: typeof row.count === "number" ? row.count : undefined,
+      } satisfies PricePoint];
+    });
+
+    return rows.length ? rows : null;
+  } catch {
+    return null;
+  }
+}
+
+function formatPrice(value: number | null | undefined) {
+  if (typeof value !== "number") return "—";
+  return `${Math.round(value).toLocaleString("pl-PL")} PLN`;
+}
+
+function PriceHistoryChart({ points }: { points: PricePoint[] }) {
+  const maxValue = Math.max(...points.map((point) => point.max ?? point.median ?? point.min ?? 0), 1);
+
+  return (
+    <div className="price-chart" aria-label="Price history chart">
+      {points.map((point) => {
+        const value = point.median ?? point.min ?? 0;
+        const width = Math.max(4, Math.round((value / maxValue) * 100));
+        return (
+          <div className="price-chart-row" key={point.bucket}>
+            <div className="price-chart-label">
+              <strong>{point.label ?? point.bucket}</strong>
+              <span>{point.count ? `${point.count} observed` : "baseline"}</span>
+            </div>
+            <div className="price-chart-track" aria-hidden>
+              <span style={{ width: `${width}%` }} />
+            </div>
+            <div className="price-chart-values">
+              <span>min {formatPrice(point.min)}</span>
+              <span>median {formatPrice(point.median)}</span>
+              <span>max {formatPrice(point.max)}</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function renderMarkdown(content: string): ReactNode[] {
   const lines = content.split("\n");
   const blocks: ReactNode[] = [];
@@ -105,11 +175,19 @@ function renderMarkdown(content: string): ReactNode[] {
 
     if (line.startsWith("```")) {
       flushList();
+      const fenceLang = line.slice(3).trim();
       const codeLines: string[] = [];
       idx++;
       while (idx < lines.length && !lines[idx].trim().startsWith("```")) {
         codeLines.push(lines[idx]);
         idx++;
+      }
+      if (fenceLang === "price-history-json") {
+        const points = parsePriceHistory(codeLines.join("\n"));
+        if (points) {
+          blocks.push(<PriceHistoryChart key={`b-${key++}`} points={points} />);
+          continue;
+        }
       }
       blocks.push(
         <pre key={`b-${key++}`}>
@@ -196,9 +274,96 @@ function renderMarkdown(content: string): ReactNode[] {
 
 /* ---- Dashboard ------------------------------------------------------- */
 
-export function ReportDashboard({ index, managementMode = false }: Props) {
+function priceLabel(value: number | null | undefined) {
+  if (typeof value !== "number") return "—";
+  return `${Math.round(value).toLocaleString("pl-PL")} PLN`;
+}
+
+function statusClass(status: string) {
+  const lower = status.toLowerCase();
+  if (lower.includes("buy") || lower.includes("best")) return "buy";
+  if (lower.includes("ask")) return "ask";
+  if (lower.includes("ignore")) return "ignore";
+  return "watch";
+}
+
+function ItemStatusBadge({ item }: { item: ReportItem }) {
+  return (
+    <span className="status-stack">
+      <span className="status-badge" data-kind={statusClass(item.status)}>{item.status}</span>
+      <span className="activity-badge" data-active={item.isActive}>{item.isActive ? "Active" : "Inactive"}</span>
+    </span>
+  );
+}
+
+function PriceTrendGraph({ items, columnWidth }: { items: ReportItem[]; columnWidth: number }) {
+  const chartItems = items
+    .filter((item) => item.priceHistory.some((point) => typeof point.pricePln === "number"))
+    .slice(0, 24);
+  const dates = Array.from(new Set(chartItems.flatMap((item) => item.priceHistory.map((point) => point.date)))).sort();
+  const prices = chartItems.flatMap((item) => item.priceHistory.map((point) => point.pricePln).filter((price): price is number => typeof price === "number"));
+  const minPrice = Math.min(...prices, 0);
+  const maxPrice = Math.max(...prices, 1);
+  const width = Math.max(720, dates.length * columnWidth + 260);
+  const height = Math.max(360, chartItems.length * 34 + 120);
+  const left = 220;
+  const top = 38;
+  const rowGap = chartItems.length ? (height - top - 76) / Math.max(chartItems.length - 1, 1) : 0;
+  const xForDate = (date: string) => left + dates.indexOf(date) * columnWidth;
+  const yForPrice = (price: number) => {
+    const span = Math.max(maxPrice - minPrice, 1);
+    return top + (1 - (price - minPrice) / span) * 220;
+  };
+
+  if (!chartItems.length) {
+    return <p className="empty-copy">No price observations extracted yet for this project.</p>;
+  }
+
+  return (
+    <div className="price-page-scroll">
+      <svg className="price-timeline" width={width} height={height} role="img" aria-label="Price over date graph">
+        <g className="chart-grid">
+          {dates.map((date) => (
+            <line key={date} x1={xForDate(date)} x2={xForDate(date)} y1={top - 8} y2={height - 48} />
+          ))}
+          {[minPrice, (minPrice + maxPrice) / 2, maxPrice].map((price) => (
+            <g key={price}>
+              <line x1={left - 8} x2={width - 24} y1={yForPrice(price)} y2={yForPrice(price)} />
+              <text x={8} y={yForPrice(price) + 4}>{priceLabel(price)}</text>
+            </g>
+          ))}
+        </g>
+        <g className="chart-dates">
+          {dates.map((date) => <text key={date} x={xForDate(date)} y={height - 18} transform={`rotate(-35 ${xForDate(date)} ${height - 18})`}>{date.slice(5)}</text>)}
+        </g>
+        {chartItems.map((item, rowIndex) => {
+          const points = item.priceHistory.filter((point) => typeof point.pricePln === "number");
+          const path = points.map((point, index) => `${index === 0 ? "M" : "L"} ${xForDate(point.date)} ${yForPrice(point.pricePln as number)}`).join(" ");
+          const labelY = top + 250 + rowIndex * rowGap;
+          return (
+            <g key={item.id} className="chart-item" data-active={item.isActive}>
+              <text x={8} y={labelY + 4}>{item.title.slice(0, 44)}</text>
+              <path d={path} />
+              {points.map((point) => (
+                <circle key={`${item.id}-${point.date}-${point.pricePln}`} cx={xForDate(point.date)} cy={yForPrice(point.pricePln as number)} r={item.isActive ? 4 : 3}>
+                  <title>{`${item.title}: ${priceLabel(point.pricePln)} on ${point.date}`}</title>
+                </circle>
+              ))}
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
+/* ---- Dashboard ------------------------------------------------------- */
+
+export function ReportDashboard({ index, managementMode = false, initialView = "items" }: Props) {
   const [query, setQuery] = useState("");
   const [viewFilter, setViewFilter] = useState<ViewFilter>("all");
+  const [viewMode, setViewMode] = useState<ViewMode>(initialView);
+  const [columnWidth, setColumnWidth] = useState(74);
   const [activeProjectId, setActiveProjectId] = useState(index.projects[0]?.id ?? "");
   const activeProject = index.projects.find((project) => project.id === activeProjectId) ?? index.projects[0];
   const [activeIdByProject, setActiveIdByProject] = useState<Record<string, string>>(() =>
@@ -211,18 +376,37 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
       ? activeProject.reports.filter((report) => report.cadence === "weekly")
       : activeProject.reports;
     const needle = query.trim().toLowerCase();
-    if (!needle) return scopedReports;
+    if (!needle || viewMode !== "reports") return scopedReports;
 
     return scopedReports.filter((report) =>
       [report.title, report.summary, report.fileName, report.sourcePath, report.content]
         .some((value) => value.toLowerCase().includes(needle)),
     );
-  }, [activeProject, query, viewFilter]);
+  }, [activeProject, query, viewFilter, viewMode]);
+
+  const items = useMemo(() => {
+    if (!activeProject) return [];
+    const needle = query.trim().toLowerCase();
+    const scopedItems = activeProject.items;
+    if (!needle || viewMode === "reports") return scopedItems;
+    return scopedItems.filter((item) =>
+      [item.title, item.summary, item.status, item.source, item.location, item.specs, item.url]
+        .filter(Boolean)
+        .some((value) => String(value).toLowerCase().includes(needle)),
+    );
+  }, [activeProject, query, viewMode]);
 
   const weeklyReportCount = activeProject?.reports.filter((report) => report.cadence === "weekly").length ?? 0;
   const activeId = activeProject ? activeIdByProject[activeProject.id] : "";
-  const active = reports.find((report) => report.id === activeId) ?? reports[0];
+  const active = reports.find((report) => report.id === activeId) ?? activeProject?.reports.find((report) => report.id === activeId) ?? reports[0];
+  const activeItems = activeProject?.items.filter((item) => item.isActive).length ?? 0;
   const totalReports = index.projects.reduce((sum, project) => sum + project.reports.length, 0);
+  const totalItems = index.projects.reduce((sum, project) => sum + project.items.length, 0);
+
+  function selectReport(reportId: string) {
+    if (!activeProject) return;
+    setActiveIdByProject((current) => ({ ...current, [activeProject.id]: reportId }));
+  }
 
   return (
     <main className="app-shell">
@@ -231,7 +415,8 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
           Hermes <span className="accent">Dash</span>
         </a>
         <div className="header-meta">
-          <span className="header-note">One link per report · {metricLabel(totalReports, "report")}</span>
+          <span className="header-note">Deduped results · {metricLabel(totalItems, "item")} · {metricLabel(totalReports, "report")}</span>
+          <a className="btn" href="/prices">Prices</a>
           <a className="btn" href={managementMode ? "/" : "/manage"}>
             {managementMode ? "Public view" : "Manage"}
           </a>
@@ -242,11 +427,11 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
         <div>
           <p className="eyebrow">Current feed</p>
           <h1>{activeProject?.name ?? "Reports"}</h1>
-          <p>Pick one thing worth opening; each report now leads with one sentence and one source link.</p>
+          <p>Results are deduplicated by listing/source link, shown as rows, and labelled active when still present in the newest report.</p>
         </div>
         <div className="hero-facts" aria-label="Collection facts">
-          <span>{metricLabel(activeProject?.reports.length ?? 0, "entry", "entries")}</span>
-          <span>{weeklyReportCount ? `${weeklyReportCount} weekly digests` : "Daily / ad hoc reports"}</span>
+          <span>{metricLabel(activeProject?.items.length ?? 0, "unique item")}</span>
+          <span>{metricLabel(activeItems, "active item")}</span>
           <span title={activeProject?.sourceDir}>{activeProject?.sourceDir ?? "No source folder"}</span>
         </div>
       </section>
@@ -265,66 +450,129 @@ export function ReportDashboard({ index, managementMode = false }: Props) {
             }}
           >
             <span>{project.name}</span>
-            <span>{project.reports.length}</span>
+            <span>{project.items.length || project.reports.length}</span>
           </button>
         ))}
       </nav>
 
-      <div className="app-body">
-        <aside className="report-list-panel">
-          <div className="list-toolbar">
-            <div className="search-field">
-              <Search className="h-4 w-4" aria-hidden />
-              <input
-                type="search"
-                placeholder="Search inside this collection…"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                aria-label="Search reports"
-              />
-            </div>
-            {weeklyReportCount ? (
-              <div className="filter-pills" aria-label="Report filters">
-                <button type="button" data-active={viewFilter === "all"} onClick={() => setViewFilter("all")}>
-                  All
-                </button>
-                <button type="button" data-active={viewFilter === "weekly"} onClick={() => setViewFilter("weekly")}>
-                  Weekly
-                </button>
-              </div>
-            ) : null}
+      <div className="view-toolbar">
+        <div className="search-field">
+          <Search className="h-4 w-4" aria-hidden />
+          <input
+            type="search"
+            placeholder="Search results, prices, places, reports…"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            aria-label="Search results"
+          />
+        </div>
+        <div className="filter-pills" aria-label="View mode">
+          <button type="button" data-active={viewMode === "items"} onClick={() => setViewMode("items")}><Table2 className="h-3.5 w-3.5" /> Table</button>
+          <button type="button" data-active={viewMode === "reports"} onClick={() => setViewMode("reports")}><List className="h-3.5 w-3.5" /> Reports</button>
+          <button type="button" data-active={viewMode === "prices"} onClick={() => setViewMode("prices")}><BarChart3 className="h-3.5 w-3.5" /> Prices</button>
+        </div>
+        {viewMode === "reports" && weeklyReportCount ? (
+          <div className="filter-pills" aria-label="Report filters">
+            <button type="button" data-active={viewFilter === "all"} onClick={() => setViewFilter("all")}>All</button>
+            <button type="button" data-active={viewFilter === "weekly"} onClick={() => setViewFilter("weekly")}>Weekly</button>
           </div>
+        ) : null}
+        {viewMode === "prices" ? (
+          <label className="width-control">
+            <span>Column width</span>
+            <input type="range" min="44" max="140" value={columnWidth} onChange={(event) => setColumnWidth(Number(event.target.value))} />
+            <b>{columnWidth}px</b>
+          </label>
+        ) : null}
+      </div>
 
+      {viewMode === "items" ? (
+        <section className="spreadsheet-panel">
           <div className="list-count">
-            <span>{reports.length} visible</span>
+            <span>{items.length} unique visible · duplicates hidden</span>
             {query ? <button type="button" onClick={() => setQuery("")}>Clear search</button> : null}
           </div>
-
-          {reports.length ? (
-            <div className="entry-list" key={`${activeProject?.id}-${viewFilter}-${query}`}>
-              {reports.map((report) => (
-                <button
-                  key={`${report.projectId}-${report.id}`}
-                  type="button"
-                  className="entry-row"
-                  data-active={active?.id === report.id}
-                  onClick={() =>
-                    setActiveIdByProject((current) => ({ ...current, [report.projectId]: report.id }))
-                  }
-                >
-                  <span className="entry-date">{formatDate(report.reportDate)}</span>
-                  <span className="entry-title">{report.title}</span>
-                  <span className="entry-summary">{report.summary}</span>
-                </button>
-              ))}
+          {items.length ? (
+            <div className="results-table-wrap">
+              <table className="results-table">
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Last seen</th>
+                    <th>First seen</th>
+                    <th>Seen</th>
+                    <th>Specs</th>
+                    <th>Source / place</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {items.map((item) => (
+                    <tr key={item.id} data-active={item.isActive} onClick={() => selectReport(item.reportId)}>
+                      <td><ItemStatusBadge item={item} /></td>
+                      <td>
+                        <div className="cell-title">
+                          {item.url ? <a href={item.url} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>{item.title}</a> : item.title}
+                          <span>{item.summary}</span>
+                        </div>
+                      </td>
+                      <td className="numeric">{priceLabel(item.pricePln)}</td>
+                      <td>{formatDate(item.lastSeen)}</td>
+                      <td>{formatDate(item.firstSeen)}</td>
+                      <td className="numeric">{item.seenCount}</td>
+                      <td>{item.specs ?? "—"}</td>
+                      <td>{[item.source, item.location].filter(Boolean).join(" · ") || "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           ) : (
-            <p className="empty-copy">No reports match this search.</p>
+            <p className="empty-copy">No extracted result rows yet. Use Reports for the raw Markdown.</p>
           )}
-        </aside>
+        </section>
+      ) : viewMode === "prices" ? (
+        <section className="spreadsheet-panel">
+          <div className="list-count">
+            <span>{items.length} deduped items · price by date</span>
+            <span>Inactive rows disappear when a listing stops showing up in the newest cron report.</span>
+          </div>
+          <PriceTrendGraph items={items} columnWidth={columnWidth} />
+        </section>
+      ) : (
+        <div className="app-body">
+          <aside className="report-list-panel">
+            <div className="list-count">
+              <span>{reports.length} visible reports</span>
+              {query ? <button type="button" onClick={() => setQuery("")}>Clear search</button> : null}
+            </div>
 
-        <ReportDetail report={active} managementMode={managementMode} hasProjects={!!activeProject} />
-      </div>
+            {reports.length ? (
+              <div className="entry-list" key={`${activeProject?.id}-${viewFilter}-${query}`}>
+                {reports.map((report) => (
+                  <button
+                    key={`${report.projectId}-${report.id}`}
+                    type="button"
+                    className="entry-row"
+                    data-active={active?.id === report.id}
+                    onClick={() => selectReport(report.id)}
+                  >
+                    <span className="entry-date">{formatDate(report.reportDate)}</span>
+                    <span className="entry-title">{report.title}</span>
+                    <span className="entry-summary">{report.summary}</span>
+                    <span className="entry-meta">{metricLabel(report.items.length, "item")} extracted</span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="empty-copy">No reports match this search.</p>
+            )}
+          </aside>
+
+          <ReportDetail report={active} managementMode={managementMode} hasProjects={!!activeProject} />
+        </div>
+      )}
     </main>
   );
 }

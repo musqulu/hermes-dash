@@ -9,6 +9,26 @@ export type ReportComment = {
   sourcePath: string;
 };
 
+export type ReportItem = {
+  id: string;
+  projectId: string;
+  reportId: string;
+  reportDate: string;
+  title: string;
+  url: string | null;
+  status: string;
+  isActive: boolean;
+  source: string | null;
+  location: string | null;
+  pricePln: number | null;
+  specs: string | null;
+  summary: string;
+  firstSeen: string;
+  lastSeen: string;
+  seenCount: number;
+  priceHistory: { date: string; pricePln: number | null; reportId: string }[];
+};
+
 export type Report = {
   id: string;
   projectId: string;
@@ -25,6 +45,7 @@ export type Report = {
   highlights: string[];
   content: string;
   comments: ReportComment[];
+  items: ReportItem[];
 };
 
 export type ReportProject = {
@@ -33,6 +54,7 @@ export type ReportProject = {
   description: string;
   sourceDir: string;
   reports: Report[];
+  items: ReportItem[];
 };
 
 export type ReportIndex = {
@@ -82,6 +104,13 @@ const projectConfigs: ProjectConfig[] = [
     description: "Twice-daily actionable watch for high-RAM Apple Mac Studio Ultra machines in Poland for local LLM rigs.",
     envVar: "HERMES_MAC_STUDIO_ULTRA_REPORTS_DIR",
     defaultDir: path.join(reportsRoot, "mac-studio-ultra"),
+  },
+  {
+    id: "mac-mini-agent-farm",
+    name: "Mac mini agent farm",
+    description: "Daily watch for super-cheap Apple Silicon Mac minis in Poland/EU, tracking RAM/value for API-agent nodes and light local LLM experiments.",
+    envVar: "HERMES_MAC_MINI_AGENT_FARM_REPORTS_DIR",
+    defaultDir: path.join(reportsRoot, "mac-mini-agent-farm"),
   },
   {
     id: "home-ai-rig-scout",
@@ -192,6 +221,146 @@ function inferCadence(fileName: string, title: string): Report["cadence"] {
   return "other";
 }
 
+
+function normalizeStatus(value: string) {
+  const cleaned = cleanMarkdown(value).trim().toUpperCase();
+  if (!cleaned) return "WATCH";
+  if (cleaned.includes("BUY")) return "BUY";
+  if (cleaned.includes("ASK")) return "ASK FIRST";
+  if (cleaned.includes("WATCH")) return "WATCH";
+  if (cleaned.includes("IGNORE")) return "IGNORE";
+  if (cleaned.includes("BEST")) return "BEST";
+  return cleaned.slice(0, 24);
+}
+
+function parsePricePln(value: string) {
+  const match = value.match(/(?:^|[^\d])(\d[\d\s.,]{2,})\s*(?:PLN|zł|zl)/i);
+  if (!match) return null;
+  const normalized = match[1].replace(/\s/g, "").replace(/,(?=\d{1,2}\b)/, ".").replace(/\.(?=\d{3}\b)/g, "");
+  const parsed = Number.parseFloat(normalized);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function itemKey(title: string, url: string | null) {
+  if (url) return url.toLowerCase().replace(/\?.*$/, "").replace(/\/$/, "");
+  return cleanMarkdown(title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function parseMetadataFromBullets(lines: string[]) {
+  let pricePln: number | null = null;
+  let specs: string | null = null;
+  let source: string | null = null;
+  let location: string | null = null;
+  let why = "";
+
+  for (const raw of lines) {
+    const line = cleanMarkdown(raw.replace(/^\s*(?:[-*]|\d+\.)\s+/, ""));
+    const lower = line.toLowerCase();
+    if (lower.startsWith("price/config:") || lower.startsWith("price:")) {
+      const value = line.replace(/^[^:]+:\s*/, "");
+      pricePln = parsePricePln(value) ?? pricePln;
+      const parts = value.split(/\s+—\s+/).map((part) => part.trim().replace(/[.]+$/, "")).filter(Boolean);
+      specs = parts[1] || specs;
+      if (parts.length >= 3) location = parts[parts.length - 2] || location;
+      if (parts.length >= 4) source = parts[parts.length - 1] || source;
+    } else if (lower.startsWith("why it matters:") || lower.startsWith("why:")) {
+      why = line.replace(/^[^:]+:\s*/, "");
+    } else if (!pricePln) {
+      pricePln = parsePricePln(line) ?? pricePln;
+    }
+  }
+
+  return { pricePln, specs, source, location, summary: why };
+}
+
+function extractReportItems(content: string, projectId: string, reportId: string, reportDate: string): ReportItem[] {
+  const lines = content.split("\n");
+  const items: ReportItem[] = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const heading = lines[i].match(/^###\s+(.+?)(?:\s+[—-]\s+|:\s+)(?:\[([^\]]+)\]\((https?:\/\/[^)]+)\)|(.+))\s*$/);
+    if (!heading) continue;
+
+    const status = normalizeStatus(heading[1]);
+    const title = cleanMarkdown(heading[2] ?? heading[4] ?? "Untitled item");
+    const url = heading[3] ?? null;
+    const bulletLines: string[] = [];
+    let j = i + 1;
+    while (j < lines.length && !lines[j].startsWith("### ") && !lines[j].startsWith("## ")) {
+      if (/^\s*(?:[-*]|\d+\.)\s+/.test(lines[j])) bulletLines.push(lines[j]);
+      j++;
+    }
+
+    const metadata = parseMetadataFromBullets(bulletLines);
+    items.push({
+      id: itemKey(title, url),
+      projectId,
+      reportId,
+      reportDate,
+      title,
+      url,
+      status,
+      isActive: false,
+      source: metadata.source,
+      location: metadata.location,
+      pricePln: metadata.pricePln,
+      specs: metadata.specs,
+      summary: metadata.summary || extractSummary(bulletLines.join("\n")),
+      firstSeen: reportDate,
+      lastSeen: reportDate,
+      seenCount: 1,
+      priceHistory: [{ date: reportDate, pricePln: metadata.pricePln, reportId }],
+    });
+    i = j - 1;
+  }
+
+  return items;
+}
+
+function dedupeProjectItems(reports: Report[]) {
+  const latestDate = reports
+    .filter((report) => report.items.length > 0)
+    .reduce((current, report) => report.reportDate > current ? report.reportDate : current, "");
+  const byKey = new Map<string, ReportItem>();
+
+  for (const report of [...reports].sort((a, b) => a.reportDate.localeCompare(b.reportDate))) {
+    for (const item of report.items) {
+      const existing = byKey.get(item.id);
+      if (!existing) {
+        byKey.set(item.id, { ...item });
+        continue;
+      }
+
+      existing.firstSeen = existing.firstSeen < item.reportDate ? existing.firstSeen : item.reportDate;
+      existing.lastSeen = existing.lastSeen > item.reportDate ? existing.lastSeen : item.reportDate;
+      existing.seenCount += 1;
+      existing.priceHistory.push(...item.priceHistory);
+      if (item.reportDate >= existing.reportDate) {
+        existing.reportId = item.reportId;
+        existing.reportDate = item.reportDate;
+        existing.title = item.title || existing.title;
+        existing.url = item.url || existing.url;
+        existing.status = item.status || existing.status;
+        existing.source = item.source || existing.source;
+        existing.location = item.location || existing.location;
+        existing.pricePln = item.pricePln ?? existing.pricePln;
+        existing.specs = item.specs || existing.specs;
+        existing.summary = item.summary || existing.summary;
+      }
+    }
+  }
+
+  return Array.from(byKey.values())
+    .map((item) => ({
+      ...item,
+      isActive: item.lastSeen === latestDate,
+      priceHistory: item.priceHistory
+        .filter((point, index, arr) => arr.findIndex((other) => other.date === point.date && other.pricePln === point.pricePln) === index)
+        .sort((a, b) => a.date.localeCompare(b.date)),
+    }))
+    .sort((a, b) => Number(b.isActive) - Number(a.isActive) || (a.pricePln ?? Infinity) - (b.pricePln ?? Infinity) || b.lastSeen.localeCompare(a.lastSeen));
+}
+
 function safeSegment(value: string) {
   return value.replace(/[^a-zA-Z0-9._-]/g, "-").slice(0, 120);
 }
@@ -266,13 +435,16 @@ async function readReport(filePath: string, projectId: string): Promise<Report> 
   const id = path.basename(filePath, path.extname(filePath));
   const title = extractTitle(content, id);
 
+  const reportDate = inferDate(fileName, content, stats.mtime);
+  const items = extractReportItems(content, projectId, id, reportDate);
+
   return {
     id,
     projectId,
     title,
     summary: extractSummary(content),
     cadence: inferCadence(fileName, title),
-    reportDate: inferDate(fileName, content, stats.mtime),
+    reportDate,
     modifiedAt: stats.mtime.toISOString(),
     sourcePath: displayPath(filePath),
     fileName,
@@ -282,6 +454,7 @@ async function readReport(filePath: string, projectId: string): Promise<Report> 
     highlights: extractHighlights(content),
     content,
     comments: await readComments(projectId, id),
+    items,
   };
 }
 
@@ -295,6 +468,7 @@ async function getProject(config: ProjectConfig): Promise<ReportProject> {
       description: config.description,
       sourceDir: displayPath(sourceDir),
       reports: [],
+      items: [],
     };
   }
 
@@ -310,12 +484,15 @@ async function getProject(config: ProjectConfig): Promise<ReportProject> {
     return new Date(b.modifiedAt).getTime() - new Date(a.modifiedAt).getTime();
   });
 
+  const items = dedupeProjectItems(reports);
+
   return {
     id: config.id,
     name: config.name,
     description: config.description,
     sourceDir: displayPath(sourceDir),
     reports,
+    items,
   };
 }
 
