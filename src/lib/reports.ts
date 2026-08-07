@@ -273,23 +273,71 @@ function parseMetadataFromBullets(lines: string[]) {
   return { pricePln, specs, source, location, summary: why };
 }
 
+function extractFirstUrl(value: string) {
+  const markdownLink = value.match(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/);
+  if (markdownLink) return markdownLink[1];
+  const bareUrl = value.match(/https?:\/\/[^\s)]+/);
+  return bareUrl ? bareUrl[0] : null;
+}
+
+function sourceFromUrl(value: string | null) {
+  if (!value) return null;
+  try {
+    return new URL(value).hostname.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
 function extractReportItems(content: string, projectId: string, reportId: string, reportDate: string): ReportItem[] {
   const lines = content.split("\n");
   const items: ReportItem[] = [];
 
   for (let i = 0; i < lines.length; i++) {
+    const linkedBullet = lines[i].match(/^\s*[-*]\s+\*\*([^*]+?):?\*\*:?\s+(.+)$/);
+    const linkedBulletUrl = linkedBullet ? extractFirstUrl(linkedBullet[2]) : null;
+    if (linkedBullet && linkedBulletUrl) {
+      const label = cleanMarkdown(linkedBullet[1]);
+      const parts = label.split(/\s+\/\s+/).map((part) => part.trim()).filter(Boolean);
+      const title = parts.length > 1 ? parts.slice(1).join(" / ") : label;
+      const summary = cleanMarkdown(linkedBullet[2].replace(/\[[^\]]+\]\(https?:\/\/[^)]+\)/g, "")).slice(0, 220);
+      const pricePln = parsePricePln(linkedBullet[2]);
+      items.push({
+        id: itemKey(title, linkedBulletUrl),
+        projectId,
+        reportId,
+        reportDate,
+        title,
+        url: linkedBulletUrl,
+        status: normalizeStatus(parts[0] ?? label),
+        isActive: false,
+        source: sourceFromUrl(linkedBulletUrl),
+        location: parts.length > 1 ? parts[1] : null,
+        pricePln,
+        specs: null,
+        summary: summary || "No summary available yet.",
+        firstSeen: reportDate,
+        lastSeen: reportDate,
+        seenCount: 1,
+        priceHistory: [{ date: reportDate, pricePln, reportId }],
+      });
+      continue;
+    }
+
     const heading = lines[i].match(/^###\s+(.+?)(?:\s+[—-]\s+|:\s+)(?:\[([^\]]+)\]\((https?:\/\/[^)]+)\)|(.+))\s*$/);
     if (!heading) continue;
 
     const status = normalizeStatus(heading[1]);
     const title = cleanMarkdown(heading[2] ?? heading[4] ?? "Untitled item");
-    const url = heading[3] ?? null;
     const bulletLines: string[] = [];
+    const sectionLines: string[] = [];
     let j = i + 1;
     while (j < lines.length && !lines[j].startsWith("### ") && !lines[j].startsWith("## ")) {
+      sectionLines.push(lines[j]);
       if (/^\s*(?:[-*]|\d+\.)\s+/.test(lines[j])) bulletLines.push(lines[j]);
       j++;
     }
+    const url = heading[3] ?? extractFirstUrl(sectionLines.join("\n"));
 
     const metadata = parseMetadataFromBullets(bulletLines);
     items.push({

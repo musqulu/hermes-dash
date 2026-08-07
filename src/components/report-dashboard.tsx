@@ -505,6 +505,7 @@ export function ReportDashboard({ index, managementMode = false, initialView = "
                     <th>Seen</th>
                     <th>Specs</th>
                     <th>Source / place</th>
+                    <th>Link</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -513,7 +514,11 @@ export function ReportDashboard({ index, managementMode = false, initialView = "
                       <td><ItemStatusBadge item={item} /></td>
                       <td>
                         <div className="cell-title">
-                          {item.url ? <a href={item.url} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>{item.title}</a> : item.title}
+                          {item.url ? (
+                            <a className="item-title-link" href={item.url} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>
+                              {item.title}
+                            </a>
+                          ) : item.title}
                           <span>{item.summary}</span>
                         </div>
                       </td>
@@ -523,6 +528,15 @@ export function ReportDashboard({ index, managementMode = false, initialView = "
                       <td className="numeric">{item.seenCount}</td>
                       <td>{item.specs ?? "—"}</td>
                       <td>{[item.source, item.location].filter(Boolean).join(" · ") || "—"}</td>
+                      <td>
+                        {item.url ? (
+                          <a className="open-item-link" href={item.url} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()} aria-label={`Open source listing for ${item.title}`}>
+                            Open ↗
+                          </a>
+                        ) : (
+                          <span className="missing-link">No link</span>
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
