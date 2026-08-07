@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: claude-telegram-hub is an implemented Telegram transport for interactive Claude Code sessions, including DM sessions, group rooms, repo-scoped agents, agent-to-agent coordination, and loop governance. [menus12/claude-telegram-hub](https://github.com/menus12/claude-telegram-hub)
+- PAOS is a single-binary local agent OS that adds durable SQLite memory, a peer message bus, and Telegram decision pings for long-running coding agents. [MGrin/paos](https://github.com/MGrin/paos)
+- mission-orchestrator runs always-on tmux-based Claude/Codex/OpenCode/Gemini workers from Telegram while preserving stateful missions across days. [ankushsrivastava0626/mission-orchestrator](https://github.com/ankushsrivastava0626/mission-orchestrator)
+- claude-tg-forum maps each Telegram forum topic to a separate Claude Agent SDK session with a launcher topic and auto-cleanup for idle sessions. [Filo6699/claude-tg-forum](https://github.com/Filo6699/claude-tg-forum)
+- codex-topics-telegram-bot turns a Telegram forum group into a multi-session Codex CLI workspace where each topic has its own queue, model, project directory, and history. [STELS37/codex-topics-telegram-bot](https://github.com/STELS37/codex-topics-telegram-bot)
+- SleepSweet is a local memory-hygiene layer that deduplicates, conflict-checks, audits, and safely edits agent memory files such as CLAUDE.md, AGENTS.md, Cursor rules, and Copilot instructions. [SleepSweet/sleepsweet](https://github.com/SleepSweet/sleepsweet)
+- remembrane is a zero-dependency SQLite memory store with hybrid recall, explainable ranking, time-travel history, conflict-aware recall, and a built-in MCP server. [satyasairay/remembrane](https://github.com/satyasairay/remembrane)
+- vestigio is a compact MCP memory server for coding agents that emphasizes low schema/context tax and budget-capped local recall. [valzkat1/vestigio](https://github.com/valzkat1/vestigio)
+- async-hermes-agent is an async-first library-focused fork of Hermes Agent that keeps the loop, providers, tools, MCP, skills, memory, sessions, trajectories, and batch runner without the CLI/gateway layers. [ykoh42/async-hermes-agent](https://github.com/ykoh42/async-hermes-agent)
+- prodagent packages production-agent primitives such as checkpoint recovery, budget control, circuit breakers, state machines, guardrails, and observable event flows. [limenagent/prodagent](https://github.com/limenagent/prodagent)
