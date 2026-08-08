@@ -1,0 +1,18 @@
+# Property scout — 2026-08-08
+
+## Linked recommendations
+
+- **🔥 Best: Needs diligence / Sulino near Barzkowice, Zachodniopomorskie:** 178,800 PLN for 14,900 m² siedliskowa land with WZ for a house and farm building, hard-surfaced access, own well and septic assumed in WZ, and electricity conditions reportedly issued; very interesting at 12 PLN/m², but verify WZ transferability, parcel class, KOWR/agricultural status and actual power connection cost before treating it as buildable. [Listing](https://www.otodom.pl/pl/oferta/dzialka-siedliskowa-z-warunkami-zabudowy-ID4CunZ)
+- **Strong but ugly / Słupice, Dolnośląskie:** 129,000 PLN for a 172 m² 1870 residential building plus two outbuildings on 4,405 m² under MPZP 2.20M village housing, with asphalt access, water and electricity; the price is exceptional at about 29.3 PLN/m² land and 750 PLN/m² house, but conservation protection plus remont/rozbiórka risk could make it a paperwork-heavy ruin. [Listing](https://www.otodom.pl/pl/oferta/budynek-mieszkalny-z-duza-dzialka-ID4CxXB)
+- **Maybe / Mieszałki, Zachodniopomorskie:** 420,000 PLN for a 116.58 m² detached house in closed shell on 7,807 m² with a roughly 20 × 30 m pond, electricity and water listed; good privacy/retreat geometry at 53.8 PLN/m² land, but finishing cost, coal-heating assumptions, drainage and pond legality need hard checking. [Listing](https://www.otodom.pl/pl/oferta/dom-wolnostojacy-na-duzej-dzialce-mieszalki-gm-ID4Cys6)
+- **Maybe / Daszów, Dolnośląskie:** 399,999 PLN for a 119 m² brick house on 7,100 m² with asphalt access, country location, renewed roof/elevation and interior renovation still needed; acceptable at 56.3 PLN/m² land if the roof claim is real, but utilities, sewage, damp and MPZP/KW are still unknown. [Listing](https://www.otodom.pl/pl/oferta/dom-119-m-z-dzialka-7100-m-daszow-duzy-potencjal-ID4CxEs)
+- **Maybe mountain land / Stara Kamienica, Dolnośląskie:** 530,000 PLN for 13,937 m² on Pogórze Izerskie split into four adjacent plots, with MPZP symbols 13RM/9RM for zagrodowa use and 34R agricultural land; attractive location/optionality, but at 38 PLN/m² it needs exact plan text, access, slope, utilities and agricultural-buyer constraints checked. [Listing](https://www.otodom.pl/pl/oferta/pogorze-izerskie-dzialka-siedliskowa-rola-ID4Cu0G)
+- **Weak maybe / Gola, Lubuskie:** 179,000 PLN for a half-twin house marketed as 80–90 m² and 8,000 m², explicitly a complete ruin; headline price is low at about 22.4 PLN/m² land, but the description also says “8 ar,” so land area must be verified from KW/parcel map before any viewing. [Listing](https://www.otodom.pl/pl/oferta/blizniak-z-duza-dzialka-gola-inwestycyjna-okazja-ID4CyIB)
+
+## Evidence notes
+
+Search/source checks used six bounded live source requests: Otodom result pages for houses in Lubuskie, Zachodniopomorskie and Dolnośląskie; Otodom land pages for Dolnośląskie, Lubuskie and Zachodniopomorskie; plus one OLX result-page attempt. Otodom embedded listing data and selected direct pages were usable despite generic captcha text in page chrome. OLX returned noisy/unusable extended-search results for the tested filtered pages, so it was not used for recommendations.
+
+Older unchanged leads from the last three reports were excluded, including Krąg river land, Wolin/Zalew land, Olchowiec manor-park, Morowo, Lubiechowa, Raszowice and Kolsko.
+
+First calls: Sulino/Barzkowice for WZ and utility proof; Słupice only if Konrad is comfortable with conservation/remont risk; Mieszałki if a pond + closed-shell rural build is genuinely appealing. For each, ask for KW, plot IDs, MPZP/WZ documents, access-road proof, media maps, flood/wetland/protection layers, and fresh photos of roof/foundations/damp where buildings exist.
