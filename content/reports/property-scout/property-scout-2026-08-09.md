@@ -1,0 +1,15 @@
+# Property scout — 2026-08-09
+
+## Linked recommendations
+
+- **🔥 Best: Needs diligence / Myślibórz, Pogórze Kaczawskie, Dolnośląskie:** 299,950 PLN for 6,031 m² directly by a stream, with electricity, forest and mountain setting flagged by the listing; interesting at about 49.7 PLN/m² for a personal retreat/nature build, but check MPZP/WZ, flood/watercourse setbacks, protected-land limits, legal access and actual buildability before emotional commitment. [Listing](https://www.otodom.pl/pl/oferta/pogorzu-kaczawskim-w-sudetach-bezposrednio-nad-potokiem-ID4AZ49)
+- **Strong maybe / Rogów Górowski, Dolnośląskie:** 200,000 PLN for a rural farmstead-type house offer on 5,800 m², with water, septic and internet listed; cheap at about 34.5 PLN/m² land, but the source has obvious area-data errors, so require KW, plot number, building usable area, roof/damp photos and access proof before viewing. [Listing](https://www.otodom.pl/pl/oferta/gospodarsrwo-rolne-ID4CmIw)
+- **Maybe / Rożnowo Nowogardzkie, Zachodniopomorskie:** 445,000 PLN for 15,000 m² by an asphalt road with electricity, gas and sewage listed; good size and media story at about 29.7 PLN/m², but not necessarily private or buildable, so MPZP/WZ, road frontage, land class and division potential decide whether it is a deal. [Listing](https://www.otodom.pl/pl/oferta/roznowo-15000m2-przy-drodze-asfaltowej-media-ID3JFqQ)
+- **Maybe / Witoszyn, Lubuskie:** 200,000 PLN for a 3-room house-to-renovate on 4,800 m²; useful low-ticket village option at about 41.7 PLN/m² land, but house size/condition, heating, sewage, roof, damp and year-round access are unknown and could turn this into demolition land. [Listing](https://www.otodom.pl/pl/oferta/dom-do-remontu-ID4z7vX)
+- **Weak but track / Pałck, Lubuskie:** 279,000 PLN for 4,365 m² with a small domek angle and electricity, water and septic listed; practical hobby/pasieka plot at about 63.9 PLN/m², but too small for the ideal 1 ha retreat and needs hard checks on building legality, services, neighbours and MPZP. [Listing](https://www.otodom.pl/pl/oferta/dzialka-z-domkiem-idealna-pod-pasieke-i-nie-tylko-palck-woj-lubuskie-ID4zoXI)
+
+## Evidence notes
+
+Bounded live source checks were run against six search/result sources: broad web queries for Lubuskie siedlisko, Zachodniopomorskie house-with-land and Dolnośląskie land/WZ were weak/noisy, while Otodom result pages for Lubuskie, Zachodniopomorskie and Dolnośląskie houses/land returned usable embedded listing links. Eight direct Otodom pages were opened; the already-reported Wojciechów manor was removed as a duplicate. Lake-front Zachodniopomorskie parcels in Lipiany and Objezierze were rejected for today because prices were high relative to size unless lake access is legally exceptional.
+
+First calls should ask for KW/plot IDs, exact MPZP or WZ status, road access basis, utility maps/connection terms, land class, flood/protection layers, and current photos of roof/foundations/damp where buildings exist. The best asymmetric lead today is Myślibórz only if the stream/mountain setting is buildable rather than just pretty restricted land.
