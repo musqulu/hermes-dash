@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: agent-workspace-kit is a full extracted pattern for a self-running Claude Code workspace with Telegram control, Obsidian-vault memory, scheduled headless workers, subagents and a local dashboard. [outlier1804/agent-workspace-kit](https://github.com/outlier1804/agent-workspace-kit)
+- foreman-agent is a Telegram-driven daemon that queues tasks into Claude Code, Codex CLI and other agent CLIs with SQLite state, worktree isolation and cross-model review loops. [coderdailyone/foreman-agent](https://github.com/coderdailyone/foreman-agent)
+- claude-tg-forum maps Telegram forum topics to independent Claude Agent SDK sessions, including a launcher topic and idle-topic cleanup for tidy topic-scoped agents. [Filo6699/claude-tg-forum](https://github.com/Filo6699/claude-tg-forum)
+- Codex Topics Telegram Bot turns each Telegram forum topic into a persistent Codex or Claude Code session with its own queue, working directory, memory and provider routing. [STELS37/codex-topics-telegram-bot](https://github.com/STELS37/codex-topics-telegram-bot)
+- agentgrid is a zero-dependency local dashboard for seeing which Claude Code or Codex sessions need attention, are still working, or have replied, with a daily checkbox notepad as the todo list. [dimichoueiry/agentgrid](https://github.com/dimichoueiry/agentgrid)
+- Termdeck is a web control plane for existing Claude Code, Codex CLI and Grok sessions, with a fleet board, phone approvals and resume-from-terminal continuity. [xDope7137/termdeck](https://github.com/xDope7137/termdeck)
+- Orchestrator MCP lets Claude Code ask Codex or Codex ask Claude Code through locally signed-in subscriptions, with validated response envelopes and a dashboard of consultations. [crAK1644/orchestrator-mcp](https://github.com/crAK1644/orchestrator-mcp)
+- lybrary is a structure-aware MCP code memory that indexes repositories so coding agents can query symbols and relationships instead of repeatedly rereading the same files. [vibhu-dixit/lybrary](https://github.com/vibhu-dixit/lybrary)
+- CodeLedger is a local-first project memory and change-intelligence layer for coding agents, with incremental symbol indexing, dependency-impact queries, scope guards and a stdio MCP server. [mikuare/Code-Ledger](https://github.com/mikuare/Code-Ledger)
+- DREAMER turns raw agent or team logs into a librarian-curated knowledge layer and assembled briefs, including spreading-activation retrieval and a nightly cross-topic “dreamer” pass. [deltafly/DREAMER](https://github.com/deltafly/DREAMER)
