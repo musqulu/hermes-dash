@@ -1,0 +1,15 @@
+# Property scout — 2026-08-11
+
+## Linked recommendations
+
+- **🔥 Best: Strong lead / Witoszyn, Lubuskie:** 480,000 PLN for a 150 m² brick detached house to renovate on 15,600 m² with asphalt/hard-surfaced access, water, power and septic listed; the land-heavy price is about 30.8 PLN/m², but roof/damp, land class, KW/plot geometry and privacy need hard checking before a viewing. [Listing](https://www.otodom.pl/pl/oferta/dom-z-ziemia-na-sprzedaz-ID4CB1H)
+- **Needs diligence / Wołów area, Dolnośląskie:** 460,000 PLN for a 232 m² detached house advertised as “without neighbourhood” on 10,000 m² with forest nearby, garage/basement, septic and partly old electrics; interesting retreat base at about 46 PLN/m² land, but verify whether “bez sąsiedztwa” is real, plus access, utilities, structure, MPZP/WZ and flood/wetland constraints. [Listing](https://www.otodom.pl/pl/oferta/na-sprzedaz-dom-wolnostojacy-bez-sasiedztwa-ID4CAEz)
+- **Maybe / Przemocze, Zachodniopomorskie:** 329,000 PLN for 15,289 m² investment land with WZ for 6 houses on 6,700 m² and asphalt-road access with electricity in the road; attractive optionality at about 21.5 PLN/m², but RIIIb/RIVa/Lz classes, no MPZP and buildable-area limits make this a document-first lead. [Listing](https://www.otodom.pl/pl/oferta/dzialka-inwestycyjna-z-warunkami-zabudowy-na-6-dom-ID4CAZE)
+- **Maybe / Kotowice near Zielona Góra, Lubuskie:** 189,000 PLN for 7,900 m² building land with WZ, hard-surfaced access and quiet forest/meadow surroundings; good personal-use size at about 23.9 PLN/m², but media are vague and the WZ, road legal status, soil class and actual neighbours decide whether it is usable or just cheap countryside. [Listing](https://www.otodom.pl/pl/oferta/dzialka-7-900-m-z-decyzja-o-warunkach-zabudowy-ID4CzXK)
+- **Weak but track / Lubieszewo, Lake Lubie, Zachodniopomorskie:** 399,000 PLN for 3,002 m² private building land near lake/forest/open terrain with MPZP claimed and asphalt/hard access; worth opening only for the lake angle, because 132.9 PLN/m² is expensive and utilities, setbacks and real lake access are unknown. [Listing](https://www.otodom.pl/pl/oferta/dzialka-3002-m-nad-jeziorem-lubie-mpzp-ID4CB1A)
+
+## Evidence notes
+
+Six bounded search/source requests were used: three broad web searches for rural property phrases and three additional web-result searches, followed by six Otodom regional result pages and eight direct Otodom listing pages. Otodom pages contained usable embedded listing data despite captcha text in the chrome. Recent report duplicates from 2026-08-08 through 2026-08-10 were checked by listing ID/URL and excluded.
+
+First-call questions: ask for KW and plot numbers, MPZP/WZ documents, access-road legal basis, utility maps/connection conditions, land class, flood/wetland/protected-area layers, and fresh roof/foundation/damp photos for houses. Witoszyn is the best asymmetric lead today because the land size compensates for renovation risk, but only if the house is structurally sane and the plot is not awkward/agricultural dead weight.
