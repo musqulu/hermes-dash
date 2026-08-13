@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Kookr is an attention router for developers running multiple Claude Code or Codex agents, detecting blockers, repeated errors, idle work and human-needed prompts from one local dashboard. [kookr-ai/kookr](https://github.com/kookr-ai/kookr)
+- ae is a single-bash tmux system where Claude Code, Codex, Gemini and other coding agents run side by side, survive reboots, communicate by name and optionally report through Telegram. [clemens33/ae](https://github.com/clemens33/ae)
+- repomon is a Rust TUI for running many Claude Code, Codex and Aider agents across many repos and worktrees, with human-needed sessions floating to the top. [AliHamzaAzam/repomon](https://github.com/AliHamzaAzam/repomon)
+- Helyx is a Telegram-forum control hub where each project topic maps to a persistent Claude Code session with dual-layer memory, voice transcription, images and dashboard monitoring. [MrCipherSmith/helyx](https://github.com/MrCipherSmith/helyx)
+- Podium runs real Claude Code, Codex and other agent CLIs in persistent PTY sessions on your machines, with a phone-friendly web UI, issue tracker and worktree-native grouping. [madeinorbit/podium](https://github.com/madeinorbit/podium)
+- lazybox is a reactive terminal inbox where every GitHub or Linear task becomes an isolated worktree with an embedded Claude Code, Codex, Cursor or shell agent terminal. [AntoineToussaint/lazybox](https://github.com/AntoineToussaint/lazybox)
+- Wringer is a vendor-neutral evidence harness that runs a repo’s own mergeability gates and leaves auditable receipts for humans or agents to inspect. [marcoakes/wringer](https://github.com/marcoakes/wringer)
+- pi-goal-list-loop-audit separates long-running implementation from verification by launching a fresh extension-less auditor process with raw command-output requirements after each claimed completion. [DraconDev/pi-goal-list-loop-audit](https://github.com/DraconDev/pi-goal-list-loop-audit)
+- Pragma packages repeatable AI working methods as reusable desktop assets, useful as a reference for turning Hermes workflows and skills into shareable operator playbooks. [pqpo/pragma](https://github.com/pqpo/pragma)
+- Veld gives agents stable local HTTPS service URLs, dependency graphs, health checks and auto-recovery for multi-service dev environments without manual port juggling. [prosperity-solutions/veld](https://github.com/prosperity-solutions/veld)
