@@ -4,15 +4,15 @@ Date: 2026-08-17
 
 ## Candidates
 
-1. **BUY (medium):** [OLX — mac studio m3 ultra 96gb ram bardzo wydajny gwarancja](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-96gb-ram-bardzo-wydajny-gwarancja-CID99-ID1bPeYm.html) — 18 000 PLN, Dolnośląskie, Wałbrzych, M3 Ultra, 96GB RAM, SSD unclear; Gwarancja apple do 2027 styczen kupiony w polskim salonie apple,; contact via platform message; no public phone visible; unusually cheap below-target Ultra; verify serial, exact SSD/GPU, pickup and Apple warranty.
-2. **WATCH (high):** [OLX — Mac Studio M3 Ultra 32/80 | 256GB RAM | 4TB SSD PL/ENG](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-32-80-256gb-ram-4tb-ssd-pl-eng-CID99-ID1bv5kg.html) — 38 500 PLN, Pomorskie, Gdynia, Kamienna Góra, M3 Ultra, 256GB RAM, 4TB; Stan: idealny — wizualnie jak prosto z pudełka, bez śladów użytkowania, rys czy wgnieceń Data zakupu: 9 lipca 2026 — sprzęt świeży, przeprowadzone zostały wyłącznie testy; contact via platform message; no public phone visible; verify serial/config/warranty/seller before acting.
-3. **WATCH (medium):** [OLX — Mac studio m3 ultra 96gb](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-96gb-CID99-ID1bJLVb.html) — 24 900 PLN, Wielkopolskie, Poznań, Grunwald, M3 Ultra, 96GB RAM, 1TB; 60 GPU, Nowy nie rozpakowany Apple Mac Studio 28-rdzeniowy procesor Apple M3 Ultra (GPU 60 rdzeni), RAM 96GB, dysk 1TB Mogę wystawić pełną FV-VAT.; contact via platform message; no public phone visible; verify serial/config/warranty/seller before acting.
-4. **IGNORE (high):** [OLX — apple mac studio m3 ultra 512GB RAM! 80gpu 40cpu 16tb ssd](https://www.olx.pl/d/oferta/apple-mac-studio-m3-ultra-512gb-ram-80gpu-40cpu-16tb-ssd-CID99-ID1bkFnk.html) — 200 000 PLN, Mazowieckie, Warszawa, Śródmieście, M3 Ultra, 512GB RAM, 16TB; 80 GPU, Kupiony w USA, dziś niedostępny w sprzedazy, używany testowo od lutego 2026 Apple Mac Studio m3 ultra 80gpu core 40cpu core. (nie musisz pobierac 10TB modeli z internetu); contact via platform message; no public phone visible; overpriced or too risky for action.
-5. **IGNORE (high):** [OLX — Mac Studio M2 Ultra 64GB Ram / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 20 000 PLN, Kujawsko-pomorskie, Bydgoszcz, M2 Ultra, 64GB RAM, 1TB; contact via platform message; no public phone visible; 64GB Ultra price comp only, not ideal for local LLM rigs.
+1. **BUY (medium):** [OLX — mac studio m3 ultra 96gb ram bardzo wydajny gwarancja](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-96gb-ram-bardzo-wydajny-gwarancja-CID99-ID1bPeYm.html) — 18 000 PLN, Wałbrzych, Dolnośląskie, M3 Ultra, 96GB RAM; Gwarancja apple do 2027 styczen kupiony w polskim salonie apple,; contact via platform message; no public phone visible; unusually cheap below-target Ultra; verify serial, exact SSD/GPU, pickup and Apple warranty.
+2. **WATCH (high):** [OLX — Mac Studio M3 Ultra 32/80 | 256GB RAM | 4TB SSD  PL/ENG](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-32-80-256gb-ram-4tb-ssd-pl-eng-CID99-ID1bv5kg.html) — 38 500 PLN, Gdynia, Kamienna Góra, Pomorskie, M3 Ultra, 256GB RAM, 4TB; Stan: idealny — wizualnie jak prosto z pudełka, bez śladów użytkowania, rys czy wgnieceń Data zakupu: 9 lipca 2026 — sprzęt świeży, przeprowadzone zostały wyłącznie testy funkcjona; contact via platform message; no public phone visible; ideal RAM, AppleCare/faktura claimed, but not obviously below market; verify serial/config/warranty/seller.
+3. **WATCH (medium):** [OLX — Mac studio m3 ultra 96gb](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-96gb-CID99-ID1bJLVb.html) — 24 900 PLN, Poznań, Grunwald, Wielkopolskie, M3 Ultra, 96GB RAM, 1TB, 60 GPU; Nowy nie rozpakowany Apple Mac Studio 28-rdzeniowy procesor Apple M3 Ultra (GPU 60 rdzeni), RAM 96GB, dysk 1TB Mogę wystawić pełną FV-VAT. W przypadku zakupu bez fv możliwa mała zn; contact via platform message; no public phone visible; new/unpacked and FV-VAT claimed, but 96GB is below target and price is not a clear BUY.
+4. **IGNORE (high):** [OLX — apple mac studio m3 ultra 512GB RAM! 80gpu 40cpu 16tb ssd](https://www.olx.pl/d/oferta/apple-mac-studio-m3-ultra-512gb-ram-80gpu-40cpu-16tb-ssd-CID99-ID1bkFnk.html) — 200 000 PLN, Warszawa, Śródmieście, Mazowieckie, M3 Ultra, 512GB RAM, 16TB, 80 GPU; Kupiony w USA, dziś niedostępny w sprzedazy, używany testowo od lutego 2026 Apple Mac Studio m3 ultra 80gpu core 40cpu core. (nie musisz pobierac 10TB modeli z internetu) W momenci; contact via platform message; no public phone visible; absurdly overpriced and seller narrative/config claims need caution.
+5. **IGNORE (high):** [OLX — Mac Studio M2 Ultra 64GB Ram / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 20 000 PLN, Bydgoszcz, Kujawsko-pomorskie, M2 Ultra, 64GB RAM, 1TB; contact via platform message; no public phone visible; 64GB Ultra price comp only, not ideal for local LLM rigs.
 
 ## New / changed since saved history
 
-- No newly discovered or meaningfully changed candidates versus saved history; the older active leads remain unchanged.
+- No newly discovered or meaningfully changed candidates versus saved history; older active OLX leads remain unchanged.
 
 ## Price-history notes
 
@@ -23,7 +23,7 @@ Date: 2026-08-17
 
 ## Source coverage
 
-- OLX Poland: accessible; current searches reconfirmed the same active OLX Ultra set, with no new price/config changes versus saved history.
-- Allegro.pl: current Mac Studio Ultra/M1/M2/M3 Ultra searches were blocked or timed out behind HTTP 403/DataDome-style protection; no bypass attempted.
-- Allegro Lokalnie: public searches for mac studio ultra, m1 ultra, m2 ultra, and m3 ultra were accessible and returned 0 Mac Studio offer links.
-- Facebook Marketplace/public groups: inaccessible via public fetch (login/cookie wall or HTTP 400); no access-control bypass attempted.
+- OLX Poland: accessible; current OLX API searches reconfirmed 5 Ultra candidates/comps and no meaningful new/changed deal versus saved history.
+- Allegro.pl: Allegro.pl direct search `Mac Studio Ultra 128GB`: blocked/error (HTTPError: HTTP Error 403: Forbidden); no listing details used.
+- Allegro Lokalnie: accessible; public Allegro Lokalnie searches for mac studio ultra / m1 ultra / m2 ultra / 128GB / 192GB returned 0 parsed Ultra offer links.
+- Facebook Marketplace/public groups: Facebook Marketplace public search: inaccessible/error (HTTPError: HTTP Error 400: Bad Request); no listing details used.
