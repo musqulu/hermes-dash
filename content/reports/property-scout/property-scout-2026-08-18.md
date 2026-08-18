@@ -1,0 +1,16 @@
+# Property scout — 2026-08-18
+
+## Linked recommendations
+
+- **🔥 Best: Strong lead / Morowo, Zachodniopomorskie:** 329,000 PLN for a 120 m² 1943 brick house on 3,000 m², about 109.67 PLN/m² of land-equivalent; seller states two independent living parts, outbuildings/3 garage spaces, sad, asphalt access, water, power, sewerage, phone and internet, and forest/lake surroundings about 20 km from Kołobrzeg. [Listing](https://www.otodom.pl/pl/oferta/dom-z-dwoma-niezaleznymi-czesciami-dzialka-3000-m-do-zamieszkania-ID4BaGh)
+- **Needs diligence / Księginice Wielkie, Dolnośląskie:** 499,000 PLN for a large 1884 brick farm-style property advertised as 400 m² building, 6,000 m² plot and many outbuildings, about 83.17 PLN/m² if counted against the whole plot; the listing also says the sale is a 1/3 share with roughly 104 m² exclusive residential use and about 2,000 m² ground, so legal/use division is the deal-killer. [Listing](https://www.otodom.pl/pl/oferta/czesc-domu-grunt-budynki-gospodarcze-ksieginice-wielkie-ID4CDo7)
+- **Maybe / Wymiarki, Lubuskie:** 360,000 PLN for a 250 m² 9-room house to renovate on 2,900 m², about 124.14 PLN/m² land-equivalent, with three outbuildings, forest nearby, asphalt access and full urban utilities stated; interesting as a cheap workshop/multi-family shell, but it is mostly a capital-remont project and just below the 3,000 m² land threshold. [Listing](https://www.otodom.pl/pl/oferta/duzy-dom-do-remontu-ID4BdWg)
+- **Maybe / Rogówek, Kłodzko area, Dolnośląskie:** 218,920 PLN for a 3,368 m² plot at 65 PLN/m², with stated WZ activity in the neighbouring plots, mountain views, quiet village setting and planned S8 upside; check exact WZ for this parcel, road rights, utilities and whether the growing mini-estate kills the privacy angle. [Listing](https://www.otodom.pl/pl/oferta/dzialki-z-wz-w-rogowku-z-pieknym-widokiem-na-gory-ID4jMYH)
+- **Weak maybe / Żółte, Zachodniopomorskie:** 163,000 PLN for a 1,206 m² building plot with MPZP for MN plus tourism/recreation uses and shared lake-access area at about 135.16 PLN/m²; attractive lake/nature angle, but the plot is small and the 15,000 PLN infrastructure contribution plus internal-road rules need checking. [Listing](https://www.otodom.pl/pl/oferta/dzialka-z-widokiem-na-jezioro-zaranskie-dostep-do-jeziora-ID4yT3J)
+
+## Evidence notes
+
+- Bounded checking used portal result pages and direct Otodom listing pages for Lubuskie, Zachodniopomorskie, Dolnośląskie and one Bieszczady-focused Podkarpackie query; search-engine HTML was blocked by anomaly/no-result pages, while Otodom pages exposed usable JSON-LD and listing text.
+- Recent-history dedupe removed unchanged August leads before selection; today’s shortlisted URLs were not present in the last three saved reports.
+- Hard rejects: Sława was only 200 m² of land for 550,000 PLN, Leśniów Wielki and Steklinko were small land parcels despite decent media/WZ clues, and Wetlina/Bukówka/Szklary/Tuczno/Lubniewice were outside the budget or too ordinary for the buy box.
+- First-call diligence for every lead: request KW and plot numbers, MPZP/WZ excerpt and map, legal road access, land classes, utility maps/connection costs, flood/wetland/protected-area checks, and fresh roof/foundation/damp photos for houses.
