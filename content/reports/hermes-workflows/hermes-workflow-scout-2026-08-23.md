@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Clockwork schedules recurring Claude Code, Codex, OpenCode and Hermes jobs in sandboxed worktrees with calendar-style runs and reviewable reports. [vimoxshah/clockwork](https://github.com/vimoxshah/clockwork)
+- Hermes HUD is a read-only local monitoring dashboard for Hermes Agent covering health, token and cost, sessions, cron jobs, channels, errors and incidents. [Diabloluo/hermes-hud](https://github.com/Diabloluo/hermes-hud)
+- System Context Compiler builds evidence-backed repository context packs for Claude Code, Codex, Hermes and OpenCode so agents can consume structured system knowledge instead of ad-hoc grep output. [carterlasalle/system_ir](https://github.com/carterlasalle/system_ir)
+- Context OS is a Git-backed context and workflow layer for Claude Code, Codex and Hermes that keeps agent instructions, state and workflows versioned with the project. [conorbronsdon/agent-context-os](https://github.com/conorbronsdon/agent-context-os)
+- Tale is an agent orchestrator that connects Hermes Agent, Claude Code, Codex, Cursor, Gemini CLI, OpenCode and Pi into a self-hosted swarm with pooled knowledge and delegation. [tale-project/tale](https://github.com/tale-project/tale)
+- cfetch is a local-first Rust memory and context engine for Claude Code, Codex, Gemini and MCP with cited Markdown recall, code navigation, hooks and cross-machine access. [corbet-labs/cfetch](https://github.com/corbet-labs/cfetch)
+- coldstart keeps codebase memory self-maintaining by combining deterministic AST indexing with agent-written notes that become stale when the referenced code changes. [AkashGoenka/coldstart](https://github.com/AkashGoenka/coldstart)
+- Knowl tackles the “CLAUDE.md keeps growing” problem by retiring changed facts and exposing persistent memory across Claude Code, Cursor and Codex over MCP. [dat999zx/knowl](https://github.com/dat999zx/knowl)
+- Agent2Telegram is a dependency-free bridge for controlling Claude Code or Codex from Telegram via local long polling, owner gating and no public webhook. [petrludwig-collab/Agent2Telegram](https://github.com/petrludwig-collab/Agent2Telegram)
+- laixin-pipeline documents a production-tested tmux orchestrator for parallel Codex, Claude Code and Kimi workers with dispatch lanes, watchdog recovery and failure-derived operating rules. [pingxia710/laixin-pipeline](https://github.com/pingxia710/laixin-pipeline)
