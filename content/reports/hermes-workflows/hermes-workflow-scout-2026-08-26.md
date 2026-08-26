@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Agent of Empires is a mature TUI/web session manager for running many local coding agents in isolated sessions, with mobile-friendly browser access and optional Docker sandboxing. [agent-of-empires/agent-of-empires](https://github.com/agent-of-empires/agent-of-empires)
+- agent-runner wraps Claude Code and Codex CLI as reliable Python workflow steps with streaming, typed outcomes, session resume and retry/failure classification. [JamMaster1999/agent-runner](https://github.com/JamMaster1999/agent-runner)
+- AgentMesh defines a local-first workflow, packet, event and artifact protocol for coordinating Codex CLI, Claude Code, Cursor Agent, Antigravity and OpenCode without replacing them. [jinhx128/agentmesh](https://github.com/jinhx128/agentmesh)
+- cc-connect bridges local coding agents to Telegram, Slack, Discord, Feishu, DingTalk and other chat platforms so projects can be controlled remotely without exposing the machine publicly. [chenhg5/cc-connect](https://github.com/chenhg5/cc-connect)
+- Engram is a single-binary SQLite/FTS5 memory layer with CLI, HTTP, MCP and TUI interfaces for sharing persistent context across Claude Code, Codex, Gemini, Cursor and other agents. [Gentleman-Programming/engram](https://github.com/Gentleman-Programming/engram)
+- Brigade keeps coding-agent work trackable with local tasks, receipts, atomic claims, bounded recall, dry-run tool projection and outcome-based skill promotion. [escoffier-labs/brigade](https://github.com/escoffier-labs/brigade)
+- Claude Agents Dashboard reads Claude Code JSONL sessions directly and gives an always-open browser monitor for active projects, branches, context usage, tools and subagent activity. [futin/claude-agents-dashboard](https://github.com/futin/claude-agents-dashboard)
+- tmux-assistant-resurrect persists and restores Claude Code, Codex, OpenCode, Pi and Copilot assistant panes across tmux restarts or machine reboots. [timvw/tmux-assistant-resurrect](https://github.com/timvw/tmux-assistant-resurrect)
+- CodeBridge is a self-hosted ACP gateway for driving local Cursor, Claude Code and Codex sessions from Telegram or Feishu with scoped mentions, streaming and local permission handling. [Chenkeliang/CodeBridge](https://github.com/Chenkeliang/CodeBridge)
+- Kiokuko is a model-agnostic MCP memory store with capability-gated task preparation and post-task memory writes, explicitly listing Hermes Agent alongside Codex and Claude Code. [askdkc/kiokuko](https://github.com/askdkc/kiokuko)
