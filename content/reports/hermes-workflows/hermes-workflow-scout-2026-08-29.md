@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: BlackBeltTechnology/pi-agent-dashboard is a real-time multi-session coding-agent dashboard with live chat mirroring, integrated terminal, diff viewer, mobile remote control, and 257 stars, making it the strongest pattern to adapt for Hermes session observability. [Open](https://github.com/BlackBeltTechnology/pi-agent-dashboard)
+- Lifecycle-Innovations-Limited/claude-ops packages Claude Code into an operations OS with many skills, agents, inbox integrations, a smart daemon, PR automation, and messaging transports including Telegram. [Open](https://github.com/Lifecycle-Innovations-Limited/claude-ops)
+- AgentDeck explores a physical and multi-surface control plane for AI coding agents across Stream Deck, mobile, desktop, ESP32 displays, and TUI surfaces. [Open](https://github.com/puritysb/AgentDeck)
+- fedoseevstanislav/agent-telegram-bridge is a focused Telegram bridge for Claude Code and Codex sessions with one thread per session, tmux/systemd framing, and voice-note transcription. [Open](https://github.com/fedoseevstanislav/agent-telegram-bridge)
+- dewil/claude-control is a macOS/Linux-friendly control layer for phone-dispatched Claude Code sessions, background agent fleets, event spools, budgets, cross-machine handoff, and PR-based rollout. [Open](https://github.com/dewil/claude-control)
+- h-wata/squad is a tmux-based dispatcher/worker orchestrator that assigns YAML tasks to parallel Claude Code and Codex CLI workers and reports progress through dashboards. [Open](https://github.com/h-wata/squad)
+- premanand8800/cogsession records coding-agent decisions, dead ends, assumptions, and truth-drift as searchable session memory exposed through an MCP server for Claude Code. [Open](https://github.com/premanand8800/cogsession)
+- useorgx/orgx-mcp is an organizational-memory MCP server for sharing decisions, artifacts, tasks, and project context across Claude, ChatGPT, Cursor, and other agents. [Open](https://github.com/useorgx/orgx-mcp)
+- wehnsdaefflae/routine-scheduler is a self-hosted LLM routine scheduler with a cron daemon, provider-agnostic workflow harness, web UI, and live conversation intervention. [Open](https://github.com/wehnsdaefflae/routine-scheduler)
+- titans-tools/Cronus targets durable background execution for agents with jobs, DAG workflows, scheduling, recovery, MCP integration, and a task-queue style architecture. [Open](https://github.com/titans-tools/Cronus)
