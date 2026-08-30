@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: AgentTrail is a local observability map for Claude Code, Codex and Cursor that streams plans, tool calls, file changes and progress in real time for debugging stuck agents. [sodiumsun/agenttrail](https://github.com/sodiumsun/agenttrail)
+- Briareus is a local dashboard for running Claude Code, Codex, Grok, OpenCode and Z.ai sessions in isolated workspace clones with per-session databases and PR review loops. [nadinyamaui/briareus](https://github.com/nadinyamaui/briareus)
+- Kanban Code Orchestrator is a Hermes skill that routes Coder → Tester → Reviewer workers through persistent Kanban ownership with retries and structured QA gates. [lichenrobo/kanban-code-orchestrator](https://github.com/lichenrobo/kanban-code-orchestrator)
+- Blacksmith is an autonomous agent factory with a worktree engine, loop runner, local event-log dashboard, self-review and one-PR handoff flow. [juzser/blacksmith](https://github.com/juzser/blacksmith)
+- memriver is a Markdown-first shared memory layer exposed through MCP for Claude Code, Codex, Cursor and Kiro, with local-only operation and write gates. [path-pass/memriver](https://github.com/path-pass/memriver)
+- centered-agent-memory builds a read-only searchable MCP and CLI index over Claude Code, Claude Desktop, Codex and Cursor conversations grouped by project. [arlinamid/centered-agent-memory](https://github.com/arlinamid/centered-agent-memory)
+- Holdfast is a zero-infra repo discipline layer for coding agents that combines memory, context budget control and a stricter Definition of Done. [kiharachiaki-gif/holdfast](https://github.com/kiharachiaki-gif/holdfast)
+- Hermes Social Media Function packages Hermes-native skills for AI image generation, multi-platform social posting and Instagram scheduling workflows. [fajrisilmi12-cyber/hermes-socmed-function](https://github.com/fajrisilmi12-cyber/hermes-socmed-function)
+- TokenGuard is a local-first cost and token guard for Claude Code, Codex and Antigravity with per-project attribution, context-stress monitoring and a lightweight dashboard. [richardlhcai2-svg/TokenGuard](https://github.com/richardlhcai2-svg/TokenGuard)
+- telegram-notifier is a reusable Telegram notification skill/plugin for AI coding agents that reports task completion, approvals and errors while pairing with mobile remote-control workflows. [alhinawi/telegram-notifier](https://github.com/alhinawi/telegram-notifier)
