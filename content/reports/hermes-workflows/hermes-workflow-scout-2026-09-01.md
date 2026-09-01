@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: PromptPilot is a background task queue for Claude Code, Codex, Qwen Code, Cursor Agent and any prompt-taking CLI, with priorities, scheduling, retry-on-rate-limit, Web UI and Telegram bot control. [ivanarama/PromptPilot](https://github.com/ivanarama/PromptPilot)
+- NoMoreIDE is a shared local MCP daemon plus CLI/TUI/web dashboard that gives coding agents a common surface for services, ports, logs, Git review, GitHub workflows and databases. [Rorogogogo/nomoreide](https://github.com/Rorogogogo/nomoreide)
+- Detach is a native macOS control center for long-running Claude Code and Codex sessions, keeping tmux-backed processes, health state, checkpoints, logs, notifications and closed-lid survival together. [iltsarev/detach](https://github.com/iltsarev/detach)
+- claudectl turns Claude Code sessions into project workspaces with browsable history, persistent semantic memory, MCP awareness and per-project model/permission launch control. [babarmuhammad/claudectl](https://github.com/babarmuhammad/claudectl)
+- Embassy is a local single-user broker for routing messages between Claude Code sessions, Codex desktop tasks and other harnesses with consent pairing, bounded delivery receipts and a live dashboard. [YuanpingSong/embassy](https://github.com/YuanpingSong/embassy)
+- ai-telegram-forum maps Telegram supergroup topics to native Claude Code or OpenAI Codex sessions, including a launcher topic for new sessions and idle-topic cleanup. [Filo6699/ai-telegram-forum](https://github.com/Filo6699/ai-telegram-forum)
+- ccem combines Claude Code and Codex workspaces, multi-model parallel sessions, Telegram remote control, scheduled cron pushes, usage analytics and permission modes in a CLI plus macOS app. [Genuifx/ccem](https://github.com/Genuifx/ccem)
+- MIND-Mem is a deterministic local memory MCP for Claude Code and OpenClaw that uses governed writes, hybrid retrieval and audit-friendly scoring to reduce silent long-run memory drift. [star-ga/mind-mem](https://github.com/star-ga/mind-mem)
+- set-core is an alpha structured-development harness for Claude Code that turns specs into supervised parallel-worktree changes with quality gates, developer memory and merge-oriented execution. [tatargabor/set-core](https://github.com/tatargabor/set-core)
+- claude-plugins is a one-command plugin marketplace for Claude Code that bundles installable MCP tools for web search, memory, Notion, email, Telegram, code review and media workflows. [n24q02m/claude-plugins](https://github.com/n24q02m/claude-plugins)
