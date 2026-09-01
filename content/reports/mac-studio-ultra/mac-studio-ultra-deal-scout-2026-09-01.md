@@ -25,4 +25,4 @@ Date: 2026-09-01
 - OLX Poland: accessible in browser; current `mac studio ultra` search showed 75 results and reconfirmed 4 Ultra-looking Mac Studio listing URLs before detail filtering.
 - Allegro.pl: blocked by DataDome CAPTCHA/HTTP 403 in browser/script; no bypass attempted.
 - Allegro Lokalnie: accessible; separate public searches for `mac studio ultra`, `mac studio m3 ultra`, and `mac studio m2 ultra` returned 0 public offers.
-- Facebook Marketplace/public groups: inaccessible/login-gated or HTTP 400 during public search; no bypass attempted.
+- Facebook Marketplace/public groups: inaccessible/login-gated during public search; no bypass attempted.
