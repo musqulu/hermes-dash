@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: deja-vu indexes the session histories already written by Claude Code, Codex, Cursor, Copilot CLI and other agents, then exposes searchable local recall without embeddings or cloud storage. [vshulcz/deja-vu](https://github.com/vshulcz/deja-vu)
+- ccbot maps Telegram topics to tmux-backed Claude Code, Codex and terminal-agent sessions with live pane screenshots, tappable prompts, one-tap worktree agents and voice control. [MrCryptoHat/ccbot](https://github.com/MrCryptoHat/ccbot)
+- Ritsu treats long-lived agents as self-hosted infrastructure with workspaces, persistent memory, hierarchy, an admin UI, bearer/OAuth access control and encrypted secrets. [Horizon-Digital-Engineering/ritsu](https://github.com/Horizon-Digital-Engineering/ritsu)
+- Token Meter turns local Claude, Codex, Cursor, OpenCode and Kiro session evidence into a private dashboard for cost, token usage, cache efficiency and run investigation. [splunk/token-meter](https://github.com/splunk/token-meter)
+- AgentLoop runs long coding tasks as fresh worker-and-critic cycles with project files as memory, git checkpoints, a local dashboard and Claude Code or Codex engines. [aiedwardyi/AgentLoop](https://github.com/aiedwardyi/AgentLoop)
+- herdr-cron schedules shell commands and coding-agent prompts inside long-lived Herdr panes, with JSON-first CLI semantics for agents and a TUI for human debugging. [huketo/herdr-cron](https://github.com/huketo/herdr-cron)
+- Lumi is a native macOS AppKit/SwiftUI dashboard for running many Claude Code or Codex PTY sessions across repos with waiting/error status, notifications, git panels and scheduled triggers. [berkaysazlioglu/Lumi](https://github.com/berkaysazlioglu/Lumi)
+- MemoryGuard is a local-first MCP memory layer for coding agents with scoped rules, deduplication, evidence, audit, token insights and rollback. [irisxc4/memoryguard](https://github.com/irisxc4/memoryguard)
+- Claude Code Orchestrator combines session history browsing, live token/cost monitoring, task dispatch from issue systems and deny-by-default per-session tool allowlists. [phahadek/claude-orchestrator](https://github.com/phahadek/claude-orchestrator)
+- ORRERY Telemetry layers launcher hooks, mailbox-style agent communication, file reservations and a live dashboard over Claude Code/Codex tmux workers to make multi-agent coordination observable. [gyroid-eth/orrery-telemetry](https://github.com/gyroid-eth/orrery-telemetry)
