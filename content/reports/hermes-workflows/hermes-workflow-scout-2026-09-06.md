@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Craft is a local-first capability catalog for agents that indexes `SKILL.md` libraries, stores task checkpoints and verification evidence, and exposes the layer as CLI/plugins/MCP: [wdx9413/craft](https://github.com/wdx9413/craft)
+- Nightshift is a zero-dependency supervisor for unattended Claude/Codex/OpenClaw/Hermes runs with hard runtime, token, dollar, disk, side-effect limits and Telegram-style morning reports: [maximilliangrand/nightshift](https://github.com/maximilliangrand/nightshift)
+- RedRock is a one-binary Rust agent that runs as a Debian user service, preserves state across restarts, and uses Telegram as the operator interface, with useful security caveats to study: [wunsiang-cheng/redrock](https://github.com/wunsiang-cheng/redrock)
+- telegram-mcp is a Telethon/MTProto MCP server aimed at letting coding agents interact with and verify Telegram bots end-to-end: [Fire162/telegram-mcp](https://github.com/Fire162/telegram-mcp)
+- route-skill packages a multi-model build loop where a director writes the plan, a different-vendor critic attacks it, and a selected worker builds via Claude/Codex/Antigravity CLIs: [dawidtomaszewskipl/route-skill](https://github.com/dawidtomaszewskipl/route-skill)
+- ai-wow is a portable “way of working” repo that syncs skills, subagents, slash commands, lifecycle hooks and a durable task board into multiple coding-agent environments: [ozanozcan/ai-wow](https://github.com/ozanozcan/ai-wow)
+- unattended-task-pitfalls is a hardening playbook for scheduled agent jobs, emphasizing code-level gates, locks, artifact verification and notification discipline over remembered “operational lessons”: [mowenQWQ/unattended-task-pitfalls](https://github.com/mowenQWQ/unattended-task-pitfalls)
+- cloudcli-timer-agent adds full five-field cron, one-shot jobs, execution history, inbox dispatch and per-task CLI overrides to scheduled AI-agent prompts: [LouisHaoL/cloudcli-timer-agent](https://github.com/LouisHaoL/cloudcli-timer-agent)
+- spring-durable-agents is a Spring Boot starter for resumable agent execution with a PostgreSQL step store, approvals and Actuator visibility: [bnymnDev/spring-durable-agents](https://github.com/bnymnDev/spring-durable-agents)
+- Kit is a compact coding-agent runtime that exposes a terminal client, ACP server, A2A endpoint and subagent orchestrator from one static binary: [speakeasy-api/kit](https://github.com/speakeasy-api/kit)
