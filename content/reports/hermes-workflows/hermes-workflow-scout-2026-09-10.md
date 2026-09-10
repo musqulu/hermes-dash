@@ -1,0 +1,8 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: iapeer runs Claude Code and Codex CLI as warm local background peers that can message each other, wake on demand, share one memory, and include Telegram or timer peers in the same protocol. [agfpd/iapeer](https://github.com/agfpd/iapeer)
+- Session Browser is a local private index and dashboard for Claude Code, GitHub Copilot CLI and Codex sessions with unified search, usage/cost views, resume-from-anywhere and cross-CLI handoff. [mpankaj151/session-browser](https://github.com/mpankaj151/session-browser)
+- Claude Command Center gives Claude Code, Codex, Cursor, Antigravity, Kimi, OpenCode and Devin sessions one local board with flow grouping, live triage and side-by-side transcript inspection. [amirfish1/claude-command-center](https://github.com/amirfish1/claude-command-center)
+- Codex Eval Plugin packages a customer-owned workflow for designing realistic tasks, running headless Codex-versus-Claude-Code comparisons, grading outcomes and opening a local dashboard. [ianho-oai/codex-eval-plugin](https://github.com/ianho-oai/codex-eval-plugin)
+- AgentRemote controls Codex, Claude and Gemini CLI sessions on a remote VM from Telegram or a browser PWA, including real-time streaming, approval prompts and isolated per-session workdirs. [per-borjesson/AgentRemote](https://github.com/per-borjesson/AgentRemote)
+- KinetAios is a local-first multi-engine desktop dashboard for running Claude Code, Codex, DeepSeek Harness and built-in ReAct/DAG agents side by side with SQLite history, memory and MCP/skill scanning. [phinn/KinetAios](https://github.com/phinn/KinetAios)
