@@ -5,26 +5,26 @@ Date: 2026-09-10
 ## Candidates
 
 1. **WATCH (medium):** [OLX — Apple Mac Studio M5 Ultra /96GB/1TB/Sprzedam/Kupie/Zamienię](https://www.olx.pl/d/oferta/apple-mac-studio-m5-ultra-96gb-1tb-sprzedam-kupie-zamienie-CID99-ID18N3V6.html) — 25 799 PLN, Warszawa Mokotów, claimed M5 Ultra, 96GB RAM, 1TB SSD, 30-core CPU / 64-core GPU, new/full Apple warranty claimed, available from 22 September; public phone +48 609 500370; unchanged WATCH, verify exact Apple model/serial/invoice because the M5 Ultra/pre-availability claim remains unusual.
-2. **WATCH (medium-high):** [OLX — Mac Studio M3 Ultra 32/80 | 256GB RAM | 4TB SSD PL/ENG](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-32-80-256gb-ram-4tb-ssd-pl-eng-CID99-ID1bv5kg.html) — 34 500 PLN, Gdynia Kamienna Góra, M3 Ultra, 256GB RAM, 4TB SSD, 32-core CPU / 80-core GPU, AppleCare+ to 2029 and invoice claimed, pickup possible; contact via platform message first, no public phone visible; unchanged and still worth verification.
-3. **IGNORE (high):** [OLX — Mac Studio M2 Ultra 64GB Ram / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 17 000 PLN, Bydgoszcz, M2 Ultra, 64GB RAM, 1TB SSD; contact via platform message; 64GB comp only, not ideal for local LLM rigs.
-4. **IGNORE (high):** [OLX — apple mac studio m3 ultra 512GB RAM! 80gpu 40cpu 16tb ssd](https://www.olx.pl/d/oferta/apple-mac-studio-m3-ultra-512gb-ram-80gpu-40cpu-16tb-ssd-CID99-ID1bkFnk.html) — 200 000 PLN, Warszawa Śródmieście, M3 Ultra, 512GB RAM, 16TB SSD, 80-core GPU; wildly overpriced / narrative-risk.
+2. **IGNORE (high):** [OLX — Mac Studio M2 Ultra 64GB Ram / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 17 000 PLN, Bydgoszcz, M2 Ultra, 64GB RAM, 1TB SSD; contact via platform message; 64GB comp only, not ideal for local LLM rigs.
+3. **IGNORE (high):** [OLX — apple mac studio m3 ultra 512GB RAM! 80gpu 40cpu 16tb ssd](https://www.olx.pl/d/oferta/apple-mac-studio-m3-ultra-512gb-ram-80gpu-40cpu-16tb-ssd-CID99-ID1bkFnk.html) — 200 000 PLN, Warszawa Śródmieście, M3 Ultra, 512GB RAM, 16TB SSD, 80-core GPU; wildly overpriced / narrative-risk.
+4. **INACTIVE (changed):** [OLX — Mac Studio M3 Ultra 32/80 | 256GB RAM | 4TB SSD PL/ENG](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-32-80-256gb-ram-4tb-ssd-pl-eng-CID99-ID1bv5kg.html) — was 34 500 PLN, Gdynia Kamienna Góra, M3 Ultra, 256GB RAM, 4TB SSD, AppleCare+ to 2029 and invoice previously claimed; OLX now says the listing is no longer available.
 
 ## New / changed since saved history
 
-- No new BUY/WATCH candidate surfaced versus the saved 2026-09-09 run.
-- Availability changed: yesterday’s 19 065 PLN Poznań M2 Ultra 64GB comp now shows “To ogłoszenie nie jest już dostępne”, so treat it as inactive.
-- Older active leads unchanged: the 25 799 PLN Warszawa 96GB Ultra WATCH lead and 34 500 PLN Gdynia 256GB M3 Ultra WATCH lead remain active at the same visible prices.
+- No new BUY/WATCH candidate surfaced versus the earlier saved 2026-09-10 run.
+- Availability changed: the 34 500 PLN Gdynia 256GB M3 Ultra WATCH lead now shows “To ogłoszenie nie jest już dostępne”, so treat it as inactive.
+- Older active lead unchanged: the 25 799 PLN Warszawa 96GB claimed Ultra WATCH lead remains active at the same visible price.
 
 ## Price-history notes
 
-- 64GB M2 Ultra: tracked range 14 900–22 000 PLN across prior observations; visible active floor remains 17 000 PLN after the 19 065 PLN Poznań comp went inactive.
-- 256GB M3 Ultra: tracked range 29 000–38 500 PLN across prior observations; the 29 000 PLN Łódź low remains inactive, leaving 34 500 PLN Gdynia as the visible active floor.
+- 64GB M2 Ultra: tracked range 14 900–22 000 PLN across prior observations; visible active floor remains 17 000 PLN but this is below the RAM target.
+- 256GB M3 Ultra: tracked range 29 000–38 500 PLN across prior observations; the 34 500 PLN Gdynia lead is now inactive, leaving no verified active 256GB Ultra lead from this run.
 - 96GB Ultra/M3-M5 Ultra: tracked recent range 17 500–25 799 PLN; current visible 96GB Ultra lead is 25 799 PLN with model-name verification risk.
 - 512GB M3 Ultra: tracked at 200 000 PLN and remains non-actionable.
 
 ## Source coverage
 
-- OLX Poland: accessible; current search and direct checks found the same 96GB Warszawa lead, active 256GB Gdynia lead, 64GB Bydgoszcz comp, and 512GB overpriced comp; the Poznań 64GB comp is now inactive.
-- Allegro.pl: blocked by DataDome CAPTCHA in browser; no bypass attempted, so current Allegro offers could not be verified.
-- Allegro Lokalnie: accessible; searches for “mac studio ultra”, “mac studio m3 ultra”, “mac studio m2 ultra”, and “mac studio m1 ultra” showed 0 public offers.
+- OLX Poland: accessible; current search and direct checks found the same 96GB Warszawa lead, 64GB Bydgoszcz comp, and 512GB overpriced comp; the formerly strong 256GB Gdynia lead is now inactive.
+- Allegro.pl: browser showed DataDome CAPTCHA/403 on current offer searches; no bypass attempted, so current Allegro offers could not be verified.
+- Allegro Lokalnie: accessible; searches for “mac studio ultra”, “mac studio m3 ultra”, “mac studio m2 ultra”, “mac studio m1 ultra”, and “mac studio m5 ultra” showed 0 public offers.
 - Facebook Marketplace/public groups: not checked beyond known login-gated Marketplace access in this run; no bypass attempted.
