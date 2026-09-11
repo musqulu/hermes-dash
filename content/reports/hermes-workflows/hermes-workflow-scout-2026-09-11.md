@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: ClawCode is a Claude Code plugin that adds persistent agent service mode, memory, personality, and WhatsApp/Telegram/Discord messaging without replacing the underlying CLI. [crisandrews/ClawCode](https://github.com/crisandrews/ClawCode)
+- Incursa Codex Telegram is a self-hosted allowlisted Telegram controller for local Codex CLI sessions with project selection, voice input, repository-pinned mode, and local state. [incursa/codex-telegram](https://github.com/incursa/codex-telegram)
+- ccbot maps Telegram topics to tmux-backed Claude Code, Codex, and terminal-agent sessions with pane screenshots, keypress control, worktree agents, voice, and resume. [MrCryptoHat/ccbot](https://github.com/MrCryptoHat/ccbot)
+- corax solves the “which remote Claude Code session is blocked?” problem by sending machine, folder, and branch-aware attention notifications to Telegram, ntfy, webhooks, or commands. [wbnns/corax](https://github.com/wbnns/corax)
+- many-ai-cli wraps Claude Code, Codex, Copilot, Cursor, Grok, OpenCode, and Command Code in PTYs so one browser hub can detect stops, approvals, errors, and quota from desktop or phone. [ishizakahiroshi/many-ai-cli](https://github.com/ishizakahiroshi/many-ai-cli)
+- Briareus runs Claude Code, Codex, Grok, OpenCode, or GLM sessions in isolated workspace clones with their own databases and an automated PR review loop. [nadinyamaui/briareus](https://github.com/nadinyamaui/briareus)
+- Negotium is an early durable local agent node with shared topics, provider sessions, queues, tools, workspaces, memory, skills, vault, cron schedules, Terminal, Telegram, and Otium access. [maestrojeong/negotium](https://github.com/maestrojeong/negotium)
+- Dashies Plugin lets Claude Code, Codex, and Cursor publish AI-built HTML dashboards over MCP and keep them refreshing on a schedule without keeping the agent in the loop. [Dashies-ai/dashies-plugin](https://github.com/Dashies-ai/dashies-plugin)
+- tokenUsage2 is an offline btop-style terminal dashboard for daily, weekly, and monthly token usage across Claude Code, Codex CLI, and OpenCode local accounts and backends. [marcelpetrick/tokenUsage2](https://github.com/marcelpetrick/tokenUsage2)
+- Gentle-AI is a cross-agent environment configurator for Claude Code, Cursor, OpenCode, Codex, and Pi that bundles persistent memory, spec-driven development, curated skills, MCP servers, personas, and bounded review. [Gentleman-Programming/gentle-ai](https://github.com/Gentleman-Programming/gentle-ai)
