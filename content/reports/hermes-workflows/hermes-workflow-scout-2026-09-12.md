@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Claude Code Agent Spawner is a macOS launchd/tmux command-center pattern for queueing, supervising, forking, and Telegram-approving parallel background Claude Code agents. [ZsoltSziklai/claude-code-agent-spawner](https://github.com/ZsoltSziklai/claude-code-agent-spawner)
+- Codex Telegram Bot is a Node/Codex-SDK Telegram controller with queues, inline runtime settings, image support, cleanup tools, and safer remote maintenance primitives. [woosungchoi/codex-telegram-bot](https://github.com/woosungchoi/codex-telegram-bot)
+- tmux-claude-agents adds live tmux tab status for Claude Code, OpenCode, and Crush panes so blocked, working, and idle agents are visible without opening each session. [ysoftman/tmux-claude-agents](https://github.com/ysoftman/tmux-claude-agents)
+- Corral is a multi-agent session finder that indexes Claude Code, Codex, Cursor, OpenCode, Kimi, and Pi conversations so old work can be searched and resumed. [x0c/corral](https://github.com/x0c/corral)
+- Tmux Agent Panel is an fzf-based pane switcher that surfaces what Claude Code, Codex, and pi agents are doing and sorts permission-blocked agents first. [ahmedelgabri/tmux-agent-panel](https://github.com/ahmedelgabri/tmux-agent-panel)
+- Claude Code Hub is a chromeless PWA for one-place plugin discovery, Kanban task tracking, cost monitoring, and memory diagnosis around Claude Code workflows. [NikiforovAll/claude-code-hub](https://github.com/NikiforovAll/claude-code-hub)
+- Lookspan is a local-first MCP/OpenTelemetry-style observability dashboard that ingests agent spans into SQLite and visualizes tool calls and execution flow in real time. [JoniMartin27/lookspan](https://github.com/JoniMartin27/lookspan)
+- Kronos Agent OS is a self-hosted durable-agent runtime combining CLI, Telegram, Discord, webhooks, cron, memory consolidation, MCP tools, skills, analytics, and a control room. [spyrae/kronos-agent-os](https://github.com/spyrae/kronos-agent-os)
+- docsbook’s Claude Code plugin bundles documentation-focused skills, commands, subagents, and an MCP server as a concrete example of packaging repeatable agent workflows. [Docsbook-io/docs-claude-plugins](https://github.com/Docsbook-io/docs-claude-plugins)
+- kru packages a Claude Code “engineering team” plugin with a lead skill that routes work to specialist subagents pinned to official framework sources. [ap-justin/kru](https://github.com/ap-justin/kru)
