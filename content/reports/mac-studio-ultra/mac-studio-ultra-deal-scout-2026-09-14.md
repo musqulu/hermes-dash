@@ -10,7 +10,7 @@ _Date: 2026-09-14_
 
 ## Changes vs saved history
 
-- No new or meaningfully changed BUY/WATCH candidate surfaced versus the 2026-09-13 run.
+- No new or meaningfully changed BUY/WATCH candidate surfaced versus the 2026-09-13/earlier 2026-09-14 saved data.
 - Older active leads remain visible: the Cieszyn 64GB M1 Ultra comp, the Warszawa claimed 96GB Ultra WATCH, and the Bydgoszcz 64GB M2 Ultra comp.
 
 ## Price-history notes
@@ -25,7 +25,7 @@ _Date: 2026-09-14_
 
 ## Source coverage
 
-- OLX Poland: checked first for Mac Studio Ultra / M1 Ultra / M2 Ultra / M3 Ultra; current relevant results are unchanged from yesterday and no new 128GB+ BUY candidate surfaced.
-- Allegro main: checked second for `mac studio ultra`, `mac studio m1 ultra`, and `mac studio m2 ultra`; browser access and direct fetch hit DataDome/403, so no current Allegro main offer could be credibly verified this run.
-- Allegro Lokalnie: checked separately for `mac studio ultra`, `mac studio m1 ultra`, `mac studio m2 ultra`, and `mac studio m3 ultra`; accessible pages showed 0 matching current offers.
+- OLX Poland: checked first for Mac Studio Ultra / M1 Ultra / M2 Ultra / M3 Ultra; current relevant results are unchanged and no new 128GB+ BUY candidate surfaced.
+- Allegro main: checked second for `mac studio ultra`; browser access hit DataDome CAPTCHA/403, so no current Allegro main offer could be credibly verified this run.
+- Allegro Lokalnie: checked separately for `mac studio ultra`, `mac studio m1 ultra`, and `mac studio m2 ultra`; accessible pages showed 0 matching current offers.
 - Facebook Marketplace: public marketplace search required login, so no listing could be accessed without crossing access controls.
