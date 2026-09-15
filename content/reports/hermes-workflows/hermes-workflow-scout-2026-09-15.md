@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Claude Code Routing rebuilds Spotify’s cheap-model routing pattern for plain Claude Code, with measured token savings and concrete wrappers for offloading reading and boilerplate. [ToolMonsters/claude-code-routing](https://github.com/ToolMonsters/claude-code-routing)
+- claudeq adds a persistent, editable instruction queue beside Claude Code using public hooks, a useful pattern for Hermes busy-state queueing and crash-safe follow-ups. [codecShivam/claudeq](https://github.com/codecShivam/claudeq)
+- agent-flow renders a live subagent tree as a Claude Code mod, showing agent status, tool calls, approvals, elapsed time, and token use in a side pane. [Charlie0113-T/claude-agent-flow](https://github.com/Charlie0113-T/claude-agent-flow)
+- Slowave is a local adaptive memory layer for AI tools that aims to share useful project memory across Claude Code, Codex, and other sessions without a separate memory-maintenance model. [slowave-ai/slowave](https://github.com/slowave-ai/slowave)
+- agentpager is a private Telegram controller for local Claude Code sessions with a daemon, bot, CLI package, and desktop setup/status app. [nguyenkechien/agentpager](https://github.com/nguyenkechien/agentpager)
+- subrev enforces a plan → implement → review pipeline on top of Claude and Codex CLIs, with user-approved plans and real check/build/test gates between stages. [Vensery/subrev](https://github.com/Vensery/subrev)
+- jirrafe gives coding agents a Java/Kotlin code graph over Maven or Gradle projects, including internal jars, so questions like callers and breakage paths return cited file-line answers in fewer tool calls. [abhishekrn44/jirrafe](https://github.com/abhishekrn44/jirrafe)
+- agentic-coding-harness runs, watches, meters, and traces Claude Code, Codex CLI, Gemini CLI, OpenCode, and Kiro from one CLI with token/cost accounting and observability hooks. [sblattj/agentic-coding-harness](https://github.com/sblattj/agentic-coding-harness)
+- steno-personal exposes self-hosted, read-only Telegram and WhatsApp history to agents through MCP and SQLite, useful for personal-context retrieval without granting send/write powers. [0xmythril/steno-personal](https://github.com/0xmythril/steno-personal)
+- Dovsky is a local-first control plane for Claude Code and Codex jobs with sandboxed execution, immutable evidence, and human-gated acceptance. [quant-dhawan/dovsky](https://github.com/quant-dhawan/dovsky)
