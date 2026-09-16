@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: amux is a serious single-binary control plane for parallel Claude Code/Codex/Gemini workers with shared board, schedules, loops, origin-stamped messaging, phone access, and self-healing recovery. [Open amux](https://github.com/mixpeek/amux)
+- Pizza Bot is a local-first inbox for long-running AI agent work, with scheduled tasks, unread/action queues, approval points, and an HTTP/SSE runtime worth studying for proactive Hermes runs. [Open Pizza Bot](https://github.com/pizza-bot-app/pizza-bot)
+- chipping-orchestrator watches GitHub issues, spawns Claude Code/Codex/Antigravity in isolated worktrees, opens PRs, and runs a separate reviewer pass while storing state back on the issue. [Open chipping-orchestrator](https://github.com/chippingway/chipping-orchestrator)
+- TelegramCode turns Telegram threads into terminal tabs for OpenCode and Claude Code, including parallel project sessions, voice control, scheduling, and no-open-port self-hosting. [Open TelegramCode](https://github.com/olosegres/telegramcode)
+- sir-vibe-a-lot bridges Telegram text, voice notes, and photos into Claude Code through the Claude Agent SDK while reusing the host machine’s login, settings, skills, and slash commands. [Open sir-vibe-a-lot](https://github.com/meinharrd/sir-vibe-a-lot)
+- postline is a pluggable mobile front-end that routes Feishu/Lark, Telegram, or Slack messages to Claude Code or Codex, useful as a compact pattern for multi-platform agent control. [Open postline](https://github.com/Christianye/postline)
+- cctop is a btop-style live pane for Claude Code internals, showing context, tokens, cost, limits, tools, agents, and advisor state beside the active session. [Open cctop](https://github.com/tomstagl/cctop)
+- memtrace provides MCP-native structural memory for coding agents with a bi-temporal graph and zero LLM calls, explicitly targeting Hermes alongside Claude Code and Codex. [Open memtrace-public](https://github.com/syncable-dev/memtrace-public)
+- Runpin is a self-hosted durable job runner for AI workflows with HTTP enqueue, leases, heartbeats, stale reclaim, retries, cron schedules, and an activity board. [Open Runpin](https://github.com/anduraio/runpin)
+- Pulpo is a self-hosted meter and breaker box for terminal coding agents, focused on exact usage metering, budget enforcement, monitoring, and durable resumable sessions. [Open Pulpo](https://github.com/darioblanco/pulpo)
