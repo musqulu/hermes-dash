@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Transcript Tool Miner parses Claude Code and Codex transcripts to find repeated tool-call sequences that should become deterministic Hermes tools instead of token-heavy habits. [Open Transcript Tool Miner](https://github.com/matthewcosier/transcript-tool-miner)
+- Cardea is a local CLI, dashboard and MCP router for sending work across Claude Code, Codex, Grok and OpenAI-compatible models by cost and strength. [Open Cardea](https://github.com/SeaHorseCapn/cardea)
+- MemFork offers Git-like fork, merge, discard and rewind semantics for shared agent memory across Claude, Codex, Gemini, Grok, Cursor and MCP clients. [Open MemFork](https://github.com/memforkdb/memfork)
+- Hermes Workstation is an opinionated deployment layer for multi-profile Hermes Agent machines that keeps profiles, Kanban, gateways, worktrees and workspace permissions explicit. [Open Hermes Workstation](https://github.com/luthfanwakan/hermes-workstation)
+- Analytics Autopilot closes an agent workflow loop where a Telegram bot answers product analytics questions and a Claude/Codex skill instruments the app with coverage gates. [Open Analytics Autopilot](https://github.com/codewithdoni/analytics-autopilot)
+- Skill Dash scans Claude Code and Codex skills for usefulness, redundancy, clarity, duplication and safety, which is directly relevant to Hermes skill-curation dashboards. [Open Skill Dash](https://github.com/48Nauts-Operator/skill-dash)
+- LLMatic Agent Runtime bootstraps a repo, configures engineering tools, indexes the codebase and exposes a schema-validated implement-review-fix workflow to coding agents. [Open LLMatic Agent Runtime](https://github.com/pikkst/llmatic-agent-runtime)
+- Gangline connects Claude Code and Codex in one tmux team with attributed message delivery plus visible context, provider limits and token use. [Open Gangline](https://github.com/adambiggs/gangline)
+- tmux Agent Icons adds event-driven per-pane status icons for Claude Code, Codex and OpenCode so blocked or idle agents are visible without a separate poller. [Open tmux Agent Icons](https://github.com/josephgardner/tmux-agent-icons)
+- The Chief of Staff pattern describes one orchestrator session coordinating and verifying worker Claude Code sessions through a durable board, matching Hermes Kanban-style supervision. [Open Chief of Staff pattern](https://asyncdot.com/blog/chief-of-staff-pattern-orchestrating-claude-code-sessions/)
