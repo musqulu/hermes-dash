@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Cross-Code Organizer is a cross-harness local control panel for Claude Code, Codex CLI, MCP servers, skills, memories, sessions and security scanning that maps directly onto Hermes profile/tool/skill operations. [Open Cross-Code Organizer](https://github.com/mcpware/cross-code-organizer)
+- TrueMemory is a fully local SQLite memory layer that automatically captures, consolidates and recalls useful agent context across Claude Code, Cursor and Codex-style coding sessions. [Open TrueMemory](https://github.com/buildingjoshbetter/TrueMemory)
+- GolemBot connects existing coding agents such as Claude Code, Codex, Cursor and OpenCode to Telegram, Discord, Slack and other chat surfaces without replacing the agent brain. [Open GolemBot](https://github.com/0xranx/golembot)
+- Engrim proposes a project-scoped SQLite episodic-memory standard for switching between Claude Code, Codex CLI, Copilot CLI, OpenCode and similar coding agents without losing state. [Open engrim](https://github.com/timgordontg/engrim)
+- Total Agent Memory combines persistent local agent memory, a temporal knowledge graph, procedural memory and codebase ingest for Claude Code, Codex CLI, Cursor and MCP clients. [Open Total Agent Memory](https://github.com/vbcherepanov/total-agent-memory)
+- Codex Claude Bridge creates a bidirectional real-time bridge and web UI so Claude Code and OpenAI Codex CLI can share one conversation instead of operating as isolated tools. [Open Codex Claude Bridge](https://github.com/abhishekgahlot2/codex-claude-bridge)
+- Sessiongrep indexes local Claude Code, Codex CLI and Cursor histories into SQLite and FTS5 so old agent sessions become searchable CLI, TUI or MCP context. [Open Sessiongrep](https://github.com/braincompany/sessiongrep)
+- Lumbergh is a self-hosted tmux supervision dashboard for multiple Claude Code sessions with live terminals, git diffs, file browsing, todos, prompt templates and a mobile PWA. [Open Lumbergh](https://github.com/voglster/lumbergh)
+- tmux-ccm is an attention manager for parallel Claude Code sessions that detects live state, exposes a dashboard and supports cross-project messaging. [Open tmux-ccm](https://github.com/yohasebe/tmux-ccm)
+- vsc_relay lets you control Claude Code inside VS Code from Telegram by reading sessions, answering prompts and approving or denying commands remotely. [Open vsc_relay](https://github.com/itrootvm/vsc_relay)
