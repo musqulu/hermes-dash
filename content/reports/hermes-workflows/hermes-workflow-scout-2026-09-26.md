@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Sno Station coordinates Claude Code, Codex and OpenClaw on one machine with encrypted shared memory, agent messaging, squad handoff skills and an approval-gated nightly skill-improvement loop. [Open Sno Station](https://github.com/sno-ai/sno-station)
+- Pragmatic Orchestration shows a cross-agent delegation pattern where Codex, Claude Code, OpenCode, Grok Build, Gemini or Devin can be steered through a shared `porch` CLI and skill layer. [Open pragmatic-orchestration](https://github.com/CodeAlive-AI/pragmatic-orchestration)
+- Motif is a self-hosted working-memory graph for Claude Code, Codex and Cursor sessions, exposed over MCP so agents can recall decisions, failed attempts and project context. [Open Motif](https://github.com/motif-Labs/motif)
+- Worktable is a local-first workspace where agents save research, structured records and interactive tools into files the user can inspect, edit and feed back on through MCP. [Open Worktable](https://github.com/worktable/worktable-dev)
+- Groundwork packages a tool-agnostic spec → plan → test-first build → human approval loop with durable cards, evidence and approvals that any coding-agent session can resume. [Open Groundwork](https://github.com/ramesesbarria/groundwork)
+- Wye stores requirements, decisions, constraints and architecture as a Git-backed graph that coding agents query before changes and update through reviewable memory writes. [Open Wye](https://github.com/emlab-ai/wye)
+- AgentTelegramBot is a lightweight Rust Telegram bridge with SQLite reply-to-session routing for mobile notifications, questions and replies across Antigravity, Claude Code, Codex or custom agents. [Open AgentTelegramBot](https://github.com/nihilok/AgentTelegramBot)
+- AI Coding Gateway adds a dashboarded tool-approval and token-reduction layer in front of Claude Code, useful as a reference for Hermes approval queues and remote review gates. [Open AI Coding Gateway](https://github.com/dommar04/ai-coding-gateway)
+- Agentry wraps Claude Code as a service with a REST API, web UI and containerized multi-agent orchestration, making it a practical comparison point for persistent Hermes worker infrastructure. [Open Agentry](https://github.com/yeyo11/agentry)
+- MCP Offensive Security Review is an agent skill for red-team-style approval of MCP servers/connectors before org-wide use, directly relevant to Hermes MCP catalog and tool-risk review workflows. [Open MCP Offensive Security Review](https://github.com/harekrishnarai/mcp-security-review)
