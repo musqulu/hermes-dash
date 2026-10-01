@@ -4,14 +4,13 @@ Date: 2026-10-01
 
 ## Candidates
 
-1. **WATCH (medium):** [OLX — Mac Studio M3 Ultra 96GB RAM 1TB SSD gwarancja](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-96gb-ram-1tb-ssd-gwarancja-CID99-ID1czxVS.html) — 15 500 PLN, Wrocław, Fabryczna, Dolnośląskie, M3 Ultra 96GB RAM 1TB 60GPU; private seller; contact via platform message / no public phone visible; 96GB below target but unusually cheap enough to chase
-2. **WATCH (medium):** [OLX — Apple Mac Studio M5 Ultra /96GB/1TB/Sprzedam/Kupie/Zamienię](https://www.olx.pl/d/oferta/apple-mac-studio-m5-ultra-96gb-1tb-sprzedam-kupie-zamienie-CID99-ID18N3V6.html) — 25 799 PLN, Warszawa, Mokotów, Mazowieckie, M5 Ultra 96GB RAM 1TB 64GPU; private seller; contact via platform message / no public phone visible; 96GB below target; only interesting if seller/config are very credible
-3. **IGNORE (high):** [OLX — Apple Mac Studio M1 ULTRA | 64GB RAM | 1TB SSD | CPU 20 / GPU 48](https://www.olx.pl/d/oferta/apple-mac-studio-m1-ultra-64gb-ram-1tb-ssd-cpu-20-gpu-48-CID99-ID1ciEcK.html) — 13 000 PLN, Dębowiec, Śląskie, M1 Ultra 64GB RAM 1TB; private seller; contact via platform message / no public phone visible; 64GB comp only, not ideal for local LLM rigs
-4. **IGNORE (high):** [OLX — Mac Studio M2 Ultra 64GB Ram / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 17 000 PLN, Bydgoszcz, Kujawsko-pomorskie, M2 Ultra 64GB RAM 1TB; private seller; contact via platform message / no public phone visible; 64GB comp only, not ideal for local LLM rigs
+1. **WATCH (medium):** [OLX — Apple Mac Studio M5 Ultra /96GB/1TB/Sprzedam/Kupie/Zamienię](https://www.olx.pl/d/oferta/apple-mac-studio-m5-ultra-96gb-1tb-sprzedam-kupie-zamienie-CID99-ID18N3V6.html) — 25 799 PLN, Warszawa, Mokotów, Mazowieckie, M5 Ultra 96GB RAM 1TB 64GPU; private seller; contact via platform message / no public phone visible; 96GB below target; only interesting if seller/config are very credible
+2. **IGNORE (high):** [OLX — Apple Mac Studio M1 ULTRA | 64GB RAM | 1TB SSD | CPU 20 / GPU 48](https://www.olx.pl/d/oferta/apple-mac-studio-m1-ultra-64gb-ram-1tb-ssd-cpu-20-gpu-48-CID99-ID1ciEcK.html) — 13 000 PLN, Dębowiec, Śląskie, M1 Ultra 64GB RAM 1TB; private seller; contact via platform message / no public phone visible; 64GB comp only, not ideal for local LLM rigs
+3. **IGNORE (high):** [OLX — Mac Studio M2 Ultra 64GB Ram / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 17 000 PLN, Bydgoszcz, Kujawsko-pomorskie, M2 Ultra 64GB RAM 1TB; private seller; contact via platform message / no public phone visible; 64GB comp only, not ideal for local LLM rigs
 
 ## New / changed since saved history
 
-- New: [Mac Studio M3 Ultra 96GB RAM 1TB SSD gwarancja](https://www.olx.pl/d/oferta/mac-studio-m3-ultra-96gb-ram-1tb-ssd-gwarancja-CID99-ID1czxVS.html) — 15 500 PLN, M3 Ultra 96GB, Wrocław, Fabryczna, Dolnośląskie, WATCH.
+- No new or meaningfully changed listings versus saved history; older active leads remain unchanged or became unavailable.
 
 ## Price-history notes
 
@@ -26,7 +25,7 @@ Date: 2026-10-01
 
 ## Source coverage
 
-- OLX Poland: accessible; `Mac Studio Ultra` returned 44 offers before filtering, 4 Ultra-looking Mac Studio candidates after filtering.
+- OLX Poland: accessible; `Mac Studio Ultra` returned 44 offers before filtering, 3 Ultra-looking Mac Studio candidates after filtering.
 - OLX Poland: accessible; `Mac Studio M1 Ultra` returned 42 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
 - OLX Poland: accessible; `Mac Studio M2 Ultra` returned 43 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
 - OLX Poland: accessible; `Mac Studio M3 Ultra` returned 42 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
