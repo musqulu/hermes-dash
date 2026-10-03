@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: AgentX is a self-hosted small-team agent router that connects Telegram, WhatsApp, GitHub, GitLab, cron, webhooks and mesh tasks to Claude Code, Codex, OpenCode or API-backed agents. [Open AgentX](https://github.com/anis-marrouchi/agentx)
+- Hermes Workflows prototypes agent-owned DAGs for Hermes with fan-out nodes, gates, fingerprint resume and a desktop live graph, directly matching resumable multi-step cron and review workflows. [Open Hermes Workflows](https://github.com/jacobhausler/hermes-workflows)
+- cpipe packages a governed request-to-PR pipeline for Hermes profiles with clarify, plan, parallel TDD, frozen-SHA review gates and evidence-backed delivery. [Open cpipe](https://github.com/chryzxc/cpipe)
+- AgEnD turns Telegram or Discord into a fleet command center for Claude Code, Gemini CLI, Codex and OpenCode sessions with cross-instance collaboration. [Open AgEnD](https://github.com/songsid/AgEnD)
+- Orchestrator MCP lets Claude Code consult Codex or Codex consult Claude Code through locally signed-in subscriptions, with a validated response envelope and consultation dashboard. [Open Orchestrator MCP](https://github.com/crAK1644/orchestrator-mcp)
+- Agent Sandbox runs coding-agent tasks inside throwaway microVM sandboxes with a dashboard/script entrypoint, live streaming, human questions and PR handoff. [Open Agent Sandbox](https://github.com/HatriGt/agent-sandbox)
+- GitHub Agent Tools exposes PRs, issues, CI runs, jobs, commits, labels, projects and repo files through MCP with hooks that redirect raw `gh` calls into safer structured tools. [Open GitHub Agent Tools](https://github.com/shopwareLabs/github-agent-tools)
+- Projectmem records issues, attempts, fixes and decisions for coding agents, then warns Claude Code, Cursor, Antigravity or Codex before they repeat a failed path. [Open projectmem](https://github.com/riponcm/projectmem)
+- tackroom is a dotfiles-style `~/.agents` repo that renders skills, MCP servers, hooks, roles and memory into Claude Code, Codex, OpenCode, Droid and Hermes with audited externals. [Open tackroom](https://github.com/yourconscience/tackroom)
+- Notchmeter puts usage meters and waiting-session controls for Claude Code, Codex, Cursor, Gemini CLI, Antigravity, Copilot, Kimi Code and OpenCode into the MacBook notch. [Open Notchmeter](https://github.com/Amir-Hackett/notchmeter)
