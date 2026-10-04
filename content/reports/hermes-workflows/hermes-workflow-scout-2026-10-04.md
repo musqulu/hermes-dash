@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Agent Deck is a self-hosted Claude Code/Codex/Kimi workspace with tmux-persistent sessions, phone-friendly controls, subscription-limit tracking, GitHub worktree startup, and Telegram answers. [Open Agent Deck](https://github.com/matacoder/agent-deck)
+- mnem gives Claude Code, Codex and pi sessions a local-first memory layer by reading their existing transcripts and injecting evidence-backed memories at startup, prompt time, and file-open time. [Open mnem](https://github.com/daefery/mnem)
+- StackRadar is a local developer-workspace dashboard that maps repos, ports, secrets, network traffic, AI agents, skills and cron jobs across macOS, Windows and Linux. [Open StackRadar](https://github.com/SYasJ/StackRadar)
+- Agent Mesh is a self-hosted LAN workspace where Claude Code and Codex agents exchange messages, record decisions, publish shared context and hand off tasks through a live review UI. [Open Agent Mesh](https://github.com/Vlad9572324/agent-mesh)
+- obsidiyan-engine turns prior Claude Code and Codex conversations into a searchable, sourced Markdown knowledge base served through MCP while keeping confidential layers out of git. [Open obsidiyan-engine](https://github.com/22wayan/obsidiyan-engine)
+- agent-pipeline generates shared AGENTS/CLAUDE/Cursor rules, stack-aware gates, skills, hooks, MCP config and local project maps so multiple coding agents follow one delivery policy. [Open agent-pipeline](https://github.com/Sskutushev/agent-pipeline)
+- pocket-agents turns an Ubuntu VPS into supervised always-on Claude Code and Codex project sessions controlled from Telegram, with login handoff, watchdogs, port alerts and Cloudflare preview tunnels. [Open pocket-agents](https://github.com/Pepebits/pocket-agents)
+- pstack ports Poteto’s rigorous Cursor agent workflows into an npx-installable skills package usable from Claude Code, Codex, Hermes and Grok Build. [Open pstack](https://github.com/mdsmithaustin/pstack)
+- Main Branch is a files-first business operating system that gives agents structured Markdown context for offers, research, decisions, launches, bets and lessons. [Open Main Branch](https://github.com/noontide-co/mainbranch)
+- Nexusyn Engine is a Go/Postgres MCP-native long-term memory engine focused on time-aware, grounded agent memory rather than plain vector recall. [Open Nexusyn Engine](https://github.com/nexusyn/engine)
