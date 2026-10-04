@@ -4,41 +4,21 @@ Date: 2026-10-04
 
 ## Candidates
 
-1. **WATCH (medium):** [OLX — Mac Studio M5 Ultra | 30-core CPU | 64-core GPU | 256 GB RAM | 2 TB SSD](https://www.olx.pl/d/oferta/mac-studio-m5-ultra-30-core-cpu-64-core-gpu-256-gb-ram-2-tb-ssd-CID99-ID1cB5Ju.html) — 47 000 PLN, Kraków, Łagiewniki-Borek Fałęcki, Małopolskie, M5 Ultra 256GB RAM 2TB; private seller; contact via platform message / no public phone visible; target RAM but price is not obviously cheap
-2. **WATCH (medium):** [OLX — Apple Mac Studio M3 Ultra 28-CORE CPU 60-CORE GPU, 256GB RAM, 2TB SSD Srebrny](https://www.olx.pl/d/oferta/apple-mac-studio-m3-ultra-28-core-cpu-60-core-gpu-256gb-ram-2tb-ssd-srebrny-CID99-ID1cB28H.html) — 49 999 PLN, Kraków, Krowodrza, Małopolskie, M3 Ultra 256GB RAM 2TB; business; contact via platform message / no public phone visible; target RAM but price is not obviously cheap
-3. **WATCH (medium):** [OLX — Apple Mac Studio M5 Ultra /96GB/1TB/Sprzedam/Kupie/Zamienię](https://www.olx.pl/d/oferta/apple-mac-studio-m5-ultra-96gb-1tb-sprzedam-kupie-zamienie-CID99-ID18N3V6.html) — 25 799 PLN, Warszawa, Mokotów, Mazowieckie, M5 Ultra 96GB RAM 1TB 64GPU; private seller; contact via platform message / no public phone visible; 96GB below target; only interesting if seller/config are very credible
-4. **IGNORE (high):** [OLX — Apple Mac Studio M1 ULTRA | 64GB RAM | 1TB SSD | CPU 20 / GPU 48](https://www.olx.pl/d/oferta/apple-mac-studio-m1-ultra-64gb-ram-1tb-ssd-cpu-20-gpu-48-CID99-ID1ciEcK.html) — 13 000 PLN, Dębowiec, Śląskie, M1 Ultra 64GB RAM 1TB; private seller; contact via platform message / no public phone visible; 64GB comp only, not ideal for local LLM rigs
-5. **IGNORE (high):** [OLX — Apple Mac Studio M2 Ultra](https://www.olx.pl/d/oferta/apple-mac-studio-m2-ultra-CID99-ID1cBH2J.html) — 14 500 PLN, Karwiany, Dolnośląskie, M2 Ultra 64GB RAM 1TB; private seller; contact via platform message / no public phone visible; 64GB comp only, not ideal for local LLM rigs
-6. **IGNORE (high):** [OLX — Mac Studio M2 Ultra 64GB Ram / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 16 000 PLN, Bydgoszcz, Kujawsko-pomorskie, M2 Ultra 64GB RAM 1TB; private seller; contact via platform message / no public phone visible; 64GB comp only, not ideal for local LLM rigs
+1. **WATCH** — [Apple Mac Studio M2 Ultra](https://www.olx.pl/d/oferta/apple-mac-studio-m2-ultra-CID99-ID1cBH2J.html) — 14,500 PLN, M2 Ultra 24CPU/60GPU, 64GB RAM, 1TB SSD, Karwiany; private seller with 5.0/5 OLX history, invoice/receipt and inspection claimed; cheap Ultra but below 128GB+ target, contact via platform message (phone login-gated).
+2. **WATCH** — [Apple Mac Studio M5 Ultra /96GB/1TB](https://www.olx.pl/d/oferta/apple-mac-studio-m5-ultra-96gb-1tb-sprzedam-kupie-zamienie-CID99-ID18N3V6.html) — 25,799 PLN, claimed 96GB/1TB, Warszawa Mokotów; still visible and unchanged, interesting below-ideal high-RAM lead but verify exact generation/serial/warranty before action.
+3. **IGNORE_COMP** — [Mac Studio M2 Ultra 64GB RAM / 1TB](https://www.olx.pl/d/oferta/mac-studio-m2-ultra-64gb-ram-1tb-CID99-ID1bGZUr.html) — 16,000 PLN, Bydgoszcz; price dropped from 17,000 PLN, useful comp only because 64GB is not ideal for local LLM rigs.
+4. **IGNORE** — [Apple Mac Studio M3 Ultra 256GB/2TB](https://www.olx.pl/d/oferta/apple-mac-studio-m3-ultra-28-core-cpu-60-core-gpu-256gb-ram-2tb-ssd-srebrny-CID99-ID1cB28H.html) — 49,999 PLN, Kraków Krowodrza, new/business seller; good RAM but not a bargain.
+5. **IGNORE** — [Mac Studio M5 Ultra 256GB/2TB](https://www.olx.pl/d/oferta/mac-studio-m5-ultra-30-core-cpu-64-core-gpu-256-gb-ram-2-tb-ssd-CID99-ID1cB5Ju.html) — 47,000 PLN, Kraków; high-RAM but too expensive for this scout.
+6. **IGNORE_COMP** — [Apple Mac Studio M1 Ultra 64GB/1TB](https://www.olx.pl/d/oferta/apple-mac-studio-m1-ultra-64gb-ram-1tb-ssd-cpu-20-gpu-48-CID99-ID1ciEcK.html) — 13,000 PLN, Dębowiec; unchanged 64GB comp only.
 
-## New / changed since saved history
+## Compact price-history notes
 
-- No new or meaningfully changed listings versus saved history; older active leads remain unchanged or became unavailable.
-
-## Price-history notes
-
-- 64GB M2 Ultra: tracked range 14 500–22 000 PLN across 73 observations.
-- 256GB M3 Ultra: tracked range 29 000–49 999 PLN across 50 observations.
-- 96GB M3 Ultra: tracked range 15 500–24 900 PLN across 36 observations.
-- 512GB M3 Ultra: tracked range 200 000–200 000 PLN across 28 observations.
-- 64GB M1 Ultra: tracked range 12 500–13 000 PLN across 21 observations.
-- 96GB claimed M5 Ultra: tracked range 25 799–29 900 PLN across 12 observations.
-- 96GB M5 Ultra (claimed): tracked range 25 799–25 799 PLN across 7 observations.
-- 96GB M5 Ultra: tracked range 25 799–25 799 PLN across 5 observations.
+- M2 Ultra 64GB/1TB OLX comps are now visible around 14,500–16,000 PLN; 64GB remains below the preferred RAM floor.
+- 96GB Ultra leads: prior 21,900 PLN Poznań M3 Ultra lead was not visible in today’s top OLX search; 25,799 PLN Warszawa claimed M5 Ultra remains the main visible 96GB watch item.
+- 256GB Ultra asks seen today are 47,000–49,999 PLN, not actionable unless the market moves down sharply.
 
 ## Source coverage
 
-- OLX Poland: accessible; `Mac Studio Ultra` returned 45 offers before filtering, 6 Ultra-looking Mac Studio candidates after filtering.
-- OLX Poland: accessible; `Mac Studio M1 Ultra` returned 42 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
-- OLX Poland: accessible; `Mac Studio M2 Ultra` returned 43 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
-- OLX Poland: accessible; `Mac Studio M3 Ultra` returned 42 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
-- OLX Poland: accessible; `Mac Studio M5 Ultra` returned 43 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
-- OLX Poland: accessible; `Mac Studio 96GB Ultra` returned 40 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
-- OLX Poland: accessible; `Mac Studio 128GB Ultra` returned 44 offers before filtering, 0 Ultra-looking Mac Studio candidates after filtering.
-- Allegro.pl: inaccessible/blocked (HTTPError: HTTP Error 403: Forbidden); no bypass attempted.
-- Allegro Lokalnie: accessible; `mac studio ultra` showed 0 public offers and 0 Ultra-looking candidates parsed.
-- Allegro Lokalnie: accessible; `mac studio m1 ultra` showed 0 public offers and 0 Ultra-looking candidates parsed.
-- Allegro Lokalnie: accessible; `mac studio m2 ultra` showed 0 public offers and 0 Ultra-looking candidates parsed.
-- Allegro Lokalnie: accessible; `mac studio m3 ultra` showed 0 public offers and 0 Ultra-looking candidates parsed.
-- Allegro Lokalnie: accessible; `mac studio m5 ultra` showed 0 public offers and 0 Ultra-looking candidates parsed.
-- Facebook Marketplace/public groups: inaccessible/error (HTTPError: HTTP Error 400: Bad Request); no bypass attempted.
+- OLX: accessible; credible/current Ultra results found, with one new cheap M2 Ultra 64GB listing and a price drop on an older 64GB comp.
+- Allegro: main Allegro listing search was blocked by DataDome CAPTCHA, so no current offers could be safely extracted.
+- Allegro Lokalnie: accessible; separate searches for “mac studio ultra” and “mac studio m2 ultra” returned 0 listings.
