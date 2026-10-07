@@ -1,0 +1,12 @@
+# Hermes workflow items worth opening today
+
+- 🔥 Best: Ouroboros is an Agent OS where the agent gets smarter on its own through interview-gated, staged evaluation with a budgeted evolution loop, supporting 14 runtimes including Claude Code, Codex, Gemini CLI, and more. [Open Ouroboros](https://github.com/Q00/ouroboros)
+- Sno Station gives Claude Code and Codex a shared encrypted memory layer, agent-to-agent messaging (Reach), squad skills for handoff and cross-vendor review, and a nightly loop that rewrites agents' own skills with your approval — now with documented Hermes memory integration. [Open Sno Station](https://github.com/sno-ai/sno-station)
+- Alan's Way Agents is a Hermes plugin that adds proactivity, workspace browser tools, computer-use providers, and Mac/VPS auto-routing to your Hermes bots with multi-profile support. [Open Alan's Way Agents](https://github.com/capthvnsen/alans-way-agents)
+- Comma is an always-on, proactive, sessionless personal agent with browser automation, computer use, files, and remote control that you self-host as an open-source alternative to Muse and Dots. [Open Comma](https://github.com/AFK-surf/Comma)
+- Pero is a Personal Agent Runtime for your VPS with Telegram, scheduled tasks, background workflows, proactive messaging, and voice — running on your existing Claude or Codex subscription. [Open Pero](https://github.com/perokit/pero)
+- Herald-OS is an agent-native operating system built with Hermes Agent as the primary interface, shipping a desktop app, Linux installer, Arch packages, and a widget system. [Open Herald-OS](https://github.com/iamlukethedev/Herald-OS)
+- Skillbox is a self-hosted, versioned skills library for AI agents with MCP integration, scoped clients, and optional Jev-powered recommendations. [Open Skillbox](https://github.com/kitze/skillbox)
+- Nightshift is a Rust CLI that orchestrates GitHub issue resolution through DAGs, assigning work to coding agents with structured handoff. [Open Nightshift](https://github.com/Shaurya-Sethi/nightshift)
+- Fable is a self-improving experience layer for AI agents combining multi-dataset session retrieval, on-device triage, token compression, and smart-mode routing for hard tasks. [Open Fable](https://github.com/romangalaxys10-spec/fable)
+- Hermes-Jev-Skills adds Jev-powered model routing, memory, compaction, skill selection, and browser use to Hermes agents, also compatible with Claude Code and Codex. [Open Hermes-Jev-Skills](https://github.com/kerpopule/hermes-jev-skills)
